@@ -12,7 +12,7 @@
  <body>
 
    <nav class="navbar navbar-default" id="nav"><!-- nemu do site -->
-		<img src="estero.png" width="50px" height="50px" id="foto">  
+		<img src="{{asset('img/estero.png')}}" width="50px" height="50px" id="foto">  
 		<div class="container">
 			<div class="navbar-header">
 				<a class="navbar-brand" href= {{ route('home') }} >Clínica Show</a> <!--  bota imagem aqui do tamanho já correto-->
@@ -26,6 +26,8 @@
 		</div>
 	 </nav>
 
+	 {{session('erro')}}
+	 
 	<form action= "{{ route('entrar') }}" method="post" > <!-- Formulário de login-->
 		{{ csrf_field() }}
 

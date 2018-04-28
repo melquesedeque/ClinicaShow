@@ -11,11 +11,16 @@ class consultaController extends Controller{
     }
     public function consulSalvar(Request $request){
         $request->validate([
-            'nome-paciente'      => 'required',
-            'matricula'    => 'required|interge',
-            'cpf'     => 'required',
-            'rg'    => 'required',
-            'telefone'      => 'required'
+            'nome'      => 'required',
+            'Nome-medico'    => 'required',
+            'queixa'     => 'required',
+            'inicio-durabilidade'    => 'required',
+            'tipo-alimento'    => 'required',
+            'inspersao'    => 'required',
+            'palpacao'    => 'required',
+            'percusao'    => 'required',
+            'ausculta'    => 'required',
+            'materias'    => 'required',
         ]);
 
     }

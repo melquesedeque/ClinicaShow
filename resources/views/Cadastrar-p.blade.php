@@ -13,7 +13,7 @@
 <body>
 
   <nav class="navbar navbar-default" id="nav"><!-- nemu do site -->
-    <img src="estero.png" width="50px" height="50px" id="foto">
+    <img src="{{asset('img/estero.png')}}" width="50px" height="50px" id="foto">
     <div class="container">
       <div class="navbar-header">
         <a class="navbar-brand" href= {{ route('conta') }} >Clínica Show</a> <!--  bota imagem aqui do tamanho já correto-->
@@ -132,8 +132,7 @@
               <option value="11">FARMACIA</option>
               <option value="12">EDUÇÃO FÍSICA</option>
             </select> </br>
-        </div>  
-      </form>  
+        </div>    
       
     </div>
 
@@ -426,7 +425,7 @@
 
           <button class="button-ok">CONCLUIR</button>        
     </div>
-
+  </form>
   </div>
 
 </div>

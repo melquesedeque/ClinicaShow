@@ -18,7 +18,7 @@
      	}
      	#foto{
      		margin-top: 2px;
-     		margin-left: 45px;
+     		
      		position: absolute;
      	}
      </style>
@@ -26,10 +26,11 @@
  <body>
 
      <nav class="navbar navbar-default" id="nav"><!-- menuu do site -->
-		<img src="estero.png" width="50px" height="50px" id="foto"> 
+		
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href={{ route('home') }}>Clínica Show</a> <!--  bota imagem aqui do tamanho já correto-->
+				<img src="{{asset('img/estero.png')}}" width="50px" height="50px" id="foto"> 
+				<a class="navbar-brand" style="margin-left: 60px" href={{ route('home') }}>Clínica Show</a> <!--  bota imagem aqui do tamanho já correto-->
 				<button class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#lista_show"></button>
 			</div>
 			
