@@ -11,7 +11,7 @@ class consultaController extends Controller{
     }
     public function consulSalvar(Request $request){
         $request->validate([
-            'nome'      => 'required',
+            'nome-paciente'      => 'required|email',
             'Nome-medico'    => 'required',
             'queixa'     => 'required',
             'inicio-durabilidade'    => 'required',
@@ -22,7 +22,7 @@ class consultaController extends Controller{
             'ausculta'    => 'required',
             'materias'    => 'required',
         ]);
-
+        return view('consulta');
     }
 
 }

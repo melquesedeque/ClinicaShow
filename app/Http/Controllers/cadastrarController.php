@@ -10,16 +10,31 @@ class cadastrarController extends Controller{
      return view('cadastrar-p');
     }
     public function funcionario(){
-        return view('cadastrar_funcionario');
+     return view('cadastrar_funcionario');
     }
     public function pacienteSalvar(Request $request){
         $request->validate([
             'nome'      => 'required',
-            'Nome-medico'    => 'required',
-            'queixa'     => 'required',
-            'inicio-durabilidade'    => 'required',
+            'matricula'    => 'required',
+            'cpf'     => 'required',
+            'rg'    => 'required',
+            'telefone'      => 'required',
+            'dataN'    => 'required',
+            'email'     => 'required|email',
+            'cep'    => 'required',
+            'uf'      => 'required',
+            'endereco'    => 'required',
+            'bairro'     => 'required',
+            'numero'    => 'required',
+            'complemento'      => 'required',
+            'parente'    => 'required',
+            'parentent-tele'     => 'required',
+            'parente-1'    => 'required',
+            'parentent-tele-1'      => 'required',
+            'peso'    => 'required',
+            'altura'     => 'required|integer',
         ]);
-
+        return view('cadastrar-p');
     }
 
     

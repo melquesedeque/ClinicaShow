@@ -40,18 +40,28 @@
 		 </nav>
 	
 		 <form action= "{{ route('consultaSalvar') }}" style="border:#ccc">
-	
+			
+			@if ($errors->any())
+				<div class="alert alert-danger">
+					<ul>
+						@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+						@endforeach
+					</ul>
+				</div>
+			@endif
+
 			<div class="container">
 			<h1>Dados Paciente</h1>
 	
 						<label for=""><b>NOME PACIENTE</b></label>
-						<input type="text" placeholder="Enter com Nome do Paciente" name="nome-paciente" id="" required>
+						<input type="text" name="nome-paciente" id="" required>
 	
 						<label for=""><b>NOME MÉDICO</b></label>
-						<input type="text" placeholder="Entre com o nome do Médico" name="Nome-medico" required>
+						<input type="text" name="Nome-medico" required>
 	
 						<label for=""><b>QUAL A SUA QUEIXA?</b></label>
-						<input type="text" placeholder="Sua QUEIXA" name="queixa" required>
+						<input type="text" name="queixa" required>
 	
 						<label for=""><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
 						<input type="text" placeholder="" name="inicio-durabilidade" required>

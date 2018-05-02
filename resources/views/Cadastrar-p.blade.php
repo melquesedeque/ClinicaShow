@@ -48,6 +48,16 @@
 
       <form action=" {{ route('paciente-salvar') }} " style="border:#ccc">
 
+        @if ($errors->any())
+          <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+          </div>
+        @endif
+
         <div class="container">
           <h1>Dados Paciente</h1>
 
@@ -102,7 +112,7 @@
             </select> </br>
 
           <label for="e-mail"><b>E-MAIL</b></label>
-          <input type="text" placeholder="Entre com seu E-mail" name="e-mail" required>
+          <input type="text" placeholder="Entre com seu E-mail" name="email" required>
 
           <label for="escolaridade"><b>ESCOLARIDADE</b></label>
             <select class="form-control" id="gender1">
@@ -223,10 +233,10 @@
             </select> </br>
 
           <label for="plano"><b>PESO</b></label>
-          <input type="text" placeholder="Entre com seu Peso" name="plano" required>
+          <input type="text" placeholder="Entre com seu Peso" name="peso" required>
 
           <label for="inscricao"><b>ALTURA</b></label>
-          <input type="text" placeholder="Entre com sua altura" name="inscricao" required>
+          <input type="text" placeholder="Entre com sua altura" name="altura" required>
 
           <label for="parente"><b>FATOR RH</b></label>
             <select class="form-control" id="gender1">
@@ -255,7 +265,7 @@
               <input type="radio" name="radioH">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>DIABETES?</b></label>
             <label class="radio">SIM
@@ -277,7 +287,7 @@
               <input type="radio" name="radioHI">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
     </div>
 
@@ -292,7 +302,7 @@
               <input type="radio" name="radioT">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>DOÊNÇAS CRONICAS?</b></label>
             <label class="radio">SIM
@@ -303,7 +313,7 @@
               <input type="radio" name="radioC">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
@@ -314,7 +324,7 @@
               <input type="radio" name="radioN">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
@@ -325,7 +335,7 @@
               <input type="radio" name="radioFA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
     </div>
 
     <div id="clinicos3" class="tab-pane fade"> <!-- 7 Aba (DADODS CLINICOS)-->
@@ -340,7 +350,7 @@
               <input type="radio" name="radioDRO">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>ALERGIAS?</b></label>
             <label class="radio">SIM
@@ -351,7 +361,7 @@
               <input type="radio" name="radioAL">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>ETILISTA?</b></label>
             <label class="radio">SIM
@@ -362,7 +372,7 @@
               <input type="radio" name="radioET">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>VACINA TOMADAS?</b></label>
             <label class="radio">SIM
@@ -373,7 +383,7 @@
               <input type="radio" name="radioVA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
     </div>
 
     <div id="clinicos4" class="tab-pane fade"> <!-- 8 Aba (DADODS CLINICOS)-->
@@ -388,7 +398,7 @@
               <input type="radio" name="radioCI">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
@@ -399,7 +409,7 @@
               <input type="radio" name="radioTRA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>PORTADOR DE MARCAPASSO?</b></label>
             <label class="radio">SIM
@@ -410,7 +420,7 @@
               <input type="radio" name="radioMAR">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>EPLIPSIA - CONSULÇÃO??</b></label>
             <label class="radio">SIM
@@ -421,7 +431,7 @@
               <input type="radio" name="radioEP">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required> </br>
+          <input type="text" placeholder="COMENTE" name=""> </br>
 
           <button class="button-ok">CONCLUIR</button>        
     </div>
