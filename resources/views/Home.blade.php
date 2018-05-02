@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <link rel="icon" href="estero.png" type="image/gif" sizes="16x16">
+	 <link rel="icon" href="{{asset('assets/img/estero.png')}}" type="image/gif" sizes="16x16">
      <meta charset="UTF-8"/>
      <title>Clínica Show</title>
 	 <meta charset="utf-8">
@@ -52,15 +52,15 @@
 	  <div class="carousel-inner" role="listbox"> <!-- Base para conteúdos -->
 
 		    <div class="item active">
-		      <img class="d-block w-100" src="https://i1.wp.com/media.metrolatam.com/2017/06/26/capturrenault1-1200x600.jpg?resize=800%2C400&ssl=1" alt="First slide" width="100%">
+		      <img class="d-block w-100" src="https://i.pinimg.com/originals/aa/d8/b3/aad8b364e9e2275ab80b0c5705cb75d8.jpg" alt="First slide" width="100%">
 		    </div>
 
 		    <div class="item">
-		      <img class="d-block w-100" src="https://www.baixarvideosgratis.com.br/imagens/entretenimento/animais/fotos-de-felinos-os-animais-mais-poderosos-da-natureza-confira-800x400.jpg" alt="Second slide" width="100%">
+		      <img class="d-block w-100" src="http://www.clinicaleger.com.br/images/2015-03-25-Leger-002.jpg" alt="Second slide" width="100%">
 		    </div>
 
 		    <div class="item">
-		      <img class="d-block w-100" src="https://www.baixarvideosgratis.com.br/imagens/entretenimento/animais/fotos-de-cachorros-fofos-e-uma-mais-lindinha-que-a-outra-confira-800x400.jpg" alt="Third slide" width="100%">
+		      <img class="d-block w-100" src="http://www.clinicaazzi.com.br/wp-content/uploads/2016/06/1img_0033.jpg" alt="Third slide" width="100%">
 		    </div>
 
 	  </div>

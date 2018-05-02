@@ -1,6 +1,7 @@
 <?php
 
 /* Home */
+Route::get('/', 'homeController@home');
 Route::get('home', 'homeController@home')->name('home');
 
 /* Login */

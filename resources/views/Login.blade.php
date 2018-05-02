@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	 <link rel="icon" href="estero.png" type="image/gif" sizes="16x16">
+	<link rel="icon" href="{{asset('assets/img/estero.png')}}" type="image/gif" sizes="16x16">
      <meta charset="UTF-8"/>
      <title>Clínica Show</title>
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	 <script href="{{asset('assets/css/Login.css')}}"></script>
+	 <link rel="stylesheet" type="text/css" href=" {{asset('assets/css/login.css')}} ">
  </head>
  <body>
 
@@ -26,7 +26,13 @@
 		</div>
 	 </nav>
 
-	 {{session('erro')}}
+	 @if (session('erro'))
+			<!-- LOGIN ou SENHA INCORRETA -->
+				<div class="alert alert-danger">
+					<strong>Erro!</strong> {{session('erro')}}
+				</div>
+				<!-- FIM [LOGIN OU SENHA INCORRETA] -->
+	@endif
 	 
 	<form action= "{{ route('entrar') }}" method="post" > <!-- Formulário de login-->
 		{{ csrf_field() }}
