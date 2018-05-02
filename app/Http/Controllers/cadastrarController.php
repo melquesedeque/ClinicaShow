@@ -18,7 +18,7 @@ class cadastrarController extends Controller{
             'matricula'    => 'required',
             'cpf'     => 'required',
             'rg'    => 'required',
-            'telefone'      => 'required',
+            'telefone'      => 'required|integer',
             'dataN'    => 'required',
             'email'     => 'required|email',
             'cep'    => 'required',

@@ -11,7 +11,7 @@ class consultaController extends Controller{
     }
     public function consulSalvar(Request $request){
         $request->validate([
-            'nome-paciente'      => 'required|email',
+            'nome-paciente'      => 'required',
             'Nome-medico'    => 'required',
             'queixa'     => 'required',
             'inicio-durabilidade'    => 'required',
