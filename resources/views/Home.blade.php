@@ -29,7 +29,7 @@
 		
 		<div class="container">
 			<div class="navbar-header">
-				<img src="{{asset('img/estero.png')}}" width="50px" height="50px" id="foto"> 
+				<!--  <img src="{{asset('estero.png')}}" width="50px" height="50px" id="foto"> --> 
 				<a class="navbar-brand" style="margin-left: 60px" href={{ route('home') }}>Clínica Show</a> <!--  bota imagem aqui do tamanho já correto-->
 				<button class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#lista_show"></button>
 			</div>
