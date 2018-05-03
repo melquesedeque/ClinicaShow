@@ -14,29 +14,11 @@
 
 <body>
 
-    <!-- Modal -->
-    <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="modalLabel">Excluir Item</h4>
-            </div>
-            <div class="modal-body">
-                Deseja realmente excluir este item?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Sim</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">N&atilde;o</button>
-            </div>
-            </div>
-        </div>
-    </div> <!-- /.modal -->
-
     <nav class="navbar navbar-default" id="nav">
         <!-- nemu do site -->
         <div class="container">
             <div class="navbar-header">
+                <img src=" {{asset('assets/img/estero.png')}} " width="50px" height="50px" id="foto">
                 <a class="navbar-brand" href={{ route( 'conta') }}>Clínica Show</a>
                 <!--  bota imagem aqui do tamanho já correto-->
                 <button class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#lista_show"></button>
@@ -55,15 +37,22 @@
 
         <div class="container">
 
-			<h1>Dados Paciente</h1> 
-			@if ($errors->any())
+            <h1>Dados Paciente</h1> 
+            
+			@if ($errors->any()) <!-- Imprimi o Erro da Validação -->
 				<div class="alert alert-danger">
 					<ul>
-						@foreach ($errors->all() as $error)
+						@foreach ($errors->all() as $error) <!-- Imprimi todos os erros -->
 						<li>{{ $error }}</li>
 						@endforeach
 					</ul>
 				</div>
+            @endif
+            
+            @if ($confirms == True) <!-- Imprimi a Menssagem de Sucesso-->
+                <div class="alert alert-success">
+                    <strong>Consulta Cadastrada!</strong> Com Sucesso!
+                </div>
             @endif
 
             <label for=""><b>NOME PACIENTE</b></label>

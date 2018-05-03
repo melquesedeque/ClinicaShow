@@ -13,11 +13,13 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-#foto{
-            margin-top: 2px;
-            margin-left: 45px;
-            position: absolute;
-        }
-th, .hora{
-  		text-align:center;
-  	}
+
+#foto {
+    margin-top: 2px;
+    margin-left: 45px;
+    position: absolute;
+}
+
+th, .hora {
+    text-align: center;
+}

@@ -1,5 +1,7 @@
 /* Full-width inputs */
-input[type=text], input[type=password] {
+
+input[type=text],
+input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -8,7 +10,9 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+
 /* Set a style for all buttons */
+
 #button-login {
     background-color: blue;
     color: white;
@@ -19,64 +23,75 @@ input[type=text], input[type=password] {
     width: 50%;
 }
 
-#button-cancelar{
+#button-cancelar {
     color: white;
     padding: 14px 20px;
     margin: 8px -2px;
     border: none;
     cursor: pointer;
     width: 50%;
-    background-color:red;
+    background-color: red;
 }
 
+
 /* Add a hover effect for buttons */
+
 button:hover {
     opacity: 0.8;
 }
 
+
 /* Extra style for the cancel button (red) */
+
 .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: red;
 }
 
-.cancelbtn a{
-    color: white;
-}
-.entralbtn a{
+.cancelbtn a {
     color: white;
 }
 
+.entralbtn a {
+    color: white;
+}
+
+
 /* Center the avatar image inside this container */
+
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
 }
 
+
 /* Avatar image */
+
 img.avatar {
     width: 25%;
     border-radius: 40%;
 }
 
+
 /* Add padding to containers */
+
 .container-forn {
     padding: 16px;
 }
 
-#nav {
-            top: -20px;
-        }
-        #login{
-            margin-left: 200px;
-            margin-right: 200px;
-        }
-#foto{
-            margin-top: 2px;
-            margin-left: 45px;
-            position: absolute;
-        }
-#login button a{
+
+#login {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+#foto {
+    margin-top: 2px;
+    margin-left: 45px;
+    position: absolute;
+}
+
+#login button a {
     text-decoration: none;
 }
