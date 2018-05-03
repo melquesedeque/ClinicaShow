@@ -246,13 +246,13 @@
               </select>
               </br>
 
-              <label for="plano"><b>PESO</b></label>
-              <input type="text" placeholder="Entre com seu Peso" name="Plano" required>
+              <label for=""><b>PESO</b></label>
+              <input type="text" placeholder="Entre com seu Peso" name="Peso" required>
 
-              <label for="inscricao"><b>ALTURA</b></label>
+              <label for=""><b>ALTURA</b></label>
               <input type="text" placeholder="Entre com sua altura" name="Altura" required>
 
-              <label for="parente"><b>FATOR RH</b></label>
+              <label for=""><b>FATOR RH</b></label>
               <select class="form-control" id="gender1">
                   <option value="">RH+</option>
                   <option value="">RH-</option>
