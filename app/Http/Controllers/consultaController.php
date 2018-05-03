@@ -12,17 +12,17 @@ class consultaController extends Controller{
     public function consulSalvar(Request $request){
         $request->validate([
             'nome-paciente'      => 'required',
-            'Nome-medico'    => 'required',
-            'queixa'     => 'required',
-            'inicio-durabilidade'    => 'required',
-            'tipo-alimento'    => 'required',
-            'inspersao'    => 'required',
-            'palpacao'    => 'required',
-            'percusao'    => 'required',
-            'ausculta'    => 'required',
-            'materias'    => 'required',
+            'Nome-medico'        => 'required',
+            'queixa'             => 'required',
+            'inicio-durabilidade'=> 'required',
+            'tipo-alimento'      => 'required',
+            'inspersao'          => 'required',
+            'palpacao'           => 'required',
+            'percusao'           => 'required',
+            'ausculta'           => 'required',
+            'materias'           => 'required',
         ]);
-        return view('consulta');
+        return redirect()->route('conta');
     }
 
 }

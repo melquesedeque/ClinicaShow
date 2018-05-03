@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="icon" href="{{asset('assets/img/estero.png')}}" type="image/gif" sizes="16x16">	
+  <link rel="icon" href="{{asset('assets/img/estero.png')}}" type="image/gif" sizes="16x16">	
   <title>Clínica Show</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,11 @@
 		 </nav>
 	
 		 <form action= "{{ route('consultaSalvar') }}" style="border:#ccc">
-			
+
+			<div class="container">
+
+			<h1>Dados Paciente</h1>
+
 			@if ($errors->any())
 				<div class="alert alert-danger">
 					<ul>
@@ -50,12 +54,9 @@
 					</ul>
 				</div>
 			@endif
-
-			<div class="container">
-			<h1>Dados Paciente</h1>
 	
 						<label for=""><b>NOME PACIENTE</b></label>
-						<input type="text" name="nome-paciente" id="" required>
+						<input type="text" name="nome-paciente" required>
 	
 						<label for=""><b>NOME MÉDICO</b></label>
 						<input type="text" name="Nome-medico" required>

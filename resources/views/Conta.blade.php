@@ -29,7 +29,6 @@
     </div>
    </nav>
 
-<form action="" style="border:#ccc">
    <div class="container">
 
 	   <h2>Agenda</h2> <!--  -->
@@ -99,8 +98,6 @@
 			    <td></td>
 			  </tr>
 			</table>
-	</div>		
-</form>
-
+	</div>	
 </body>
 </html>

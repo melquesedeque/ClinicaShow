@@ -14,28 +14,55 @@ class cadastrarController extends Controller{
     }
     public function pacienteSalvar(Request $request){
         $request->validate([
-            'nome'      => 'required',
-            'matricula'    => 'required',
-            'cpf'     => 'required',
-            'rg'    => 'required',
-            'telefone'      => 'required|integer',
-            'dataN'    => 'required',
-            'email'     => 'required|email',
-            'cep'    => 'required',
-            'uf'      => 'required',
-            'endereco'    => 'required',
-            'bairro'     => 'required',
-            'numero'    => 'required',
-            'complemento'      => 'required',
-            'parente'    => 'required',
-            'parentent-tele'     => 'required',
-            'parente-1'    => 'required',
-            'parentent-tele-1'      => 'required',
-            'peso'    => 'required',
-            'altura'     => 'required|integer',
+            'Nome'             => 'required',
+            'Matricula'        => 'required',
+            'Cpf'              => 'required|integer',
+            'Rg'               => 'required|integer',
+            'Telefone'         => 'required|integer',
+            'Data'             => 'required|date',
+            'Email'            => 'required|email',
+            'Cep'              => 'required|integer',
+            'Uf'               => 'required',
+            'Endereco'         => 'required',
+            'Bairro'           => 'required',
+            'Numero'           => 'required|integer',
+            'Complemento'      => 'required',
+            'Parente'          => 'required',
+            'Parentent-tele'   => 'required',
+            'Parente-1'        => 'required',
+            'Parentent-tele-1' => 'required',
+            'Plano'            => 'required|integer',
+            'Inscricao'        => 'required|integer',
+            'Validade'         => 'required|date',
+            'Peso'             => 'required|integer',
+            'Altura'           => 'required|integer',
         ]);
-        return view('cadastrar-p');
+        return redirect()->route('conta');
     }
 
+    public function funcionarioSalvar(Request $request){
+        $request->validate([
+            'Nome'             => 'required',
+            'Matricula'        => 'required',
+            'Cpf'              => 'required|integer',
+            'Rg'               => 'required|integer',
+            'Telefone'         => 'required|integer',
+            'Data'             => 'required|date',
+            'Email'            => 'required|email',
+            'Cep'              => 'required|integer',
+            'Uf'               => 'required',
+            'Endereco'         => 'required',
+            'Bairro'           => 'required',
+            'Numero'           => 'required|integer',
+            'Complemento'      => 'required',
+            'Parente'          => 'required',
+            'Parentent-tele'   => 'required',
+            'Parente-1'        => 'required',
+            'Parentent-tele-1' => 'required',
+            'Peso'             => 'required|integer',
+            'Altura'           => 'required|integer',
+        ]);
+        return redirect()->route('conta');
+    }
     
 }

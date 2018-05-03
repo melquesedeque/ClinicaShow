@@ -35,7 +35,6 @@
     <li class="active"><a data-toggle="tab" href="#DadosPessoais">Dados Pessoais</a></li>
     <li><a data-toggle="tab" href="#Endereco">Endereço</a></li>
     <li><a data-toggle="tab" href="#Contato">Familiares para contato</a></li>
-    <li><a data-toggle="tab" href="#financeiro">Finânceiro</a></li>
     <li><a data-toggle="tab" href="#clinicos1">Dados Clínicos 1</a></li>
     <li><a data-toggle="tab" href="#clinicos2">Clínicos 2</a></li>
     <li><a data-toggle="tab" href="#clinicos3">Clínicos 3</a></li>
@@ -46,28 +45,38 @@
 
     <div id="DadosPessoais" class="tab-pane fade in active"> <!-- Dados do pacientes-->
 
-    <form action=" {{ route('paciente-salvar') }}" style="border:#ccc">
+    <form action=" {{ route('funcionario-salva') }}" style="border:#ccc">
 
         <div class="container">
           <h1>Dados Paciente</h1>
 
+          @if ($errors->any())
+              <div class="alert alert-danger">
+                <ul>
+                  @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                  @endforeach
+                </ul>
+              </div>
+          @endif
+
           <label for=""><b>NOME</b></label>
-          <input type="text" placeholder="Enter com seu nome" name="nome-funcionario" required>
+          <input type="text" placeholder="Enter com seu nome" name="Nome" required>
 
           <label for=""><b>MATRICULA</b></label>
-          <input type="text" placeholder="" name="matricula-funcionario" required>
+          <input type="text" placeholder="Entre com sua Matricula" name="Matricula" required>
 
           <label for=""><b>CPF</b></label>
-          <input type="text" placeholder="Entre com seu CPF" name="cpf-funcionario" required>
+          <input type="text" placeholder="Entre com seu CPF" name="Cpf" required>
 
           <label for=""><b>RG</b></label>
-          <input type="text" placeholder="Entre com seu RG" name="rg-funcionario" required>
+          <input type="text" placeholder="Entre com seu RG" name="Rg" required>
 
           <label for=""><b>TELEFONE</b></label>
-          <input type="text" placeholder="Entre com seu Telefone" name="telefone-funcionario" required>
+          <input type="text" placeholder="Entre com seu Telefone" name="Telefone" required>
 
           <label for=""><b>DATA NASCIMENTO</b></label>
-          <input type="text" placeholder="Entre com seu RG" name="dataN-funcionario" required>
+          <input type="text" placeholder="Entre com seu RG" name="Data" required>
 
           <label for=""><b>NATURALIDADE</b></label> </br> 
             <select class="form-control" id="gender1">
@@ -102,7 +111,7 @@
             </select> </br>
 
           <label for=""><b>E-MAIL</b></label>
-          <input type="text" placeholder="Entre com seu E-mail" name="e-mail" required>
+          <input type="text" placeholder="Entre com seu E-mail" name="Email" required>
 
           <label for=""><b>ESCOLARIDADE</b></label>
             <select class="form-control" id="gender1">
@@ -161,16 +170,15 @@
               <option value="PRH">RH</option>
             </select> </br>
         </div>  
-    </form>
     </div>
 
     <div id="Endereco" class="tab-pane fade"> <!-- 2 Aba (aba dos enderço)-->
       <h3>Endereço</h3>
           <label for="CEP"><b>CEP</b></label>
-          <input type="text" placeholder="Enter com seu CEP" name="cep" required>
+          <input type="text" placeholder="Enter com seu CEP" name="Cep" required>
 
           <label for="uf"><b>UF</b></label>
-          <input type="text" placeholder="Entre com seu UF" name="uf" required>
+          <input type="text" placeholder="Entre com seu UF" name="Uf" required>
 
           <label for="cidade"><b>CIDADE</b></label>
           <select class="form-control" id="gender1">
@@ -190,53 +198,31 @@
             </select> </br>
 
           <label for="endereco"><b>ENDEREÇO</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="endereco" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Endereco" required>
 
           <label for="bairro"><b>BAIRRO</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="bairro" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Bairro" required>
 
           <label for="numero"><b>NÚMERO</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="numero" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Numero" required>
 
           <label for="complemento"><b>COMPLEMENTO</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="complemento" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Complemento" required>
     </div>
 
     <div id="Contato" class="tab-pane fade"> <!-- 3 Aba (aba dos contatos)-->
       <h3>Contatos</h3>
           <label for="parente"><b>RESPONSAVEL/PARENTE 1 NOME</b></label>
-          <input type="text" placeholder="Entre com seu nome" name="parente" required>
+          <input type="text" placeholder="Entre com seu nome" name="Parente" required>
 
           <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-          <input type="text" placeholder="Entre com seu Telefone" name="parentent-tele" required>
+          <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" required>
 
           <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="parente-1" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Parente-1" required>
 
           <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-          <input type="text" placeholder="Entre com seu Endereço" name="parentent-tele-1" required>
-    </div>
-
-    <div id="financeiro" class="tab-pane fade"> <!-- 4 Aba (aba dos financeiro)-->
-      <h3>Finânceiro</h3>
-
-          <label for="parente"><b>CONVÊNIO</b></label>
-
-            <select class="form-control" id="gender1">
-              <option value="">UNIMED</option>
-              <option value="">HAPVIDA</option>
-              <option value="">SANDANDER</option>
-              <option value="">AMIL</option>
-            </select> </br>
-
-          <label for="plano"><b>PLANO</b></label>
-          <input type="text" placeholder="Entre com seu Plano" name="plano" required>
-
-          <label for="inscricao"><b>INSCRIÇÃO</b></label>
-          <input type="text" placeholder="Entre com sua Inscrição" name="inscricao" required>
-
-          <label for="validade"><b>VALIDADE</b></label>
-          <input type="text" placeholder="Entre com sua Validade" name="validade" required>
+          <input type="text" placeholder="Entre com seu Endereço" name="Parentent-tele-1" required>
     </div>
 
     <div id="clinicos1" class="tab-pane fade"> <!-- 5 Aba (aba dos dados clinicos)-->
@@ -251,10 +237,10 @@
             </select> </br>
 
           <label for="plano"><b>PESO</b></label>
-          <input type="text" placeholder="Entre com seu Peso" name="plano" required>
+          <input type="text" placeholder="Entre com seu Peso" name="Plano" required>
 
           <label for="inscricao"><b>ALTURA</b></label>
-          <input type="text" placeholder="Entre com sua altura" name="inscricao" required>
+          <input type="text" placeholder="Entre com sua altura" name="Altura" required>
 
           <label for="parente"><b>FATOR RH</b></label>
             <select class="form-control" id="gender1">
@@ -283,7 +269,7 @@
               <input type="radio" name="radioH">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>DIABETES?</b></label>
             <label class="radio">SIM
@@ -294,7 +280,7 @@
               <input type="radio" name="radioD">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>HIPERTENSÃO?</b></label>
             <label class="radio">SIM
@@ -305,7 +291,7 @@
               <input type="radio" name="radioHI">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
     </div>
 
@@ -320,7 +306,7 @@
               <input type="radio" name="radioT">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>DOÊNÇAS CRONICAS?</b></label>
             <label class="radio">SIM
@@ -331,7 +317,7 @@
               <input type="radio" name="radioC">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
@@ -342,7 +328,7 @@
               <input type="radio" name="radioN">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
@@ -353,7 +339,7 @@
               <input type="radio" name="radioFA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
     </div>
 
     <div id="clinicos3" class="tab-pane fade"> <!-- 7 Aba (DADODS CLINICOS)-->
@@ -368,7 +354,7 @@
               <input type="radio" name="radioDRO">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>ALERGIAS?</b></label>
             <label class="radio">SIM
@@ -379,7 +365,7 @@
               <input type="radio" name="radioAL">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>ETILISTA?</b></label>
             <label class="radio">SIM
@@ -390,7 +376,7 @@
               <input type="radio" name="radioET">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>VACINA TOMADAS?</b></label>
             <label class="radio">SIM
@@ -401,7 +387,7 @@
               <input type="radio" name="radioVA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
     </div>
 
     <div id="clinicos4" class="tab-pane fade"> <!-- 8 Aba (DADODS CLINICOS)-->
@@ -416,7 +402,7 @@
               <input type="radio" name="radioCI">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
@@ -427,7 +413,7 @@
               <input type="radio" name="radioTRA">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>PORTADOR DE MARCAPASSO?</b></label>
             <label class="radio">SIM
@@ -438,7 +424,7 @@
               <input type="radio" name="radioMAR">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required>
+          <input type="text" placeholder="COMENTE" name="">
 
           <label for="plano" ><b>EPLIPSIA - CONSULÇÃO??</b></label>
             <label class="radio">SIM
@@ -449,13 +435,12 @@
               <input type="radio" name="radioEP">
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="" required> </br>
+          <input type="text" placeholder="COMENTE" name=""> </br>
 
           <button class="button-ok">CONCLUIR</button>    
     </div>
-
+  </form>
   </div>
-
 </div>
 
 </body>
