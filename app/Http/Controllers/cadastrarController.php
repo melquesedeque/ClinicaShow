@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 class cadastrarController extends Controller{
 
     public function paciente(){
-     return view('cadastrar-p');
+        $dados['menu'] = 1; // Para acionar o Active do navbar
+        return view('cadastrar-p', $dados);
     }
     public function funcionario(){
-     return view('cadastrar_funcionario');
+        $dados['menu'] = 2;
+        return view('cadastrar_funcionario', $dados);
     }
     public function pacienteSalvar(Request $request){
         $request->validate([

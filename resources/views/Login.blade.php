@@ -1,33 +1,5 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link rel="icon" href="{{asset('assets/img/estero.png')}}" type="image/gif" sizes="16x16">
-    <meta charset="UTF-8" />
-    <title>Clínica Show</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href=" {{asset('assets/css/login.css')}} ">
-</head>
-
-<body>
-
-    <nav class="navbar navbar-default" id="nav">
-        <!-- nemu do site -->
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href={{ route( 'home') }}>Clínica Show</a>
-                <!--  bota imagem aqui do tamanho já correto-->
-                <button class="navbar-toggle glyphicon glyphicon-menu-hamburger" data-toggle="collapse" data-target="#lista_show"></button>
-            </div>
-
-            <ul id="lista_show" class="nav navbar-nav navbar-right collapse navbar-collapse">
-                <li><a href={{ route( 'home') }}>Home</a></li>
-                <li class="active"><a href={{ route( 'login') }}>Login</a></li>
-            </ul>
-        </div>
-    </nav>
+@extends('Nav')
+@section('body')
 
     <form action="{{ route('entrar') }}" method="post">
         <!-- Formulário de login-->
@@ -65,6 +37,6 @@
         </dir>
     </form>
 
-</body>
+@endsection
 
-</html>
+@push('css', '<link rel="stylesheet" type="text/css" href="' . asset('assets/css/Login.css'). '">') <!-- Concatenação -->

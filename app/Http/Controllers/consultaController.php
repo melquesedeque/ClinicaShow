@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class consultaController extends Controller{
     
     public function paciente(){
-        return view('consulta');
+        $dados['menu'] = 3; // Para acionar o Active do navbar
+        return view('consulta', $dados);
     }
     public function consulSalvar(Request $request){
         $request->validate([

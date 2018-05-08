@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class contaController extends Controller
 {
     public function pacienteconta(){
-        return view('conta');
+        $dados['menu'] = 4; // Para acionar o Active do navbar
+        return view('conta', $dados);
     }
 }
