@@ -4,7 +4,10 @@
 
 <div class="container">
 
+
         <h2>Agenda</h2>
+
+        <h4> Bem-vindo! {{session('usuario')}} </h4>
         <!--  -->
 
         <table>
