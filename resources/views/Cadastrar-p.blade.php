@@ -382,7 +382,7 @@
             <!-- 8 Aba (DADODS CLINICOS)-->
             <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
 
-            <label for="plano"><b>JÁ PASSOU POR CIRURGIAS?</b></label>
+            <label for="plano"><b>CIRURGIAS?</b></label>
             <label class="radio">SIM
                 <input type="radio" checked="checked" name="radioCI">
                 <span class="checkmark"></span>
@@ -415,7 +415,7 @@
             </label>
             <input type="text" placeholder="COMENTE" name="">
 
-            <label for="plano"><b>EPLIPSIA - CONSULÇÃO??</b></label>
+            <label for="plano"><b>EPLIPSIA - CONSULÇÃO?</b></label>
             <label class="radio">SIM
                 <input type="radio" checked="checked" name="radioEP">
                 <span class="checkmark"></span>

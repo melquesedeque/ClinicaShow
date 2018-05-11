@@ -23,6 +23,7 @@ class consultaController extends Controller{
             'ausculta'           => 'required',
             'materias'           => 'required',
         ]);
+        $button = true;
         return redirect()->route('conta');
     }
 
