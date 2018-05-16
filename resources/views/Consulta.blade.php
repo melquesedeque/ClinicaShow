@@ -17,7 +17,7 @@
 				</div>
             @endif
 
-            {{$button=false}}
+            {{-- {{$button=false}}
 
             @if ($button=true)
                 <!-- Modal -->
@@ -35,41 +35,41 @@
                         </div>
                     </div>
                 </div>
-            @endif
+            @endif --}}
 
 
-            <label for=""><b>NOME PACIENTE</b></label>
-            <input type="text" name="nome-paciente" required>
+            <label for="nome-paciente"><b>NOME PACIENTE</b></label>
+            <input type="text" name="nome-paciente" required value=" {{old('nome-paciente')}} ">
 
-            <label for=""><b>NOME MÉDICO</b></label>
-            <input type="text" name="Nome-medico" required>
+            <label for="Nome-medico"><b>NOME MÉDICO</b></label>
+            <input type="text" name="Nome-medico" required value=" {{old('Nome-medico')}} ">
 
-            <label for=""><b>QUAL A SUA QUEIXA?</b></label>
-            <input type="text" name="queixa" required>
+            <label for="queixa"><b>QUAL A SUA QUEIXA?</b></label>
+            <input type="text" name="queixa" required value=" {{old('queixa')}} ">
 
-            <label for=""><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
-            <input type="text" placeholder="" name="inicio-durabilidade" required>
+            <label for="inicio-durabilidade"><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
+            <input type="text" placeholder="" name="inicio-durabilidade" value=" {{old('inicio-durabilidade')}} ">
 
-            <label for=""><b>HÁBITOS DA VIDA</b></label>
-            <input type="text" placeholder="" name="habitos-vida" required>
+            <label for="habitos-vida"><b>HÁBITOS DA VIDA</b></label>
+            <input type="text" placeholder="" name="habitos-vida" value=" {{old('habitos-vida')}} ">
 
-            <label for=""><b>TIPO DE ALIMENTAÇÃO</b></label>
-            <input type="text" placeholder="" name="tipo-alimento" required>
+            <label for="tipo-alimento"><b>TIPO DE ALIMENTAÇÃO</b></label>
+            <input type="text" placeholder="" name="tipo-alimento" value=" {{old('tipo-alimento')}} ">
 
-            <label for=""><b>INSPERÇÃO</b></label>
-            <input type="text" placeholder="" name="inspersao" required>
+            <label for="inspersao"><b>INSPERÇÃO</b></label>
+            <input type="text" placeholder="" name="inspersao" value=" {{old('inspersao')}} ">
 
-            <label for=""><b>PALPAÇÃO</b></label>
-            <input type="text" placeholder="" name="palpacao" required>
+            <label for="palpacao"><b>PALPAÇÃO</b></label>
+            <input type="text" placeholder="" name="palpacao" value=" {{old('palpacao')}} ">
 
-            <label for=""><b>PERCUSSÃO</b></label>
-            <input type="text" placeholder="" name="percusao" required>
+            <label for="percusao"><b>PERCUSSÃO</b></label>
+            <input type="text" placeholder="" name="percusao" value=" {{old('percusao')}} ">
 
-            <label for=""><b>AUSCULTA</b></label>
-            <input type="text" placeholder="" name="ausculta" required>
+            <label for="ausculta"><b>AUSCULTA</b></label>
+            <input type="text" placeholder="" name="ausculta" value=" {{old('ausculta')}} ">
 
-            <label for=""><b>MATERIAS UTILIZADOS</b></label>
-            <input type="text" placeholder="" name="materias" required>
+            <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
+            <input type="text" placeholder="" name="materias" value=" {{old('materias')}} ">
 
             <button class="button-ok" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
             
