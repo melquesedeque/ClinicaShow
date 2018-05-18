@@ -39,7 +39,22 @@ class cadastrarController extends Controller{
             'Peso'             => 'required|integer',
             'Altura'           => 'required|integer',
         ]);
+
+        Paciente::create($request->all()); // para salvar no banco
+
         return redirect()->route('conta');
+    }
+
+    public function pacienteListar(){
+        # code...
+    }
+
+    public function pacienteEditar(){
+        # code...
+    }
+
+    public function pacienteExcluir(){
+        # code...
     }
 
     public function funcionarioSalvar(Request $request){
@@ -64,7 +79,22 @@ class cadastrarController extends Controller{
             'Peso'             => 'required|integer',
             'Altura'           => 'required|integer',
         ]);
+        
+        Funcionario::create($request->all()); // para salvar no banco
+
         return redirect()->route('conta');
+    }
+
+    public function funcionarioListar(){
+        # code...
+    }
+
+    public function funcionarioEditar(){
+        # code...
+    }
+
+    public function funcionarioExcluir(){
+        # code...
     }
     
 }

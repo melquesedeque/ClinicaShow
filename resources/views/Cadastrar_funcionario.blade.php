@@ -35,22 +35,22 @@
                       @endif
 
                       <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome" required>
+                      <input type="text" placeholder="Enter com seu nome" name="Nome">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" required>
+                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula">
 
                       <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" required>
+                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf">
 
                       <label for=""><b>RG</b></label>
-                      <input type="text" placeholder="Entre com seu RG" name="Rg" required>
+                      <input type="text" placeholder="Entre com seu RG" name="Rg">
 
                       <label for=""><b>TELEFONE</b></label>
-                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone" required>
+                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="text" placeholder="DD/MM/YYYY" name="Data" required>
+                      <input type="text" placeholder="DD/MM/YYYY" name="Data">
 
                       <label for=""><b>NATURALIDADE</b></label>
                       </br>
@@ -89,7 +89,7 @@
                       </br>
 
                       <label for=""><b>E-MAIL</b></label>
-                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email" required>
+                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email">
 
                       <label for=""><b>ESCOLARIDADE</b></label>
                       <select class="form-control" id="gender1">
@@ -149,10 +149,10 @@
               <!-- 2 Aba (aba dos enderço)-->
               <h3>Endereço</h3>
               <label for="CEP"><b>CEP</b></label>
-              <input type="text" placeholder="Enter com seu CEP" name="Cep" required>
+              <input type="text" placeholder="Enter com seu CEP" name="Cep">
 
               <label for="uf"><b>UF</b></label>
-              <input type="text" placeholder="Entre com seu UF" name="Uf" required>
+              <input type="text" placeholder="Entre com seu UF" name="Uf">
 
               <label for="cidade"><b>CIDADE</b></label>
               <select class="form-control" id="gender1">
@@ -173,32 +173,32 @@
               </br>
 
               <label for="endereco"><b>ENDEREÇO</b></label>
-              <input type="text" placeholder="Entre com seu Endereço" name="Endereco" required>
+              <input type="text" placeholder="Entre com seu Endereço" name="Endereco">
 
               <label for="bairro"><b>BAIRRO</b></label>
-              <input type="text" placeholder="Entre com seu Bairro" name="Bairro" required>
+              <input type="text" placeholder="Entre com seu Bairro" name="Bairro">
 
               <label for="numero"><b>NÚMERO</b></label>
-              <input type="text" placeholder="Entre com seu Número" name="Numero" required>
+              <input type="text" placeholder="Entre com seu Número" name="Numero">
 
               <label for="complemento"><b>COMPLEMENTO</b></label>
-              <input type="text" placeholder="Entre com seu Complemento" name="Complemento" required>
+              <input type="text" placeholder="Entre com seu Complemento" name="Complemento">
           </div>
 
           <div id="Contato" class="tab-pane fade">
               <!-- 3 Aba (aba dos contatos)-->
               <h3>Contatos</h3>
               <label for="parente"><b>RESPONSAVEL/PARENTE 1 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente" required>
+              <input type="text" placeholder="Entre com seu nome" name="Parente">
 
               <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" required>
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele">
 
               <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente-1" required>
+              <input type="text" placeholder="Entre com seu nome" name="Parente-1">
 
               <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" required>
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1">
           </div>
 
           <div id="clinicos1" class="tab-pane fade">
@@ -215,10 +215,10 @@
               </br>
 
               <label for=""><b>PESO</b></label>
-              <input type="text" placeholder="Entre com seu Peso" name="Peso" required>
+              <input type="text" placeholder="Entre com seu Peso" name="Peso">
 
               <label for=""><b>ALTURA</b></label>
-              <input type="text" placeholder="Entre com sua altura" name="Altura" required>
+              <input type="text" placeholder="Entre com sua altura" name="Altura">
 
               <label for=""><b>FATOR RH</b></label>
               <select class="form-control" id="gender1">

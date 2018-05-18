@@ -27,14 +27,14 @@
 
                     <h3>Dados Paciente</h3> 
                     @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                    @endifs
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <label for="nome"><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu Nome" name="Nome" value=" {{old('Nome')}} ">
@@ -43,17 +43,17 @@
                     <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value=" {{old('Matricula')}} ">
 
                     <label for="cpf"><b>CPF</b></label>
-                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value=" {{old('Cpf')}} " maxlength="14" OnKeyPress="formatar('###.###.###-##', this)" class="nao">
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value=" {{old('Cpf')}} " maxlength="14"  class="nao">
 
                     <label for="rg"><b>RG</b></label>
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value=" {{old('Rg')}} ">
 
                     <label for="telefone"><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone" value=" {{old('Telefone')}} " maxlength="12" OnKeyPress="formatar('##-####-####', this)" class="nao">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone" value=" {{old('Telefone')}} " maxlength="12"  class="nao">
 
                     <label class="col-sm-2 control_label" for="data">Data</label>
                     <div class="input-group date">
-                        <input type="text" class="form-control" id="Data" OnKeyPress="formatar('##/##/####', this)" maxlength="10">
+                        <input type="text" class="form-control" id="Data"  maxlength="10">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-th"></span>
                         </div>
@@ -436,40 +436,4 @@
             <button class="button-ok">CONCLUIR</button>
         </div>
         </form>
-
-        <script>
-            $('#Data').datepicker({
-                format: 'dd/mm/yyyy',
-                language:"pt-BR",
-            });
-        
-            function formatar(mascara, documento){ // Para a Data
-                var i = documento.value.length;
-                var saida = mascara.substring(0,1);
-                var texto = mascara.substring(i)
-                
-                if (texto.substring(0,1) != saida){
-                            documento.value += texto.substring(0,1);
-                }
-                
-            }
-
-            function formatar(mascara, documento){ // Mascara dos campos
-
-                var i = documento.value.length;
-                var saida = mascara.substring(0,1);
-                var texto = mascara.substring(i)
-                
-                    if (texto.substring(0,1) != saida){
-                        documento.value += texto.substring(0,1);
-                    }
-                
-                }
-            
-                $(document).ready(function() { // Para Não permitir C,V,X
-                    $('.nao').bind('cut copy paste', function(event) {
-                        event.preventDefault();
-                    }); 
-                });
-        </script>
 @endsection

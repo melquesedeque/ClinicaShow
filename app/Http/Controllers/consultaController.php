@@ -10,21 +10,36 @@ class consultaController extends Controller{
         $dados['menu'] = 3; // Para acionar o Active do navbar
         return view('consulta', $dados);
     }
-    public function consulSalvar(Request $request){
+    public function consultaSalvar(Request $request){
         $request->validate([
-            'nome-paciente'      => 'required',
-            'Nome-medico'        => 'required',
-            'queixa'             => 'required',
-            'inicio-durabilidade'=> 'required',
-            'tipo-alimento'      => 'required',
-            'inspersao'          => 'required',
-            'palpacao'           => 'required',
-            'percusao'           => 'required',
-            'ausculta'           => 'required',
-            'materias'           => 'required',
+            'NomePaciente'       => 'required',
+            'NomeMedico'         => 'required',
+            'Queixa'             => 'required',
+            'InicioDurabilidade' => 'required',
+            'HabitosVida'        => 'required',
+            'TipoAlimento'       => 'required',
+            'Inspersao'          => 'required',
+            'Palpacao'           => 'required',
+            'Percusao'           => 'required',
+            'Ausculta'           => 'required',
+            'Materias'           => 'required',
         ]);
-        $button = true;
+
+        consulta::create($request->all());
+
         return redirect()->route('conta');
+    }
+
+    public function consultaListar(){
+        # code...
+    }
+
+    public function consultaEditar(){
+        # code...
+    }
+
+    public function consultaExcluir(){
+        # code...
     }
 
 }

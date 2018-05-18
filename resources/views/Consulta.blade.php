@@ -39,37 +39,37 @@
 
 
             <label for="nome-paciente"><b>NOME PACIENTE</b></label>
-            <input type="text" name="nome-paciente" required value=" {{old('nome-paciente')}} ">
+            <input type="text" name="NomePaciente" required value=" {{old('NomePaciente')}} ">
 
             <label for="Nome-medico"><b>NOME MÉDICO</b></label>
-            <input type="text" name="Nome-medico" required value=" {{old('Nome-medico')}} ">
+            <input type="text" name="NomeMedico" required value=" {{old('NomeMedico')}} ">
 
             <label for="queixa"><b>QUAL A SUA QUEIXA?</b></label>
-            <input type="text" name="queixa" required value=" {{old('queixa')}} ">
+            <input type="text" name="Queixa" required value=" {{old('Queixa')}} ">
 
             <label for="inicio-durabilidade"><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
-            <input type="text" placeholder="" name="inicio-durabilidade" value=" {{old('inicio-durabilidade')}} ">
+            <input type="text" placeholder="" name="InicioDurabilidade" value=" {{old('InicioDurabilidade')}} ">
 
             <label for="habitos-vida"><b>HÁBITOS DA VIDA</b></label>
-            <input type="text" placeholder="" name="habitos-vida" value=" {{old('habitos-vida')}} ">
+            <input type="text" placeholder="" name="HabitosVida" value=" {{old('HabitosVida')}} ">
 
             <label for="tipo-alimento"><b>TIPO DE ALIMENTAÇÃO</b></label>
-            <input type="text" placeholder="" name="tipo-alimento" value=" {{old('tipo-alimento')}} ">
+            <input type="text" placeholder="" name="TipoAlimento" value=" {{old('TipoAlimento')}} ">
 
             <label for="inspersao"><b>INSPERÇÃO</b></label>
-            <input type="text" placeholder="" name="inspersao" value=" {{old('inspersao')}} ">
+            <input type="text" placeholder="" name="Inspersao" value=" {{old('Inspersao')}} ">
 
             <label for="palpacao"><b>PALPAÇÃO</b></label>
-            <input type="text" placeholder="" name="palpacao" value=" {{old('palpacao')}} ">
+            <input type="text" placeholder="" name="Palpacao" value=" {{old('Palpacao')}} ">
 
             <label for="percusao"><b>PERCUSSÃO</b></label>
-            <input type="text" placeholder="" name="percusao" value=" {{old('percusao')}} ">
+            <input type="text" placeholder="" name="Percusao" value=" {{old('Percusao')}} ">
 
             <label for="ausculta"><b>AUSCULTA</b></label>
-            <input type="text" placeholder="" name="ausculta" value=" {{old('ausculta')}} ">
+            <input type="text" placeholder="" name="Ausculta" value=" {{old('Ausculta')}} ">
 
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
-            <input type="text" placeholder="" name="materias" value=" {{old('materias')}} ">
+            <input type="text" placeholder="" name="Materias" value=" {{old('Materias')}} ">
 
             <button class="button-ok" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
             
