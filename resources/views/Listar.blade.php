@@ -3,42 +3,42 @@
 
     <div class="container">
 
-            {{-- <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                  </form> --}}
+        <h3>Listar Consultas</h3> </br>
 
-        {{-- <div class="input-group">  
-            <span class="input-group-addon">Text</span>
-            <input type="text" name="pesquisa" class="form-control mb-2 mr-sm-2 mb-sm-0"/>
+        {{-- barra de pesquisa --}}
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Buscar" name="search">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </div>
         </div>
-        <button type="button" class="btn btn-primary">
-            <span class="glyphicon glyphicon-search"></span> Buscar
-        </button> --}}
 
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Matricula</th>
-                    <th>Nome</th>
-                    <th>E-mail</th>
+                    <th>Nome Paciente</th>
+                    <th>Nome Médico</th>
+                    <th>Queixa</th>
                     <th width="30%">Opções</th>
                 </tr>
             </thead>
+
             <!-- DADOS -->
+
             <tbody>
                 @foreach($consultas as $consulta)
-                <tr>
-                    <td>{{$consulta['NomePaciente']}}</td>
-                    <td>{{$consulta['NomeMedico']}}</td>
-                    <td>{{$consulta['Queixa']}}</td>
+
+                <tr class="trItens">
+                    <td class="tex">{{$consulta['NomePaciente']}}</td>
+                    <td class="tex">{{$consulta['NomeMedico']}}</td>
+                    <td class="tex">{{$consulta['Queixa']}}</td>
     
                     <td>
                         <a href="{{route('consultaVisualizar', ['id' => $consulta['id']])}}" class="btn btn-primary">Visualizar</a>
                         <a href="{{route('consultaEditar', ['id' => $consulta['id']])}}" class="btn btn-warning">Editar</a>
-                        <a href="" class="btn btn-danger">Excluir</a>
+                        <a href="{{route('consultaExcluir', ['id' => $consulta['id']])}}" class="btn btn-danger">Excluir</a>
                     </td>
                    
                 </tr>
@@ -47,4 +47,19 @@
             <!-- DADOS [FIM] -->
         </table>
     </div>
+</div>
+   
+    <script type="text/javascript">
+        $(function(){
+            $("#txtBusca").keyup(function(){
+                var texto = $(this).val();
+                
+                $("#trItens tex").css("display", "block");
+                $("#trItens tex").each(function(){
+                    if($(this).text().indexOf(texto) < 0)
+                       $(this).css("display", "none");
+                });
+            });
+        });
+    </script>
 @endsection

@@ -28,7 +28,7 @@ class consultaController extends Controller{
 
         consulta::create($request->all());
 
-        return redirect()->route('conta');
+        return redirect()->route('consultaListar');
     }
 
     public function consultaListar(){ // Listar
@@ -50,8 +50,10 @@ class consultaController extends Controller{
 
     }
 
-    public function consultaExcluir(){ // Excluir
-        # code...
+    public function consultaExcluir($id){ // Excluir
+        
+        consulta::destroy($id);
+        return redirect()->route('consultaListar');
     }
 
     public function consultaVisualizar($id){ // Visualizar
@@ -79,7 +81,7 @@ class consultaController extends Controller{
         ]);
 
         consulta::where('id', $id)->update($request->all());
-        return redirect()->route('conta');
+        return redirect()->route('consultaListar');
     }
-
+  
 }
