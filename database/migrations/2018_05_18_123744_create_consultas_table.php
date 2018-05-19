@@ -6,25 +6,23 @@ use Illuminate\Database\Migrations\Migration;
 
 class CreateConsultasTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+ 
     public function up()
     {
         Schema::create('consultas', function (Blueprint $table) {
-            $table->string('nome-paciente');
-            $table->string('nome-medico');
-            $table->string('queixa');
-            $table->integer('inicio-durabilidade');
-            $table->string('habitos-vida');
-            $table->string('tipo-alimento');
-            $table->string('inspersao');
-            $table->string('palpacao');
-            $table->string('percusao');
-            $table->string('ausculta');
-            $table->string('materias');
+            $table->increments('id');
+            $table->string('NomePaciente');
+            $table->string('NomeMedico');
+            $table->string('Queixa');
+            $table->string('InicioDurabilidade');
+            $table->string('HabitosVida');
+            $table->string('TipoAlimento');
+            $table->string('Inspersao');
+            $table->string('Palpacao');
+            $table->string('Percusao');
+            $table->string('Ausculta');
+            $table->string('Materias');
+            $table->timestamps();
         });
     }
 

@@ -38,7 +38,8 @@
                 <li @if($menu == 1) class="active" @endif><a href={{ route('cadastrar-paciente') }}>Cadastrar Paciente</a></li>
                 <li @if($menu == 2) class="active" @endif><a href={{ route('cadastrar-funcionario') }}>Cadastrar Funcionário</a></li>
                 <li @if($menu == 3) class="active" @endif><a href={{ route('consuta') }}>Consulta</a></li>
-                <li @if($menu == 4) class="active" @endif><a href={{ route('conta') }}>Conta</a></li>
+                <li @if($menu == 4) class="active" @endif><a href={{ route('consultaListar') }}>Listar consulta</a></li>
+                <li @if($menu == 5) class="active" @endif><a href={{ route('conta') }}>Conta</a></li>
 
                 @yield('deslogar') <!-- para fazer o delogar aparecer -->
 
