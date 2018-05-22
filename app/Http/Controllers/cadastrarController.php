@@ -20,7 +20,7 @@ class cadastrarController extends Controller{
             'Matricula'        => 'required',
             'Cpf'              => 'required|integer',
             'Rg'               => 'required|integer',
-            'Telefone'         => 'required|integer',
+            'Telefone-p'       => 'required|integer',
             'Data'             => 'required|date',
             'Email'            => 'required|email',
             'Cep'              => 'required|integer',

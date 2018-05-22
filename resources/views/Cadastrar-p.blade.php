@@ -49,7 +49,7 @@
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value=" {{old('Rg')}} ">
 
                     <label for="telefone"><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone" value=" {{old('Telefone')}} " maxlength="12"  class="nao">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value=" {{old('Telefone-p')}} " maxlength="12"  class="nao">
 
                     <label class="col-sm-2 control_label" for="data">Data</label>
                     <div class="input-group date">
@@ -61,7 +61,7 @@
 
                     <label for="naturalidade"><b>NATURALIDADE</b></label>
                     </br>
-                    <select class="form-control" id="gender1" name="natu" value=" {{old('natu')}} ">
+                    <select class="form-control" id="gender1" name="Naturalidade" value=" {{old('Naturalidade')}} ">
                         <option value="0">BRASIL</option>
                         <option value="1">ARGENTINA</option>
                         <option value="2">CHILE</option>
@@ -314,11 +314,11 @@
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" >
+                <input type="radio" checked="checked" name="radioN">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioN">Z
+                <input type="radio" name="radioN">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cneopla" value="{{old('Cneopla')}}">
