@@ -35,95 +35,93 @@
                       @endif
 
                       <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome">
+                      <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome')}}">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula">
+                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula')}}">
 
                       <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf">
+                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}">
 
                       <label for=""><b>RG</b></label>
-                      <input type="text" placeholder="Entre com seu RG" name="Rg">
+                      <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg')}}">
 
                       <label for=""><b>TELEFONE</b></label>
-                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone">
+                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="text" placeholder="DD/MM/YYYY" name="Data">
+                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data')}}">
 
                       <label for=""><b>NATURALIDADE</b></label>
-                      </br>
-                      <select class="form-control" id="gender1">
-                          <option value="0">BRASIL</option>
-                          <option value="1">ARGENTINA</option>
-                          <option value="2">CHILE</option>
-                          <option value="3">COLÔMBIA</option>
-                          <option value="4">ESTADOS UNIDOS</option>
-                          <option value="5">CANADÁ</option>
-                          <option value="6">MÉXICO</option>
-                          <option value="7">PORTUGAL</option>
-                          <option value="8">FRANÇA</option>
-                          <option value="9">ITáLIA</option>
-                          <option value="10">RÚSSIA</option>
-                          <option value="11">JAPÃO</option>
-                          <option value="12">CHINA</option>
+                      <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade')}}">
+                        <option value="BRASIL">BRASIL</option>
+                        <option value="ARGENTINA">ARGENTINA</option>
+                        <option value="CHILE">CHILE</option>    
+                        <option value="COLÔMBIA">COLÔMBIA</option>
+                        <option value="ESTADOS">ESTADOS UNIDOS</option>
+                        <option value="CANADa">CANADÁ</option>
+                        <option value="MeXICO">MÉXICO</option>
+                        <option value="PORTUGAL">PORTUGAL</option>
+                        <option value="FRANcA">FRANÇA</option>
+                        <option value="ITáLIA">ITáLIA</option>
+                        <option value="RÚSSIA">RÚSSIA</option>
+                        <option value="JAPÃO">JAPÃO</option>
+                        <option value="CHINA">CHINA</option>
                       </select>
-                      </br>
 
                       <label for=""><b>SEXO</b></label>
-                      <select class="form-control" id="gender1">
-                          <option value="MASC-funcionario">MASCULINO</option>
-                          <option value="FEMIN-funcionario">FEMININO</option>
-                          <option value="OUTRO-funcionario">OUTRO</option>
+                      <select class="form-control" id="gender1" name="sexo" value="{{old('sexo')}}">
+                        <option value="MASC">MASCULINO</option>
+                        <option value="FEMIN">FEMININO</option>
+                        <option value="OUTRO">OUTRO</option>
                       </select>
                       </br>
 
                       <label for=""><b>ESTADO CIVIL</b></label>
-                      <select class="form-control" id="gender1">
-                          <option value="casado-funcionario">CASADO</option>
-                          <option value="solteiro-funcionario">SOLTEIRO</option>
-                          <option value="viuvo-funcionario">VIUVO</option>
-                          <option value="divorciado-funcionario">DIVORCIADO</option>
+                      <select class="form-control" id="gender1" name="estado" value="{{old('estado')}}">
+                        <option value="casado">CASADO</option>
+                        <option value="solteiro">SOLTEIRO</option>
+                        <option value="viuvo">VIUVO</option>
+                        <option value="divorciado">DIVORCIADO</option>
                       </select>
                       </br>
 
                       <label for=""><b>E-MAIL</b></label>
-                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email">
+                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email" value="{{old('Email')}}">
 
                       <label for=""><b>ESCOLARIDADE</b></label>
-                      <select class="form-control" id="gender1">
-                          <option value="FUND-INCO">FUNDAMENTAL-INCOMPLETO</option>
-                          <option value="FUND-COMP">FUNDAMENTAL-COMPLETO</option>
-                          <option value="SEGUN-INCO">SEGUNDO GRAU-INCOMPLETO</option>
-                          <option value="SEGUN-COMPL">SEGUNDO GRAU-COMPLETO</option>
-                          <option value="SUPE-INCO">SUPERIOR-INCOMPLETO</option>
-                          <option value="SUPE-COMPL">SUPERIOR-COMPLETO</option>
-                          <option value="MEST-INCO">MESTRADO-INCOMPLETO</option>
-                          <option value="MEST-COMPL">MESTRADO-COMPLETO</option>
+                      <select class="form-control" id="gender1" name="escola" value="{{old('escola')}}">
+                        <option value="FunINCOMPLETO">FUNDAMENTAL-INCOMPLETO</option>
+                        <option value="FunCOMPLETO">FUNDAMENTAL-COMPLETO</option>
+                        <option value="SugSEGUNDO">SEGUNDO GRAU-INCOMPLETO</option>
+                        <option value="SugCOMPLETO">SEGUNDO GRAU-COMPLETO</option>
+                        <option value="SupINCOMPLETO">SUPERIOR-INCOMPLETO</option>
+                        <option value="SupCOMPLETO">SUPERIOR-COMPLETO</option>
+                        <option value="MesINCOMPLETO">MESTRADO-INCOMPLETO</option>
+                        <option value="MesCOMPLETO">MESTRADO-COMPLETO</option>
                       </select>
                       </br>
 
                       <label for=""><b>PROFISSÃO</b></label>
-                      <select class="form-control" id="gender1">
-                          <option value="MEDICO">MÉDICO</option>
-                          <option value="ENFERMEIRO">ENFERMEIRO</option>
-                          <option value="ARQUITETO">ARQUITETO</option>
-                          <option value="ENGENHEIRO">ENGENHEIRO</option>
-                          <option value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                          <option value="ANALISTA">ANALISTA DE SISTEMAAS</option>
-                          <option value="PROGRAMADOR">PROGRAMADOR</option>
-                          <option value="DENTISTA">DENTISTA</option>
-                          <option value="PEDREIRO">PEDREIRO</option>
-                          <option value="SEGURANÇA">SEGURANÇA</option>
-                          <option value="ADIMINISTRACAO">ADIMINISTRAÇÃO</option>
-                          <option value="FARMACIA">FARMACIA</option>
-                          <option value="EDUCAO">EDUÇÃO FÍSICA</option>
+                      <select class="form-control" id="gender1" name="profi" value="{{old('profi')}}">
+                        <option value="MÉDICO">MÉDICO</option>
+                        <option value="ENFERMEIRO">ENFERMEIRO</option>
+                        <option value="ARQUITETO">ARQUITETO</option>
+                        <option value="ENGENHEIRO">ENGENHEIRO</option>
+                        <option value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
+                        <option value="ANALISTA">ANALISTA DE SISTEMAAS</option>
+                        <option value="PROGRAMADOR">PROGRAMADOR</option>
+                        <option value="DENTISTA">DENTISTA</option>
+                        <option value="PEDREIRO">PEDREIRO</option>
+                        <option value="SEGURANÇA">SEGURANÇA</option>
+                        <option value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
+                        <option value="FARMACIA">FARMACIA</option>
+                        <option value="FÍSICA">EDUÇÃO FÍSICA</option>
                       </select>
                       </br>
 
                       <label for="profissao"><b>ESPECIALIDADE</b></label>
-                      <select class="form-control" id="gender1">
+                      <select class="form-control" id="gender1" name="Especialidade" value="{{old('Especialidade')}}">
                           <option value="NEUROLOGISTA">NEUROLOGISTA</option>
                           <option value="CARDIOVASCULAR">CARDIOVASCULAR</option>
                           <option value="CIRURGIÃO">CIRURGIÃO GERAL</option>
@@ -132,7 +130,7 @@
                       </br>
 
                       <label for="profissao"><b>TIPO DE PERMISSÃO</b></label>
-                      <select class="form-control" id="gender1">
+                      <select class="form-control" id="gender1" name="TIPO_PERMISAO"  value="{{old('TIPO_PERMISAO')}}">
                           <option value="PMEDICO">MÉDICO</option>
                           <option value="PMEDICOGERENTE">MÉDICO GERENTE</option>
                           <option value="PENFERMEIRO">ENFERMEIRO</option>
@@ -149,276 +147,279 @@
               <!-- 2 Aba (aba dos enderço)-->
               <h3>Endereço</h3>
               <label for="CEP"><b>CEP</b></label>
-              <input type="text" placeholder="Enter com seu CEP" name="Cep">
+              <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep')}}">
 
               <label for="uf"><b>UF</b></label>
-              <input type="text" placeholder="Entre com seu UF" name="Uf">
+              <input type="text" placeholder="Entre com seu UF" name="Uf" value="{{old('Uf')}}">
 
               <label for="cidade"><b>CIDADE</b></label>
-              <select class="form-control" id="gender1">
-                  <option value="0">MACEIÓ</option>
-                  <option value="1">CORURIPE</option>
-                  <option value="2">RIO DE JANEIRO</option>
-                  <option value="3">SÃO PAULO</option>
-                  <option value="4">PARANA</option>
-                  <option value="5">SANTA CATARINA</option>
-                  <option value="6">RECIFE</option>
-                  <option value="7">BAHIA</option>
-                  <option value="8">SERGIPE</option>
-                  <option value="9">PERNABUCO</option>
-                  <option value="10">GOIAS</option>
-                  <option value="11">AMAZONAS</option>
-                  <option value="12">FLORIPA</option>
+              <select class="form-control" id="gender1" name="cidade" value="{{old('cidade')}}">
+                <option value="MACEIÓ">MACEIÓ</option>
+                <option value="CORURIPE">CORURIPE</option>
+                <option value="RIO">RIO DE JANEIRO</option>
+                <option value="PAULO">SÃO PAULO</option>
+                <option value="PARANA">PARANA</option>
+                <option value="SANTA">SANTA CATARINA</option>
+                <option value="RECIFE">RECIFE</option>
+                <option value="BAHIA">BAHIA</option>
+                <option value="SERGIPE">SERGIPE</option>
+                <option value="PERNABUCO">PERNABUCO</option>
+                <option value="GOIAS">GOIAS</option>
+                <option value="AMAZONAS">AMAZONAS</option>
+                <option value="FLORIPA">FLORIPA</option>
               </select>
               </br>
 
               <label for="endereco"><b>ENDEREÇO</b></label>
-              <input type="text" placeholder="Entre com seu Endereço" name="Endereco">
+              <input type="text" placeholder="Entre com seu Endereço" name="Endereco" value="{{old('Endereco')}}">
 
               <label for="bairro"><b>BAIRRO</b></label>
-              <input type="text" placeholder="Entre com seu Bairro" name="Bairro">
+              <input type="text" placeholder="Entre com seu Bairro" name="Bairro" value="{{old('Bairro')}}">
 
               <label for="numero"><b>NÚMERO</b></label>
-              <input type="text" placeholder="Entre com seu Número" name="Numero">
+              <input type="text" placeholder="Entre com seu Número" name="Numero" value="{{old('Numero')}}">
 
               <label for="complemento"><b>COMPLEMENTO</b></label>
-              <input type="text" placeholder="Entre com seu Complemento" name="Complemento">
+              <input type="text" placeholder="Entre com seu Complemento" name="Complemento" value="{{old('Complemento')}}">
           </div>
 
           <div id="Contato" class="tab-pane fade">
               <!-- 3 Aba (aba dos contatos)-->
               <h3>Contatos</h3>
               <label for="parente"><b>RESPONSAVEL/PARENTE 1 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente">
+              <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente')}}">
 
               <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" value="{{old('Parentent-tele')}}">
 
               <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente-1">
+              <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1')}}">
 
               <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" value="{{old('Parentent-tele-1')}}">
           </div>
 
           <div id="clinicos1" class="tab-pane fade">
               <!-- 5 Aba (aba dos dados clinicos)-->
+
               <h3>DADOS CLÍNICOS</h3>
-              <label for="parente"><b>COR DA PELE</b></label>
-              <select class="form-control" id="gender1">
-                  <option value="">BRANCA</option>
-                  <option value="">PARDA</option>
-                  <option value="">PRETA</option>
-                  <option value="">AMARELO</option>
-                  <option value="">INDÍGINA</option>
-              </select>
-              </br>
+            <label for="cor"><b>COR DA PELE</b></label>
+            <select class="form-control" id="gender1" name="cor" value="{{old('cor')}}">
+                <option value="BRANCA">BRANCA</option>
+                <option value="PARDA">PARDA</option>
+                <option value="PRETA">PRETA</option>
+                <option value="AMARELO">AMARELO</option>
+                <option value="INDÍGINA">INDÍGINA</option>
+            </select>
+            </br>
 
-              <label for=""><b>PESO</b></label>
-              <input type="text" placeholder="Entre com seu Peso" name="Peso">
+            <label for="Peso"><b>PESO</b></label>
+            <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso')}}">
 
-              <label for=""><b>ALTURA</b></label>
-              <input type="text" placeholder="Entre com sua altura" name="Altura">
+            <label for="Altura"><b>ALTURA</b></label>
+            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura')}}">
 
-              <label for=""><b>FATOR RH</b></label>
-              <select class="form-control" id="gender1">
-                  <option value="">RH+</option>
-                  <option value="">RH-</option>
-              </select>
-              </br>
+            <label for="rh"><b>FATOR RH</b></label>
+            <select class="form-control" id="gender1" name="rh" value="{{old('rh')}}">
+                <option value="RH+">RH+</option>
+                <option value="RH-">RH-</option>
+            </select>
+            </br>
 
-              <label for="parente"><b>TIPO SANGUINIO</b></label>
-              <select class="form-control" id="gender1">
-                  <option value="">A+</option>
-                  <option value="">A-</option>
-                  <option value="">B+</option>
-                  <option value="">B-</option>
-                  <option value="">AB+</option>
-                  <option value="">AB-</option>
-                  <option value="">O+</option>
-                  <option value="">O-</option>
-              </select>
-              </br>
+            <label for="tipo"><b>TIPO SANGUINIO</b></label>
+            <select class="form-control" id="gender1" name="tipo" value="{{old('tipo')}}">
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            </br>
 
-              <label for="plano"><b>DOÊNÇAS HEREDITARIAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioH">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioH">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>DOÊNÇAS HEREDITARIAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioH">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioH">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere')}}">
 
-              <label for="plano"><b>DIABETES?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioD">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioD">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>DIABETES?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioD">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioD">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab')}}">
 
-              <label for="plano"><b>HIPERTENSÃO?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioHI">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioHI">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>HIPERTENSÃO?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioHI">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioHI">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Chiper" value="{{old('Chiper')}}">
 
-          </div>
+        </div>
 
-          <div id="clinicos2" class="tab-pane fade">
-              <!-- 6 Aba (DADODS CLINICOS)-->
-              <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
-              <label for="plano"><b>TABAGISTA?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioT">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioT">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+        <div id="clinicos2" class="tab-pane fade">
+            <!-- 6 Aba (DADODS CLINICOS)-->
 
-              <label for="plano"><b>DOÊNÇAS CRONICAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioC">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioC">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
+            <label for="plano"><b>TABAGISTA?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioT">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioT">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cclini" value="{{old('Cclini')}}">
 
-              <label for="plano"><b>NEOPLASIA?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioN">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioN">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>DOÊNÇAS CRONICAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioC">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioC">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cdoen" value="{{old('Cdoen')}}">
 
-              <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioFA">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioFA">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
-          </div>
+            <label for="plano"><b>NEOPLASIA?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioN">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioN">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cneopla" value="{{old('Cneopla')}}">
 
-          <div id="clinicos3" class="tab-pane fade">
-              <!-- 7 Aba (DADODS CLINICOS)-->
-              <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
+            <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioFA">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioFA">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cfarma" value="{{old('Cfarma')}}">
+        </div>
 
-              <label for="plano"><b>USO DE DROGAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioDRO">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioDRO">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+        <div id="clinicos3" class="tab-pane fade">
+            <!-- 7 Aba (DADODS CLINICOS)-->
 
-              <label for="plano"><b>ALERGIAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioAL">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioAL">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
 
-              <label for="plano"><b>ETILISTA?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioET">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioET">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>USO DE DROGAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioDRO">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioDRO">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cuso" value="{{old('Cuso')}}">
 
-              <label for="plano"><b>VACINA TOMADAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioVA">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioVA">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
-          </div>
+            <label for="plano"><b>ALERGIAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioAL">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioAL">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Calerg" value="{{old('Calerg')}}">
 
-          <div id="clinicos4" class="tab-pane fade">
-              <!-- 8 Aba (DADODS CLINICOS)-->
-              <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
+            <label for="plano"><b>ETILISTA?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioET">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioET">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cetili" value="{{old('Cetili')}}">
 
-              <label for="plano"><b>JÁ PASSOU POR CIRURGIAS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioCI">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioCI">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>VACINA TOMADAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioVA">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioVA">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cvacina" value="{{old('Cvacina')}}">
+        </div>
 
-              <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioTRA">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioTRA">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+        <div id="clinicos4" class="tab-pane fade">
+            <!-- 8 Aba (DADODS CLINICOS)-->
+            <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
 
-              <label for="plano"><b>PORTADOR DE MARCAPASSO?</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioMAR">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioMAR">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name="">
+            <label for="plano"><b>CIRURGIAS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioCI">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioCI">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Ccirur" value="{{old('Ccirur')}}">
 
-              <label for="plano"><b>EPLIPSIA - CONSULÇÃO??</b></label>
-              <label class="radio">SIM
-                  <input type="radio" checked="checked" name="radioEP">
-                  <span class="checkmark"></span>
-              </label>
-              <label class="radio">NÃO
-                  <input type="radio" name="radioEP">
-                  <span class="checkmark"></span>
-              </label>
-              <input type="text" placeholder="COMENTE" name=""> </br>
+            <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioTRA">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioTRA">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cporta" value="{{old('Cporta')}}">
+
+            <label for="plano"><b>PORTADOR DE MARCAPASSO?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioMAR">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioMAR">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Cmarca" value="{{old('Cmarca')}}">
+
+            <label for="plano"><b>EPLIPSIA - CONSULÇÃO?</b></label>
+            <label class="radio">SIM
+                <input type="radio" checked="checked" name="radioEP">
+                <span class="checkmark"></span>
+            </label>
+            <label class="radio">NÃO
+                <input type="radio" name="radioEP">
+                <span class="checkmark"></span>
+            </label>
+            <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
 
               <button class="button-ok">CONCLUIR</button>
           </div>

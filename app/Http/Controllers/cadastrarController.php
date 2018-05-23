@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Paciente;
+use App\Models\Funcionario;
 
 class cadastrarController extends Controller{
 
@@ -18,12 +20,12 @@ class cadastrarController extends Controller{
         $request->validate([
             'Nome'             => 'required',
             'Matricula'        => 'required',
-            'Cpf'              => 'required|integer',
-            'Rg'               => 'required|integer',
-            'Telefone-p'       => 'required|integer',
-            'Data'             => 'required|date',
+            'Cpf'              => 'required',
+            'Rg'               => 'required',
+            'Telefone-p'       => 'required',
+            'Data'             => 'required',
             'Email'            => 'required|email',
-            'Cep'              => 'required|integer',
+            'Cep'              => 'required',
             'Uf'               => 'required',
             'Endereco'         => 'required',
             'Bairro'           => 'required',
@@ -36,8 +38,8 @@ class cadastrarController extends Controller{
             'Plano'            => 'required|integer',
             'Inscricao'        => 'required|integer',
             'Validade'         => 'required|date',
-            'Peso'             => 'required|integer',
-            'Altura'           => 'required|integer',
+            'Peso'             => 'required',
+            'Altura'           => 'required',
         ]);
 
         Paciente::create($request->all()); // para salvar no banco
@@ -61,12 +63,12 @@ class cadastrarController extends Controller{
         $request->validate([
             'Nome'             => 'required',
             'Matricula'        => 'required',
-            'Cpf'              => 'required|integer',
-            'Rg'               => 'required|integer',
-            'Telefone'         => 'required|integer',
-            'Data'             => 'required|date',
+            'Cpf'              => 'required',
+            'Rg'               => 'required',
+            'Telefone-p'       => 'required',
+            'Data'             => 'required',
             'Email'            => 'required|email',
-            'Cep'              => 'required|integer',
+            'Cep'              => 'required',
             'Uf'               => 'required',
             'Endereco'         => 'required',
             'Bairro'           => 'required',
@@ -76,8 +78,8 @@ class cadastrarController extends Controller{
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
             'Parentent-tele-1' => 'required',
-            'Peso'             => 'required|integer',
-            'Altura'           => 'required|integer',
+            'Peso'             => 'required',
+            'Altura'           => 'required',
         ]);
         
         Funcionario::create($request->all()); // para salvar no banco

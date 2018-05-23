@@ -23,7 +23,7 @@ class CreatePacientesTable extends Migration{
             $table->string('escola');
             $table->string('profi');
             $table->string('Cep');
-            $table->char('Uf',2);
+            $table->string('Uf');
             $table->string('cidade');
             $table->string('Endereco');
             $table->string('Bairro');
@@ -38,8 +38,8 @@ class CreatePacientesTable extends Migration{
             $table->integer('Inscricao');
             $table->string('Validade');
             $table->string('cor');
-            $table->float('Peso',4,2);
-            $table->float('Altura',4,2);
+            $table->string('Peso');
+            $table->string('Altura');
             $table->string('rh');
             $table->string('tipo');
             $table->string('radioH');
@@ -72,6 +72,7 @@ class CreatePacientesTable extends Migration{
             $table->string('Cmarca')->default('Campo Não Informado!');
             $table->string('radioEP');
             $table->string('Ceplis')->default('Campo Não Informado!');
+            $table->timestamps();
         });
     }
 

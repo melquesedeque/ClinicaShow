@@ -25,7 +25,7 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Especialidade');
             $table->string('TIPO_PERMISAO');
             $table->string('Cep');
-            $table->char('Uf',2);
+            $table->string('Uf');
             $table->string('cidade');
             $table->string('Endereco');
             $table->string('Bairro');
@@ -36,8 +36,8 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Parente-1');
             $table->string('Parentent-tele-1');
             $table->string('cor');
-            $table->float('Peso',4,2);
-            $table->float('Altura',4,2);
+            $table->string('Peso');
+            $table->string('Altura');
             $table->string('rh');
             $table->string('tipo');
             $table->string('radioH');
@@ -70,6 +70,7 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Cmarca')->default('Campo Não Informado!');
             $table->string('radioEP');
             $table->string('Ceplis')->default('Campo Não Informado!');
+            $table->timestamps();
         });
     }
 
