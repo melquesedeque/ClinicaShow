@@ -11,6 +11,7 @@ class consultaController extends Controller{
         $dados['menu'] = 3; // Para acionar o Active do navbar
         return view('consulta', $dados);
     }
+    
     public function consultaSalvar(Request $request){
         $request->validate([
             'NomePaciente'       => 'required',
@@ -58,7 +59,7 @@ class consultaController extends Controller{
 
     public function consultaVisualizar($id){ // Visualizar
         $dados = [
-            'menu'      => 4,
+            'menu'     => 4,
             'consulta' => consulta::find($id)
         ];
 

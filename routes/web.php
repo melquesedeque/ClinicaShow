@@ -12,18 +12,23 @@ Route::get('deslogar', 'LoginController@logout')->name('deslogar');
 
 Route::group(['middleware' => ['login']], function() {
 
-    /* Cadastrar */
+    /* Cadastrar Paciente*/
     Route::get('cadastrar-paciente', 'cadastrarController@paciente')->name('cadastrar-paciente');
     Route::get('pacienteSalvar', 'cadastrarController@pacienteSalvar')->name('paciente-salvar');
     Route::get('pacienteListar', 'cadastrarController@pacienteListar')->name('paciente-listar');
-    Route::get('pacienteEditar', 'cadastrarController@pacienteEditar')->name('paciente-editar');
-    Route::get('pacienteExcluir', 'cadastrarController@pacienteExcluir')->name('paciente-excluir');
+    Route::get('pacienteEditar/{id}', 'cadastrarController@pacienteEditar')->name('paciente-editar');
+    Route::get('pacienteExcluir/{id}', 'cadastrarController@pacienteExcluir')->name('paciente-excluir');
+    Route::get('pacienteVisualizar/{id}', 'cadastrarController@pacienteVisualizar')->name('paciente-visualizar');
+    Route::get('pacienteAtualizar/{id}', 'cadastrarController@pacienteAtualizar')->name('paciente-atualizar');
 
+    /* Cadastrar Funcionário*/
     Route::get('cadastrar-funcionario', 'cadastrarController@funcionario')->name('cadastrar-funcionario');
     Route::get('funcionarioSalvar', 'cadastrarController@funcionarioSalvar')->name('funcionario-salva');
     Route::get('funcionarioListar', 'cadastrarController@funcionarioListar')->name('funcionario-listar');
-    Route::get('funcionarioEditar', 'cadastrarController@funcionarioEditar')->name('funcionario-editar');
-    Route::get('funcionarioExcluir', 'cadastrarController@funcionarioExcluir')->name('funcionario-excluir');
+    Route::get('funcionarioEditar/{id}', 'cadastrarController@funcionarioEditar')->name('funcionario-editar');
+    Route::get('funcionarioExcluir/{id}', 'cadastrarController@funcionarioExcluir')->name('funcionario-excluir');
+    Route::get('funcionarioVisualizar/{id}', 'cadastrarController@funcionarioVisualizar')->name('funcionario-visualizar');
+    Route::get('funcionarioAtualizar/{id}', 'cadastrarController@funcionarioAtualizar')->name('funcionario-Atualizar');
 
     /* Consulta */
     Route::get('cadastrar-consulta', 'consultaController@paciente')->name('consuta');
