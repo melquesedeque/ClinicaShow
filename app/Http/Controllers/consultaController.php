@@ -38,10 +38,16 @@ class consultaController extends Controller{
         return redirect()->route('consultaListar');
     }
 
-    public function consultaListar(){ // Listar Consulta
+    public function consultaListar(Request $request){ // Listar Consulta e Filtro
+
+        if ($request->filtro)
+            $consultas = consulta::where('NomePaciente', 'like', '%'.$request->filtro.'%')->orWhere('NomeMedico', 'like', '%'.$request->filtro.'%')->get();
+        else
+            $consultas = consulta::all();
+
         $dados = [
             'menu'      => 4, 
-            'consultas'  => consulta::all()
+            'consultas'  => $consultas
         ];
 
         return view('listar', $dados);

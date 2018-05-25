@@ -51,7 +51,7 @@
                     <label for="telefone"><b>TELEFONE</b></label>
                     <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="nao">
 
-                    <label class="col-sm-2 control_label" for="Data">Data</label>
+                    <label for="Data">Data</label>
                     <div class="input-group date">
                         <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data')}}">
                         <div class="input-group-addon">

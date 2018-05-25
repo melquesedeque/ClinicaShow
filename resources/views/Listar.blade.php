@@ -6,14 +6,16 @@
         <h3>Listar Consultas</h3> </br>
 
         {{-- barra de pesquisa --}}
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Buscar" name="search">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">
-                <i class="glyphicon glyphicon-search"></i>
-                </button>
+        <form method="get" action="">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Buscar" name="filtro">
+                <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
             </div>
-        </div>
+        </form>
 
         <table class="table table-hover">
             <thead>
