@@ -39,37 +39,58 @@
 
 
             <label for="nome-paciente"><b>NOME PACIENTE</b></label>
-            <input type="text" name="NomePaciente" required value=" {{old('NomePaciente',$consulta['NomePaciente'])}} ">
+            <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente',$consulta['NomePaciente'])}}" class="form-control"> // bucas Pacientes no Banco
+                @foreach ($pacientes as $paci)
+
+                    <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
+
+                @endforeach      
+            </select> 
 
             <label for="Nome-medico"><b>NOME MÉDICO</b></label>
-            <input type="text" name="NomeMedico" required value=" {{old('NomeMedico',$consulta['NomeMedico'])}} ">
+            <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico',$consulta['NomeMedico'])}}" class="form-control"> // bucas Pacientes no Banco
+                @foreach ($funcionarios as $func)
+
+                    <option value="{{$func->Nome}}">{{$func->Nome}}</option>
+
+                @endforeach      
+            </select>
+
+            <label for="Data">Data</label>
+
+                    <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$consulta['Data'])}}">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                    </div>
 
             <label for="queixa"><b>QUAL A SUA QUEIXA?</b></label>
-            <input type="text" name="Queixa" required value=" {{old('Queixa',$consulta['Queixa'])}} ">
+            <input type="text" name="Queixa" required class="form-control" value=" {{old('Queixa',$consulta['Queixa'])}} ">
 
             <label for="inicio-durabilidade"><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
-            <input type="text" placeholder="" name="InicioDurabilidade" value=" {{old('InicioDurabilidade',$consulta['InicioDurabilidade'])}} ">
+            <input type="text" placeholder="" name="InicioDurabilidade" class="form-control" value=" {{old('InicioDurabilidade',$consulta['InicioDurabilidade'])}} ">
 
             <label for="habitos-vida"><b>HÁBITOS DA VIDA</b></label>
-            <input type="text" placeholder="" name="HabitosVida" value=" {{old('HabitosVida',$consulta['HabitosVida'])}} ">
+            <input type="text" placeholder="" name="HabitosVida" class="form-control" value=" {{old('HabitosVida',$consulta['HabitosVida'])}} ">
 
             <label for="tipo-alimento"><b>TIPO DE ALIMENTAÇÃO</b></label>
-            <input type="text" placeholder="" name="TipoAlimento" value=" {{old('TipoAlimento',$consulta['TipoAlimento'])}} ">
+            <input type="text" placeholder="" name="TipoAlimento" class="form-control" value=" {{old('TipoAlimento',$consulta['TipoAlimento'])}} ">
 
             <label for="inspersao"><b>INSPERÇÃO</b></label>
-            <input type="text" placeholder="" name="Inspersao" value=" {{old('Inspersao',$consulta['Inspersao'])}} ">
+            <input type="text" placeholder="" name="Inspersao" class="form-control" value=" {{old('Inspersao',$consulta['Inspersao'])}} ">
 
             <label for="palpacao"><b>PALPAÇÃO</b></label>
-            <input type="text" placeholder="" name="Palpacao" value=" {{old('Palpacao',$consulta['Palpacao'])}} ">
+            <input type="text" placeholder="" name="Palpacao" class="form-control" value=" {{old('Palpacao',$consulta['Palpacao'])}} ">
 
             <label for="percusao"><b>PERCUSSÃO</b></label>
-            <input type="text" placeholder="" name="Percusao" value=" {{old('Percusao',$consulta['Percusao'])}} ">
+            <input type="text" placeholder="" name="Percusao" class="form-control" value=" {{old('Percusao',$consulta['Percusao'])}} ">
 
             <label for="ausculta"><b>AUSCULTA</b></label>
-            <input type="text" placeholder="" name="Ausculta" value=" {{old('Ausculta',$consulta['Ausculta'])}} ">
+            <input type="text" placeholder="" name="Ausculta" class="form-control" value=" {{old('Ausculta',$consulta['Ausculta'])}} ">
 
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
-            <input type="text" placeholder="" name="Materias" value=" {{old('Materias',$consulta['Materias'])}} ">
+            <input type="text" placeholder="" name="Materias" class="form-control" value=" {{old('Materias',$consulta['Materias'])}} ">
 
             <button class="button-ok" data-toggle="modal" data-target="#exampleModal">Alterar</button>
             

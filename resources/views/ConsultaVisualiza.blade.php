@@ -44,6 +44,15 @@
             <label for="Nome-medico"><b>NOME MÉDICO</b></label>
             <input type="text" name="NomeMedico" required value=" {{old('NomeMedico',$consulta['NomeMedico'])}} ">
 
+            <label for="Data">Data</label>
+
+                    <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$consulta['Data'])}}">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                    </div>
+
             <label for="queixa"><b>QUAL A SUA QUEIXA?</b></label>
             <input type="text" name="Queixa" required value=" {{old('Queixa',$consulta['Queixa'])}} ">
 

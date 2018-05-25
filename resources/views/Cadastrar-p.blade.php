@@ -40,28 +40,28 @@
                     <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
 
                     <label for="matricula"><b>MATRICULA</b></label>
-                    <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value=" {{old('Matricula')}} ">
+                    <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value="{{old('Matricula')}}">
 
                     <label for="cpf"><b>CPF</b></label>
-                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value=" {{old('Cpf')}} " maxlength="14"  class="nao">
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
                     <label for="rg"><b>RG</b></label>
-                    <input type="text" placeholder="Entre com seu RG" name="Rg" value=" {{old('Rg')}} ">
+                    <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg')}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
                     <label for="telefone"><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value=" {{old('Telefone-p')}} " maxlength="12"  class="nao">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="nao">
 
                     <label class="col-sm-2 control_label" for="Data">Data</label>
-                    {{-- <div class="input-group date"> --}}
-                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value=" {{old('Data')}} ">
-                        {{-- <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
+                    <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data')}}">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
                         </div>
-                    </div> --}}
+                    </div>
 
                     <label for="naturalidade"><b>NATURALIDADE</b></label>
                     </br>
-                    <select class="form-control" id="gender1" name="Naturalidade" value=" {{old('Naturalidade')}} ">
+                    <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade')}}">
                         <option value="BRASIL">BRASIL</option>
                         <option value="ARGENTINA">ARGENTINA</option>
                         <option value="CHILE">CHILE</option>
@@ -79,7 +79,7 @@
                     </br>
 
                     <label for="sexo"><b>SEXO</b></label>
-                    <select class="form-control" id="gender1" name="sexo" value=" {{old('sexo')}} ">
+                    <select class="form-control" id="gender1" name="sexo" value="{{old('sexo')}}">
                         <option value="MASC">MASCULINO</option>
                         <option value="FEMIN">FEMININO</option>
                         <option value="OUTRO">OUTRO</option>
@@ -136,13 +136,13 @@
             <!-- 2 Aba (aba dos enderço)-->
             <h3>Endereço</h3>
             <label for="Cep"><b>CEP</b></label>
-            <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep')}}" maxlength="9" OnKeyPress="formatar('#####-###', this)" class="nao">
+            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
 
             <label for="Uf"><b>UF</b></label>
-            <input type="text" placeholder="Entre com seu UF" name="Uf" rvalue="{{old('Uf')}}">
+            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" rvalue="{{old('Uf')}}">
 
             <label for="cidade"><b>CIDADE</b></label>
-            <select class="form-control" id="gender1" name="cidade" value="{{old('cidade')}}">
+            <select class="form-control" name="cidade" value="{{old('cidade')}}">
                 <option value="MACEIÓ">MACEIÓ</option>
                 <option value="CORURIPE">CORURIPE</option>
                 <option value="RIO">RIO DE JANEIRO</option>
@@ -160,10 +160,10 @@
             </br>
 
             <label for="Endereco"><b>ENDEREÇO</b></label>
-            <input type="text" placeholder="Entre com seu Endereço" name="Endereco" value="{{old('Endereco')}}">
+            <input type="text" placeholder="Entre com seu Endereço" id="rua" name="Endereco" value="{{old('Endereco')}}">
 
             <label for="Bairro"><b>BAIRRO</b></label>
-            <input type="text" placeholder="Entre com seu Bairro" name="Bairro" value="{{old('Bairro')}}">
+            <input type="text" placeholder="Entre com seu Bairro" id="bairro" name="Bairro" value="{{old('Bairro')}}">
 
             <label for="Numero"><b>NÚMERO</b></label>
             <input type="text" placeholder="Entre com seu Número" name="Numero" value="{{old('Numero')}}">
@@ -207,8 +207,13 @@
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao')}}">
 
-            <label for="Validade"><b>VALIDADE</b></label>
-            <input type="date" placeholder="Entre com sua Validade" name="Validade" value="{{old('Validade')}}">
+            <label class="col-sm-2 control_label" for="Validade">Validade</label>
+            <div class="input-group date">
+                <input type="date" class="form-control" id="Validade" name="Validade" maxlength="10" value="{{old('Validade')}}">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+            </div>
         </div>
 
         <div id="clinicos1" class="tab-pane fade">
@@ -226,10 +231,10 @@
             </br>
 
             <label for="Peso"><b>PESO</b></label>
-            <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso')}}">
+            <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso')}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="Altura"><b>ALTURA</b></label>
-            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura')}}">
+            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura')}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="rh"><b>FATOR RH</b></label>
             <select class="form-control" id="gender1" name="rh" value="{{old('rh')}}">
@@ -436,4 +441,119 @@
             <button class="button-ok">CONCLUIR</button>
         </div>
         </form>
+
+        <script>
+            function formatar(mascara, documento) { // Para a Data
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+    
+            $('#Data').datepicker({
+                format: 'dd/mm/yyyy',
+                language: "pt-BR",
+            });
+    
+            function formatar(mascara, documento) { // Mascara dos campos
+    
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+    
+            $(document).ready(function() { // Para Não permitir C,V,X
+                $('.nao').bind('cut copy paste', function(event) {
+                    event.preventDefault();
+                });
+            });
+
+            function limpa_formulário_cep() {
+	            //Limpa valores do formulário de cep.
+	            document.getElementById('rua').value=("");
+	            document.getElementById('bairro').value=("");
+	            document.getElementById('cidade').value=("");
+	            document.getElementById('uf').value=("");
+	            document.getElementById('ibge').value=("");
+	    }
+
+	    function meu_callback(conteudo) {
+	        if (!("erro" in conteudo)) {
+	            //Atualiza os campos com os valores.
+	            document.getElementById('rua').value=(conteudo.logradouro);
+	            document.getElementById('bairro').value=(conteudo.bairro);
+	            document.getElementById('cidade').value=(conteudo.localidade);
+	            document.getElementById('uf').value=(conteudo.uf);
+	            document.getElementById('ibge').value=(conteudo.ibge);
+	        } //end if.
+	        else {
+	            //CEP não Encontrado.
+	            limpa_formulário_cep();
+	            alert("CEP não encontrado.");
+	        }
+	    }
+	        
+	    function pesquisacep(valor) {
+
+	        //Nova variável "cep" somente com dígitos.
+	        var cep = valor.replace(/\D/g, '');
+
+	        //Verifica se campo cep possui valor informado.
+	        if (cep != "") {
+
+	            //Expressão regular para validar o CEP.
+	            var validacep = /^[0-9]{8}$/;
+
+	            //Valida o formato do CEP.
+	            if(validacep.test(cep)) {
+
+	                //Preenche os campos com "..." enquanto consulta webservice.
+	                document.getElementById('rua').value="...";
+	                document.getElementById('bairro').value="...";
+	                document.getElementById('cidade').value="...";
+	                document.getElementById('uf').value="...";
+	                document.getElementById('ibge').value="...";
+
+	                //Cria um elemento javascript.
+	                var script = document.createElement('script');
+
+	                //Sincroniza com o callback.
+	                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+	                //Insere script no documento e carrega o conteúdo.
+	                document.body.appendChild(script);
+
+	            } //end if.
+	            else {
+	                //cep é inválido.
+	                limpa_formulário_cep();
+	                alert("Formato de CEP inválido.");
+	            }
+	        } //end if.
+	        else {
+	            //cep sem valor, limpa formulário.
+	            limpa_formulário_cep();
+	        }
+	    };
+
+	    function formatar(mascara, documento){ // Para o CEP
+	            var i = documento.value.length;
+	            var saida = mascara.substring(0,1);
+	            var texto = mascara.substring(i)
+	            
+	            if (texto.substring(0,1) != saida){
+	                        documento.value += texto.substring(0,1);
+	            }
+	            
+	    }
+        </script>
 @endsection

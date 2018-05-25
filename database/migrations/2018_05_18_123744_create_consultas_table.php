@@ -13,6 +13,7 @@ class CreateConsultasTable extends Migration
             $table->increments('id');
             $table->string('NomePaciente');
             $table->string('NomeMedico');
+            $table->string('Data');
             $table->string('Queixa');
             $table->string('InicioDurabilidade');
             $table->string('HabitosVida');

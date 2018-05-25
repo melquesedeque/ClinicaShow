@@ -4,15 +4,21 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\consulta;
+use App\Models\Paciente;
+use App\Models\Funcionario;
 
 class consultaController extends Controller{
     
-    public function paciente(){
-        $dados['menu'] = 3; // Para acionar o Active do navbar
+    public function paciente(){ // Rota de consulta
+        $dados = [
+            'menu'       => 3,
+            'pacientes'  => Paciente::all(),
+            'funcionarios'  => Funcionario::all()
+        ]; 
         return view('consulta', $dados);
     }
     
-    public function consultaSalvar(Request $request){
+    public function consultaSalvar(Request $request){ // Cadastar no banco
         $request->validate([
             'NomePaciente'       => 'required',
             'NomeMedico'         => 'required',
@@ -32,7 +38,7 @@ class consultaController extends Controller{
         return redirect()->route('consultaListar');
     }
 
-    public function consultaListar(){ // Listar
+    public function consultaListar(){ // Listar Consulta
         $dados = [
             'menu'      => 4, 
             'consultas'  => consulta::all()
@@ -41,23 +47,24 @@ class consultaController extends Controller{
         return view('listar', $dados);
     }
 
-    public function consultaEditar($id){ // Editar
+    public function consultaEditar($id){ // Editar Consulta
         $dados = [
             'menu'      => 4,
-            'consulta' => consulta::find($id)
+            'consulta' => consulta::find($id),
+            'pacientes'  => Paciente::all(),
+            'funcionarios'  => Funcionario::all()
         ];
 
         return view('consultaEditar', $dados);
 
     }
 
-    public function consultaExcluir($id){ // Excluir
-        
+    public function consultaExcluir($id){ // Excluir Consulta
         consulta::destroy($id);
         return redirect()->route('consultaListar');
     }
 
-    public function consultaVisualizar($id){ // Visualizar
+    public function consultaVisualizar($id){ // Visualizar Consulta
         $dados = [
             'menu'     => 4,
             'consulta' => consulta::find($id)
@@ -66,7 +73,7 @@ class consultaController extends Controller{
         return view('consultaVisualiza', $dados);
     }
 
-    public function consultaAtualizar(Request $request, $id){ // Atualizar
+    public function consultaAtualizar(Request $request, $id){ // Atualizar Consulta
         $request->validate([
             'NomePaciente'       => 'required',
             'NomeMedico'         => 'required',
