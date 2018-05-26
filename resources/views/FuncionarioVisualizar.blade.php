@@ -245,7 +245,7 @@
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "não") checked @endif>
+                <input type="radio" value="não" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere',$Funcionarios['Chere'])}}">
@@ -256,7 +256,7 @@
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "não") checked @endif >
+                <input type="radio" value="não" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "não") checked @endif >
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab',$Funcionarios['CDiab'])}}">
@@ -267,7 +267,7 @@
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "não") checked @endif>
+                <input type="radio" value="não" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Chiper" value="{{old('Chiper',$Funcionarios['Chiper'])}}">

@@ -1,7 +1,7 @@
 @extends('NavBar')
 @section('body')
 
-    <form action="{{ route('consultaSalvar') }}" style="border:#ccc">
+    <form action="{{ route('consultaListar') }}" style="border:#ccc">
 
         <div class="container">
 
@@ -80,6 +80,8 @@
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
             <input type="text" placeholder="" name="Materias" value=" {{old('Materias',$consulta['Materias'])}} ">
             
+            <button class="button-ok" data-toggle="modal" data-target="#exampleModal">Voltar</button>
         </div>
+        
     </form>
 @endsection
