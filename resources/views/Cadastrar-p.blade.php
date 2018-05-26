@@ -139,7 +139,7 @@
             <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
 
             <label for="Uf"><b>UF</b></label>
-            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" rvalue="{{old('Uf')}}">
+            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" value="{{old('Uf')}}">
 
             <label for="cidade"><b>CIDADE</b></label>
             <select class="form-control" name="cidade" value="{{old('cidade')}}">
@@ -483,7 +483,6 @@
 	            document.getElementById('bairro').value=("");
 	            document.getElementById('cidade').value=("");
 	            document.getElementById('uf').value=("");
-	            document.getElementById('ibge').value=("");
 	    }
 
 	    function meu_callback(conteudo) {
@@ -491,9 +490,8 @@
 	            //Atualiza os campos com os valores.
 	            document.getElementById('rua').value=(conteudo.logradouro);
 	            document.getElementById('bairro').value=(conteudo.bairro);
-	            document.getElementById('cidade').value=(conteudo.localidade);
+	            //document.getElementById('cidade').value=(conteudo.localidade);
 	            document.getElementById('uf').value=(conteudo.uf);
-	            document.getElementById('ibge').value=(conteudo.ibge);
 	        } //end if.
 	        else {
 	            //CEP não Encontrado.
@@ -519,9 +517,9 @@
 	                //Preenche os campos com "..." enquanto consulta webservice.
 	                document.getElementById('rua').value="...";
 	                document.getElementById('bairro').value="...";
-	                document.getElementById('cidade').value="...";
+	                //document.getElementById('cidade').value="...";
 	                document.getElementById('uf').value="...";
-	                document.getElementById('ibge').value="...";
+	                //document.getElementById('ibge').value="...";
 
 	                //Cria um elemento javascript.
 	                var script = document.createElement('script');
