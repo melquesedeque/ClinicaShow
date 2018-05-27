@@ -11,8 +11,8 @@ class consultaController extends Controller{
     
     public function paciente(){ // Rota de consulta
         $dados = [
-            'menu'       => 3,
-            'pacientes'  => Paciente::all(),
+            'menu'          => 3,
+            'pacientes'     => Paciente::all(),
             'funcionarios'  => Funcionario::all()
         ]; 
         return view('consulta', $dados);
@@ -46,7 +46,7 @@ class consultaController extends Controller{
             $consultas = consulta::all();
 
         $dados = [
-            'menu'      => 4, 
+            'menu'       => 4, 
             'consultas'  => $consultas
         ];
 
@@ -55,9 +55,9 @@ class consultaController extends Controller{
 
     public function consultaEditar($id){ // Editar Consulta
         $dados = [
-            'menu'      => 4,
-            'consulta' => consulta::find($id),
-            'pacientes'  => Paciente::all(),
+            'menu'          => 4,
+            'consulta'      => consulta::find($id),
+            'pacientes'     => Paciente::all(),
             'funcionarios'  => Funcionario::all()
         ];
 

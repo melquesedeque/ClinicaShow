@@ -32,8 +32,8 @@ class cadastrarController extends Controller{
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
             'Parentent-tele-1' => 'required',
-            'Plano'            => 'required|integer',
-            'Inscricao'        => 'required|integer',
+            'Plano'            => 'required',
+            'Inscricao'        => 'required',
             'Validade'         => 'required|date',
             'Peso'             => 'required',
             'Altura'           => 'required',
@@ -44,10 +44,16 @@ class cadastrarController extends Controller{
         return redirect()->route('paciente-listar');
     }
 
-    public function pacienteListar(){ // Listar Paciente
+    public function pacienteListar(Request $request){ // Listar Paciente e filtro
+
+        if ($request->filtro)
+            $pacientes = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->get();
+        else
+            $pacientes = Paciente::all();
+
         $dados = [
             'menu'       => 6, 
-            'pacientes'  => Paciente::all()
+            'pacientes'  => $pacientes
         ];
 
         return view('listarPaciente', $dados);
@@ -108,7 +114,7 @@ class cadastrarController extends Controller{
         return redirect()->route('paciente-listar');
     }
 
-    # ---------------------------------------------------- Funcionario ---------------------------------------
+    # ---------------------------------------------------- Funcionario --------------------------------------------------------------------
     public function funcionario(){ // Rota da View Funcionario
         $dados['menu'] = 2;
         return view('cadastrar_funcionario', $dados);
@@ -142,10 +148,16 @@ class cadastrarController extends Controller{
         return redirect()->route('funcionario-listar');
     }
 
-    public function funcionarioListar(){ // Listar Funcionario
+    public function funcionarioListar(Request $request){ // Listar Funcionario e filtar
+
+        if ($request->filtro)
+            $Funcionarios = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->get();
+        else
+            $Funcionarios = Funcionario::all();
+
         $dados = [
-            'menu'       => 7, 
-            'Funcionarios'  => Funcionario::all()
+            'menu'          => 7, 
+            'Funcionarios'  => $Funcionarios
         ];
 
         return view('listarFuncionario', $dados);

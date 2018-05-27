@@ -37,22 +37,27 @@
                     @endif
 
                     <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$pacientes['Nome'])}}">
+                    <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$pacientes['Nome'])}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$pacientes['Matricula'])}}">
+                    <label for=""><b>MATRICULA</b></label>
+                    <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$pacientes['Matricula'])}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$pacientes['Cpf'])}}">
+                    <label for=""><b>CPF</b></label>
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$pacientes['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for=""><b>RG</b></label>
-                      <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$pacientes['Rg'])}}">
+                    <label for=""><b>RG</b></label>
+                    <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$pacientes['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for=""><b>TELEFONE</b></label>
-                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}">
+                    <label for=""><b>TELEFONE</b></label>
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data',$pacientes['Data'])}}">
+                      <label for="Data">Data</label>
+                      <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$pacientes['Data'])}}">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                      </div>
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$pacientes['Naturalidade'])}}">
@@ -128,11 +133,11 @@
         <div id="Endereco" class="tab-pane fade">
             <!-- 2 Aba (aba dos enderço)-->
             <h3>Endereço</h3>
-            <label for="CEP"><b>CEP</b></label>
-            <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep',$pacientes['Cep'])}}">
+            <label for="Cep"><b>CEP</b></label>
+            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
 
-            <label for="uf"><b>UF</b></label>
-            <input type="text" placeholder="Entre com seu UF" name="Uf" value="{{old('Uf',$pacientes['Uf'])}}">
+            <label for="Uf"><b>UF</b></label>
+            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" value="{{old('Uf')}}">
 
             <label for="cidade"><b>CIDADE</b></label>
             <select class="form-control" id="gender1" name="cidade">
@@ -153,13 +158,13 @@
             </br>
 
             <label for="endereco"><b>ENDEREÇO</b></label>
-            <input type="text" placeholder="Entre com seu Endereço" name="Endereco" value="{{old('Endereco',$pacientes['Endereco'])}}">
+            <input type="text" placeholder="Entre com seu Endereço" id="rua" name="Endereco" value="{{old('Endereco',$pacientes['Endereco'])}}">
 
             <label for="bairro"><b>BAIRRO</b></label>
-            <input type="text" placeholder="Entre com seu Bairro" name="Bairro" value="{{old('Bairro',$pacientes['Bairro'])}}">
+            <input type="text" placeholder="Entre com seu Bairro" id="bairro" name="Bairro" value="{{old('Bairro',$pacientes['Bairro'])}}">
 
             <label for="numero"><b>NÚMERO</b></label>
-            <input type="text" placeholder="Entre com seu Número" name="Numero" value="{{old('Numero',$pacientes['Numero'])}}">
+            <input type="text" placeholder="Entre com seu Número" name="Numero" value="{{old('Numero',$pacientes['Numero'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="complemento"><b>COMPLEMENTO</b></label>
             <input type="text" placeholder="Entre com seu Complemento" name="Complemento" value="{{old('Complemento',$pacientes['Complemento'])}}">
@@ -172,13 +177,13 @@
             <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente',$pacientes['Parente'])}}">
 
             <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" maxlength="14" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
 
             <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
             <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1',$pacientes['Parente-1'])}}">
 
             <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" maxlength="14" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
         </div>
 
         <div id="financeiro" class="tab-pane fade">
@@ -186,22 +191,27 @@
             <h3>Finânceiro</h3>
 
             <label for="convenio"><b>CONVÊNIO</b></label>
-            <select class="form-control" id="gender1" name="convenio" value="{{old('convenio',$pacientes['convenio'])}}">
-                <option value="UNIMED">UNIMED</option>
-                <option value="HAPVIDA">HAPVIDA</option>
-                <option value="SANDANDER">SANDANDER</option>
-                <option value="AMIL">AMIL</option>
+            <select class="form-control" id="gender1" name="convenio" disabled value="{{old('convenio',$pacientes['convenio'])}}">
+                <option @if(old('convenio',$pacientes['convenio']) == "UNIMED") selected @endif disabled value="UNIMED">UNIMED</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "HAPVIDA") selected @endif disabled value="HAPVIDA">HAPVIDA</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "SANDANDER") selected @endif disabled value="SANDANDER">SANDANDER</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "AMIL") selected @endif disabled value="AMIL">AMIL</option>
             </select>
             </br>
 
             <label for="Plano"><b>PLANO</b></label>
-            <input type="text" placeholder="Entre com seu Plano" name="Plano" value="{{old('Plano',$pacientes['Plano'])}}">
+            <input type="text" placeholder="Entre com seu Plano" name="Plano" value="{{old('Plano',$pacientes['Plano'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
-            <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao',$pacientes['Inscricao'])}}">
+            <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao',$pacientes['Inscricao'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-            <label for="Validade"><b>VALIDADE</b></label>
-            <input type="date" placeholder="Entre com sua Validade" name="Validade" value="{{old('Validade',$pacientes['Validade'])}}">
+            <label class="col-sm-2 control_label" for="Validade">Validade</label>
+            <div class="input-group date">
+                <input type="date" class="form-control" id="Validade" name="Validade" maxlength="10" value="{{old('Validade',$pacientes['Validade'])}}">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+            </div>
         </div>
 
         <div id="clinicos1" class="tab-pane fade">
@@ -219,15 +229,15 @@
           </br>
 
           <label for="Peso"><b>PESO</b></label>
-          <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso',$pacientes['Peso'])}}">
+          <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso',$pacientes['Peso'])}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
           <label for="Altura"><b>ALTURA</b></label>
-          <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura',$pacientes['Altura'])}}">
+          <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura',$pacientes['Altura'])}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
           <label for="rh"><b>FATOR RH</b></label>
-          <select class="form-control" id="gender1" name="rh" value="{{old('rh',$pacientes['rh'])}}">
-              <option value="RH+">RH+</option>
-              <option value="RH-">RH-</option>
+          <select class="form-control" id="gender1" name="rh" disabled value="{{old('rh',$pacientes['rh'])}}">
+            <option @if(old('rh',$pacientes['rh']) == "RH+") selected @endif disabled value="RH+">RH+</option>
+            <option @if(old('rh',$pacientes['rh']) == "RH-") selected @endif disabled value="RH-">RH-</option>
           </select>
           </br>
 
@@ -429,4 +439,117 @@
         </div>
           <button class="button-ok">Alterar Dados</button>
         </form>
+
+        <script>
+            function formatar(mascara, documento) { // Para a Data
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+    
+            $('#Data').datepicker({
+                format: 'dd/mm/yyyy',
+                language: "pt-BR",
+            });
+    
+            function formatar(mascara, documento) { // Mascara dos campos
+    
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+    
+            $(document).ready(function() { // Para Não permitir C,V,X
+                $('.nao').bind('cut copy paste', function(event) {
+                    event.preventDefault();
+                });
+            });
+
+            function limpa_formulário_cep() {
+	            //Limpa valores do formulário de cep.
+	            document.getElementById('rua').value=("");
+	            document.getElementById('bairro').value=("");
+	            document.getElementById('cidade').value=("");
+	            document.getElementById('uf').value=("");
+	    }
+
+	    function meu_callback(conteudo) {
+	        if (!("erro" in conteudo)) {
+	            //Atualiza os campos com os valores.
+	            document.getElementById('rua').value=(conteudo.logradouro);
+	            document.getElementById('bairro').value=(conteudo.bairro);
+	            //document.getElementById('cidade').value=(conteudo.localidade);
+	            document.getElementById('uf').value=(conteudo.uf);
+	        } //end if.
+	        else {
+	            //CEP não Encontrado.
+	            limpa_formulário_cep();
+	            alert("CEP não encontrado.");
+	        }
+	    }
+	        
+	    function pesquisacep(valor) {
+
+	        //Nova variável "cep" somente com dígitos.
+	        var cep = valor.replace(/\D/g, '');
+
+	        //Verifica se campo cep possui valor informado.
+	        if (cep != "") {
+
+	            //Expressão regular para validar o CEP.
+	            var validacep = /^[0-9]{8}$/;
+
+	            //Valida o formato do CEP.
+	            if(validacep.test(cep)) {
+
+	                //Preenche os campos com "..." enquanto consulta webservice.
+	                document.getElementById('rua').value="...";
+	                document.getElementById('bairro').value="...";
+	                //document.getElementById('cidade').value="...";
+	                document.getElementById('uf').value="...";
+	                //document.getElementById('ibge').value="...";
+
+	                //Cria um elemento javascript.
+	                var script = document.createElement('script');
+
+	                //Sincroniza com o callback.
+	                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+	                //Insere script no documento e carrega o conteúdo.
+	                document.body.appendChild(script);
+
+	            } //end if.
+	            else {
+	                //cep é inválido.
+	                limpa_formulário_cep();
+	                alert("Formato de CEP inválido.");
+	            }
+	        } //end if.
+	        else {
+	            //cep sem valor, limpa formulário.
+	            limpa_formulário_cep();
+	        }
+	    };
+
+	    function formatar(mascara, documento){ // Para o CEP
+	            var i = documento.value.length;
+	            var saida = mascara.substring(0,1);
+	            var texto = mascara.substring(i)
+	            
+	            if (texto.substring(0,1) != saida){
+	                        documento.value += texto.substring(0,1);
+	            }
+	            
+	    }
+        </script>
 @endsection

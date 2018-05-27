@@ -14,15 +14,15 @@ class CreateConsultasTable extends Migration
             $table->string('NomePaciente');
             $table->string('NomeMedico');
             $table->string('Data');
-            $table->string('Queixa');
-            $table->string('InicioDurabilidade');
-            $table->string('HabitosVida');
-            $table->string('TipoAlimento');
-            $table->string('Inspersao');
-            $table->string('Palpacao');
-            $table->string('Percusao');
-            $table->string('Ausculta');
-            $table->string('Materias');
+            $table->text('Queixa');
+            $table->text('InicioDurabilidade');
+            $table->text('HabitosVida');
+            $table->text('TipoAlimento');
+            $table->text('Inspersao');
+            $table->text('Palpacao');
+            $table->text('Percusao');
+            $table->text('Ausculta');
+            $table->text('Materias');
             $table->timestamps();
         });
     }

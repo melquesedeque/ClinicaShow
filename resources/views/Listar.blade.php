@@ -22,7 +22,7 @@
                 <tr>
                     <th>Nome Paciente</th>
                     <th>Nome Médico</th>
-                    <th>Queixa</th>
+                    <th>Data da Consula</th>
                     <th width="30%">Opções</th>
                 </tr>
             </thead>
@@ -35,14 +35,14 @@
                 <tr class="trItens">
                     <td class="tex">{{$consulta['NomePaciente']}}</td>
                     <td class="tex">{{$consulta['NomeMedico']}}</td>
-                    <td class="tex">{{$consulta['Queixa']}}</td>
+                    <td class="tex">{{$consulta['Data']}}</td>
     
                     <td>
-                        <a href="{{route('consultaVisualizar', ['id' => $consulta['id']])}}" class="btn btn-primary">Visualizar</a>
-                        <a href="{{route('consultaEditar', ['id' => $consulta['id']])}}" class="btn btn-warning">Editar</a>
-                        <a href="{{route('consultaExcluir', ['id' => $consulta['id']])}}" class="btn btn-danger">Excluir</a>
+                        <a href="{{route('consultaVisualizar', ['id' => $consulta['id']])}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Visualizar</a>
+                        <a href="{{route('consultaEditar', ['id' => $consulta['id']])}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
+                        <a href="{{route('consultaExcluir', ['id' => $consulta['id']])}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Excluir</a>
                     </td>
-                   
+                    
                 </tr>
                 @endforeach	 
             </tbody>

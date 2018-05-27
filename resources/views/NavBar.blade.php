@@ -35,13 +35,35 @@
             </div>
 
             <ul id="lista_show" class="nav navbar-nav navbar-right collapse navbar-collapse">
-                <li @if($menu == 1) class="active" @endif><a href={{ route('cadastrar-paciente') }}>Cadastrar Paciente</a></li>
-                <li @if($menu == 2) class="active" @endif><a href={{ route('cadastrar-funcionario') }}>Cadastrar Funcionário</a></li>
-                <li @if($menu == 3) class="active" @endif><a href={{ route('consuta') }}>Consulta</a></li>
-                <li @if($menu == 4) class="active" @endif><a href={{ route('consultaListar') }}>Listar consulta</a></li>
-                <li @if($menu == 6) class="active" @endif><a href={{ route('paciente-listar') }}>Listar Paciente</a></li>
-                <li @if($menu == 7) class="active" @endif><a href={{ route('funcionario-listar') }}>Listar Funcionário</a></li>
-                <li @if($menu == 5) class="active" @endif><a href={{ route('conta') }}>Conta</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Paciente
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li @if($menu == 1) class="active" @endif><a href={{ route('cadastrar-paciente') }}>Cadastrar Paciente</a></li>
+                        <li @if($menu == 6) class="active" @endif><a href={{ route('paciente-listar') }}>Listar Paciente</a></li>
+                      </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Funcionário
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li @if($menu == 2) class="active" @endif><a href={{ route('cadastrar-funcionario') }}>Cadastrar Funcionário</a></li>
+                        <li @if($menu == 7) class="active" @endif><a href={{ route('funcionario-listar') }}>Listar Funcionário</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">Consulta
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li @if($menu == 3) class="active" @endif><a href={{ route('consuta') }}>Cadastrar Consulta</a></li>
+                        <li @if($menu == 4) class="active" @endif><a href={{ route('consultaListar') }}>Listar Consulta</a></li>
+                    </ul>
+                </li>
+
+                <li @if($menu == 5) class="active" @endif><a href={{ route('conta') }}><span class="glyphicon glyphicon-user"></span> Conta</a></li>
 
                 @yield('deslogar') <!-- para fazer o delogar aparecer -->
 

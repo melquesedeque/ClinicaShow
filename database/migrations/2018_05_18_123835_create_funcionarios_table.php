@@ -13,7 +13,7 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Nome');
             $table->integer('Matricula');
             $table->string('Cpf');
-            $table->integer('Rg');
+            $table->string('Rg');
             $table->string('Telefone-p');
             $table->string('Data');
             $table->string('Naturalidade');
@@ -22,6 +22,7 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Email');
             $table->string('escola');
             $table->string('profi');
+            $table->string('Crm');
             $table->string('Especialidade');
             $table->string('TIPO_PERMISAO');
             $table->string('Cep');

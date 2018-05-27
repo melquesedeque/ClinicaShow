@@ -83,7 +83,7 @@
     @endsection
 
     @section('deslogar')
-        <li><a href={{ route('deslogar') }}>Deslogar</a></li>
+        <li><a href={{ route('deslogar') }}> <span class="glyphicon glyphicon-log-in"></span> Deslogar</a></li>
     @endsection
 
     @push('css', '<link rel="stylesheet" type="text/css" href="' . asset('assets/css/conta.css'). '">') <!-- Concatenação -->

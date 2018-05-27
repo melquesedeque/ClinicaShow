@@ -109,7 +109,7 @@
                         <option @if(old('profi',$Funcionarios['profi']) == "ARQUITETO") selected @endif value="ARQUITETO">ARQUITETO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "ENGENHEIRO") selected @endif value="ENGENHEIRO">ENGENHEIRO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "FISIOTERAPEUTA") selected @endif value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif value="ANALISTA">ANALISTA DE SISTEMAAS</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif value="ANALISTA">ANALISTA DE SISTEMAS</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "PROGRAMADOR") selected @endif value="PROGRAMADOR">PROGRAMADOR</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "DENTISTA") selected @endif value="DENTISTA">DENTISTA</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "PEDREIRO") selected @endif value="PEDREIRO">PEDREIRO</option>
@@ -221,8 +221,8 @@
 
             <label for="rh"><b>FATOR RH</b></label>
             <select class="form-control" id="gender1" name="rh" value="{{old('rh',$Funcionarios['rh'])}}">
-                <option value="RH+">RH+</option>
-                <option value="RH-">RH-</option>
+                <option @if(old('rh',$Funcionarios['rh']) == "RH+") selected @endif value="RH+">RH+</option>
+                <option @if(old('rh',$Funcionarios['rh']) == "RH-") selected @endif value="RH-">RH-</option>
             </select>
             </br>
 
@@ -423,6 +423,6 @@
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
 
-            <button class="button-ok">Alterar</button>
+            <button class="button-ok">Alterar Dados</button>
         </form>
 @endsection

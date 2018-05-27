@@ -35,109 +35,109 @@
                       @endif
 
                       <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$Funcionarios['Nome'])}}">
+                      <input type="text" placeholder="Enter com seu nome" name="Nome" disabled value="{{old('Nome',$Funcionarios['Nome'])}}">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$Funcionarios['Matricula'])}}">
+                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" disabled value="{{old('Matricula',$Funcionarios['Matricula'])}}">
 
                       <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}">
+                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" disabled value="{{old('Cpf',$Funcionarios['Cpf'])}}">
 
                       <label for=""><b>RG</b></label>
-                      <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$Funcionarios['Rg'])}}">
+                      <input type="text" placeholder="Entre com seu RG" name="Rg" disabled value="{{old('Rg',$Funcionarios['Rg'])}}">
 
                       <label for=""><b>TELEFONE</b></label>
-                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
+                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" disabled value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data',$Funcionarios['Data'])}}">
+                      <input type="date" placeholder="DD/MM/YYYY" name="Data" disabled value="{{old('Data',$Funcionarios['Data'])}}">
 
                       <label for=""><b>NATURALIDADE</b></label>
-                      <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "BRASIL") selected @endif value="BRASIL">BRASIL</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ARGENTINA") selected @endif value="ARGENTINA">ARGENTINA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHILE") selected @endif value="CHILE">CHILE</option>    
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "COLÔMBIA") selected @endif value="COLÔMBIA">COLÔMBIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ESTADOS") selected @endif value="ESTADOS">ESTADOS UNIDOS</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CANADA") selected @endif value="CANADA">CANADÁ</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "MEXICO") selected @endif value="MEXICO">MÉXICO</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PORTUGAL") selected @endif value="PORTUGAL">PORTUGAL</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">FRANÇA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">ITáLIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">RÚSSIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "JAPÃO") selected @endif value="JAPÃO">JAPÃO</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHINA") selected @endif value="CHINA">CHINA</option>
+                      <select class="form-control" id="gender1" name="Naturalidade" disabled value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "BRASIL") selected @endif disabled value="BRASIL">BRASIL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ARGENTINA") selected @endif disabled value="ARGENTINA">ARGENTINA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHILE") selected @endif disabled value="CHILE">CHILE</option>    
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "COLÔMBIA") selected @endif disabled value="COLÔMBIA">COLÔMBIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ESTADOS") selected @endif disabled value="ESTADOS">ESTADOS UNIDOS</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CANADA") selected @endif disabled value="CANADA">CANADÁ</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "MEXICO") selected @endif disabled value="MEXICO">MÉXICO</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PORTUGAL") selected @endif disabled value="PORTUGAL">PORTUGAL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">FRANÇA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">ITáLIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">RÚSSIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "JAPÃO") selected @endif disabled value="JAPÃO">JAPÃO</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHINA") selected @endif disabled value="CHINA">CHINA</option>
                       </select>
 
                       <label for=""><b>SEXO</b></label>
-                      <select class="form-control" id="gender1" name="sexo" value="{{old('sexo',$Funcionarios['sexo'])}}">
-                        <option @if(old('sexo',$Funcionarios['sexo']) == "MASC") selected @endif value="MASC">MASCULINO</option>
-                        <option @if(old('sexo',$Funcionarios['sexo']) == "FEMIN") selected @endif value="FEMIN">FEMININO</option>
-                        <option @if(old('sexo',$Funcionarios['sexo']) == "OUTRO") selected @endif value="OUTRO">OUTRO</option>
+                      <select class="form-control" id="gender1" name="sexo" disabled value="{{old('sexo',$Funcionarios['sexo'])}}">
+                        <option @if(old('sexo',$Funcionarios['sexo']) == "MASC") selected @endif disabled value="MASC">MASCULINO</option>
+                        <option @if(old('sexo',$Funcionarios['sexo']) == "FEMIN") selected @endif disabled value="FEMIN">FEMININO</option>
+                        <option @if(old('sexo',$Funcionarios['sexo']) == "OUTRO") selected @endif disabled value="OUTRO">OUTRO</option>
                       </select>
                       </br>
 
                       <label for=""><b>ESTADO CIVIL</b></label>
-                      <select class="form-control" id="gender1" name="estado" value="{{old('estado',$Funcionarios['estado'])}}">
-                        <option @if(old('estado',$Funcionarios['estado']) == "casado") selected @endif value="casado">CASADO</option>
-                        <option @if(old('estado',$Funcionarios['estado']) == "solteiro") selected @endif value="solteiro">SOLTEIRO</option>
-                        <option @if(old('estado',$Funcionarios['estado']) == "viuvo") selected @endif value="viuvo">VIUVO</option>
-                        <option @if(old('estado',$Funcionarios['estado']) == "divorciado") selected @endif value="divorciado">DIVORCIADO</option>
+                      <select class="form-control" id="gender1" name="estado" disabled value="{{old('estado',$Funcionarios['estado'])}}">
+                        <option @if(old('estado',$Funcionarios['estado']) == "casado") selected @endif disabled value="casado">CASADO</option>
+                        <option @if(old('estado',$Funcionarios['estado']) == "solteiro") selected @endif disabled value="solteiro">SOLTEIRO</option>
+                        <option @if(old('estado',$Funcionarios['estado']) == "viuvo") selected @endif disabled value="viuvo">VIUVO</option>
+                        <option @if(old('estado',$Funcionarios['estado']) == "divorciado") selected @endif disabled value="divorciado">DIVORCIADO</option>
                       </select>
                       </br>
 
                       <label for=""><b>E-MAIL</b></label>
-                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email" value="{{old('Email',$Funcionarios['Email'])}}">
+                      <input type="text" placeholder="Entre com seu Email@email.com" name="Email" disabled value="{{old('Email',$Funcionarios['Email'])}}">
 
                       <label for=""><b>ESCOLARIDADE</b></label>
-                      <select class="form-control" id="gender1" name="escola" value="{{old('escola',$Funcionarios['escola'])}}">
-                        <option @if(old('escola',$Funcionarios['escola']) == "FunINCOMPLETO") selected @endif value="FunINCOMPLETO">FUNDAMENTAL-INCOMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "FunCOMPLETO") selected @endif value="FunCOMPLETO">FUNDAMENTAL-COMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "SugSEGUNDO") selected @endif value="SugSEGUNDO">SEGUNDO GRAU-INCOMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "SugCOMPLETO") selected @endif value="SugCOMPLETO">SEGUNDO GRAU-COMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "SupINCOMPLETO") selected @endif value="SupINCOMPLETO">SUPERIOR-INCOMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "SupCOMPLETO") selected @endif value="SupCOMPLETO">SUPERIOR-COMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "MesINCOMPLETO") selected @endif value="MesINCOMPLETO">MESTRADO-INCOMPLETO</option>
-                        <option @if(old('escola',$Funcionarios['escola']) == "MesCOMPLETO") selected @endif value="MesCOMPLETO">MESTRADO-COMPLETO</option>
+                      <select class="form-control" id="gender1" name="escola" disabled value="{{old('escola',$Funcionarios['escola'])}}">
+                        <option @if(old('escola',$Funcionarios['escola']) == "FunINCOMPLETO") selected @endif disabled value="FunINCOMPLETO">FUNDAMENTAL-INCOMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "FunCOMPLETO") selected @endif disabled value="FunCOMPLETO">FUNDAMENTAL-COMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "SugSEGUNDO") selected @endif disabled value="SugSEGUNDO">SEGUNDO GRAU-INCOMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "SugCOMPLETO") selected @endif disabled value="SugCOMPLETO">SEGUNDO GRAU-COMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "SupINCOMPLETO") selected @endif disabled value="SupINCOMPLETO">SUPERIOR-INCOMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "SupCOMPLETO") selected @endif disabled value="SupCOMPLETO">SUPERIOR-COMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "MesINCOMPLETO") selected @endif disabled value="MesINCOMPLETO">MESTRADO-INCOMPLETO</option>
+                        <option @if(old('escola',$Funcionarios['escola']) == "MesCOMPLETO") selected @endif disabled value="MesCOMPLETO">MESTRADO-COMPLETO</option>
                       </select>
                       </br>
 
                       <label for=""><b>PROFISSÃO</b></label>
-                      <select class="form-control" id="gender1" name="profi" value="{{old('profi',$Funcionarios['profi'])}}">
-                        <option @if(old('profi',$Funcionarios['profi']) == "MÉDICO") selected @endif value="MÉDICO">MÉDICO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ENFERMEIRO") selected @endif value="ENFERMEIRO">ENFERMEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ARQUITETO") selected @endif value="ARQUITETO">ARQUITETO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ENGENHEIRO") selected @endif value="ENGENHEIRO">ENGENHEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FISIOTERAPEUTA") selected @endif value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif value="ANALISTA">ANALISTA DE SISTEMAAS</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PROGRAMADOR") selected @endif value="PROGRAMADOR">PROGRAMADOR</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "DENTISTA") selected @endif value="DENTISTA">DENTISTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PEDREIRO") selected @endif value="PEDREIRO">PEDREIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "SEGURANÇA") selected @endif value="SEGURANÇA">SEGURANÇA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ADIMINISTRAÇÃO") selected @endif value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FARMACIA") selected @endif value="FARMACIA">FARMACIA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FÍSICA") selected @endif value="FÍSICA">EDUÇÃO FÍSICA</option>
+                      <select class="form-control" id="gender1" name="profi" disabled value="{{old('profi',$Funcionarios['profi'])}}">
+                        <option @if(old('profi',$Funcionarios['profi']) == "MÉDICO") selected @endif disabled value="MÉDICO">MÉDICO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ENFERMEIRO") selected @endif disabled value="ENFERMEIRO">ENFERMEIRO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ARQUITETO") selected @endif disabled value="ARQUITETO">ARQUITETO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ENGENHEIRO") selected @endif disabled value="ENGENHEIRO">ENGENHEIRO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "FISIOTERAPEUTA") selected @endif disabled value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif disabled value="ANALISTA">ANALISTA DE SISTEMAAS</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "PROGRAMADOR") selected @endif disabled value="PROGRAMADOR">PROGRAMADOR</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "DENTISTA") selected @endif disabled value="DENTISTA">DENTISTA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "PEDREIRO") selected @endif disabled value="PEDREIRO">PEDREIRO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "SEGURANÇA") selected @endif disabled value="SEGURANÇA">SEGURANÇA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "ADIMINISTRAÇÃO") selected @endif disabled value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "FARMACIA") selected @endif disabled value="FARMACIA">FARMACIA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "FÍSICA") selected @endif disabled value="FÍSICA">EDUÇÃO FÍSICA</option>
                       </select>
                       </br>
 
                       <label for="profissao"><b>ESPECIALIDADE</b></label>
-                      <select class="form-control" id="gender1" name="Especialidade" value="{{old('Especialidade',$Funcionarios['Especialidade'])}}">
-                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "NEUROLOGISTA") selected @endif value="NEUROLOGISTA">NEUROLOGISTA</option>
-                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "CARDIOVASCULAR") selected @endif value="CARDIOVASCULAR">CARDIOVASCULAR</option>
-                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "CIRURGIÃO") selected @endif value="CIRURGIÃO">CIRURGIÃO GERAL</option>
-                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "PEDRIATRIA") selected @endif value="PEDRIATRIA">PEDRIATRIA</option>
+                      <select class="form-control" id="gender1" name="Especialidade" disabled value="{{old('Especialidade',$Funcionarios['Especialidade'])}}">
+                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "NEUROLOGISTA") selected @endif disabled value="NEUROLOGISTA">NEUROLOGISTA</option>
+                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "CARDIOVASCULAR") selected @endif disabled value="CARDIOVASCULAR">CARDIOVASCULAR</option>
+                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "CIRURGIÃO") selected @endif disabled value="CIRURGIÃO">CIRURGIÃO GERAL</option>
+                          <option @if(old('Especialidade',$Funcionarios['Especialidade']) == "PEDRIATRIA") selected @endif disabled value="PEDRIATRIA">PEDRIATRIA</option>
                       </select>
                       </br>
 
                       <label for="profissao"><b>TIPO DE PERMISSÃO</b></label>
-                      <select class="form-control" id="gender1" name="TIPO_PERMISAO"  value="{{old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO'])}}">
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICO") selected @endif value="PMEDICO">MÉDICO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICOGERENTE") selected @endif value="PMEDICOGERENTE">MÉDICO GERENTE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIRO") selected @endif value="PENFERMEIRO">ENFERMEIRO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIROCHEFE") selected @endif value="PENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PATENDIMENTO") selected @endif value="PATENDIMENTO">ATENDIMENTO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PGERAL") selected @endif value="PGERAL">GERENTE GERAL</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "RH") selected @endif value="RH">RH</option>
+                      <select class="form-control" id="gender1" name="TIPO_PERMISAO"  disabled value="{{old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO'])}}">
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICO") selected @endif disabled value="PMEDICO">MÉDICO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICOGERENTE") selected @endif disabled value="PMEDICOGERENTE">MÉDICO GERENTE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIRO") selected @endif disabled value="PENFERMEIRO">ENFERMEIRO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIROCHEFE") selected @endif disabled value="PENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PATENDIMENTO") selected @endif disabled value="PATENDIMENTO">ATENDIMENTO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PGERAL") selected @endif disabled value="PGERAL">GERENTE GERAL</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "RH") selected @endif disabled value="RH">RH</option>
                       </select>
                       </br>
                   </div>
@@ -147,56 +147,56 @@
               <!-- 2 Aba (aba dos enderço)-->
               <h3>Endereço</h3>
               <label for="CEP"><b>CEP</b></label>
-              <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep',$Funcionarios['Cep'])}}">
+              <input type="text" placeholder="Enter com seu CEP" name="Cep" disabled value="{{old('Cep',$Funcionarios['Cep'])}}">
 
               <label for="uf"><b>UF</b></label>
-              <input type="text" placeholder="Entre com seu UF" name="Uf" value="{{old('Uf',$Funcionarios['Uf'])}}">
+              <input type="text" placeholder="Entre com seu UF" name="Uf" disabled value="{{old('Uf',$Funcionarios['Uf'])}}">
 
               <label for="cidade"><b>CIDADE</b></label>
-              <select class="form-control" id="gender1" name="cidade">
-                <option @if(old('cidade',$Funcionarios['cidade']) == "MACEIÓ") selected @endif value="MACEIÓ">MACEIÓ</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "CORURIPE") selected @endif value="CORURIPE">CORURIPE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "RIO") selected @endif value="RIO">RIO DE JANEIRO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PAULO") selected @endif value="PAULO">SÃO PAULO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PARANA") selected @endif value="PARANA">PARANA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "SANTA") selected @endif value="SANTA">SANTA CATARINA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "RECIFE") selected @endif value="RECIFE">RECIFE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "BAHIA") selected @endif value="BAHIA">BAHIA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "SERGIPE") selected @endif value="SERGIPE">SERGIPE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PERNABUCO") selected @endif value="PERNABUCO">PERNABUCO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "GOIAS") selected @endif value="GOIAS">GOIAS</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "AMAZONAS") selected @endif value="AMAZONAS">AMAZONAS</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "FLORIPA") selected @endif value="FLORIPA">FLORIPA</option>
+              <select class="form-control" id="gender1" disabled name="cidade">
+                <option @if(old('cidade',$Funcionarios['cidade']) == "MACEIÓ") selected @endif disabled value="MACEIÓ">MACEIÓ</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "CORURIPE") selected @endif disabled value="CORURIPE">CORURIPE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "RIO") selected @endif disabled value="RIO">RIO DE JANEIRO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PAULO") selected @endif disabled value="PAULO">SÃO PAULO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PARANA") selected @endif disabled value="PARANA">PARANA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "SANTA") selected @endif disabled value="SANTA">SANTA CATARINA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "RECIFE") selected @endif disabled value="RECIFE">RECIFE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "BAHIA") selected @endif disabled value="BAHIA">BAHIA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "SERGIPE") selected @endif disabled value="SERGIPE">SERGIPE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PERNABUCO") selected @endif disabled value="PERNABUCO">PERNABUCO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "GOIAS") selected @endif disabled value="GOIAS">GOIAS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "AMAZONAS") selected @endif disabled value="AMAZONAS">AMAZONAS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "FLORIPA") selected @endif disabled value="FLORIPA">FLORIPA</option>
               </select>
               </br>
 
               <label for="endereco"><b>ENDEREÇO</b></label>
-              <input type="text" placeholder="Entre com seu Endereço" name="Endereco" value="{{old('Endereco',$Funcionarios['Endereco'])}}">
+              <input type="text" placeholder="Entre com seu Endereço" name="Endereco" disabled value="{{old('Endereco',$Funcionarios['Endereco'])}}">
 
               <label for="bairro"><b>BAIRRO</b></label>
-              <input type="text" placeholder="Entre com seu Bairro" name="Bairro" value="{{old('Bairro',$Funcionarios['Bairro'])}}">
+              <input type="text" placeholder="Entre com seu Bairro" name="Bairro" disabled value="{{old('Bairro',$Funcionarios['Bairro'])}}">
 
               <label for="numero"><b>NÚMERO</b></label>
-              <input type="text" placeholder="Entre com seu Número" name="Numero" value="{{old('Numero',$Funcionarios['Numero'])}}">
+              <input type="text" placeholder="Entre com seu Número" name="Numero" disabled value="{{old('Numero',$Funcionarios['Numero'])}}">
 
               <label for="complemento"><b>COMPLEMENTO</b></label>
-              <input type="text" placeholder="Entre com seu Complemento" name="Complemento" value="{{old('Complemento',$Funcionarios['Complemento'])}}">
+              <input type="text" placeholder="Entre com seu Complemento" name="Complemento" disabled value="{{old('Complemento',$Funcionarios['Complemento'])}}">
           </div>
 
           <div id="Contato" class="tab-pane fade">
               <!-- 3 Aba (aba dos contatos)-->
               <h3>Contatos</h3>
               <label for="parente"><b>RESPONSAVEL/PARENTE 1 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente',$Funcionarios['Parente'])}}">
+              <input type="text" placeholder="Entre com seu nome" name="Parente" disabled value="{{old('Parente',$Funcionarios['Parente'])}}">
 
               <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" value="{{old('Parentent-tele',$Funcionarios['Parentent-tele'])}}">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" disabled value="{{old('Parentent-tele',$Funcionarios['Parentent-tele'])}}">
 
               <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1',$Funcionarios['Parente-1'])}}">
+              <input type="text" placeholder="Entre com seu nome" name="Parente-1" disabled value="{{old('Parente-1',$Funcionarios['Parente-1'])}}">
 
               <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" value="{{old('Parentent-tele-1',$Funcionarios['Parentent-tele-1'])}}">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" disabled value="{{old('Parentent-tele-1',$Funcionarios['Parentent-tele-1'])}}">
           </div>
 
           <div id="clinicos1" class="tab-pane fade">
@@ -204,73 +204,73 @@
 
               <h3>DADOS CLÍNICOS</h3>
             <label for="cor"><b>COR DA PELE</b></label>
-            <select class="form-control" id="gender1" name="cor" value="{{old('cor',$Funcionarios['cor'])}}">
-                <option @if(old('cor',$Funcionarios['cor']) == "BRANCA") selected @endif value="BRANCA">BRANCA</option>
-                <option @if(old('cor',$Funcionarios['cor']) == "PARDA") selected @endif value="PARDA">PARDA</option>
-                <option @if(old('cor',$Funcionarios['cor']) == "PRETA") selected @endif value="PRETA">PRETA</option>
-                <option @if(old('cor',$Funcionarios['cor']) == "AMARELO") selected @endif value="AMARELO">AMARELO</option>
-                <option @if(old('cor',$Funcionarios['cor']) == "INDÍGINA") selected @endif value="INDÍGINA">INDÍGINA</option>
+            <select class="form-control" id="gender1" name="cor" disabled value="{{old('cor',$Funcionarios['cor'])}}">
+                <option @if(old('cor',$Funcionarios['cor']) == "BRANCA") selected @endif disabled value="BRANCA">BRANCA</option>
+                <option @if(old('cor',$Funcionarios['cor']) == "PARDA") selected @endif disabled value="PARDA">PARDA</option>
+                <option @if(old('cor',$Funcionarios['cor']) == "PRETA") selected @endif disabled value="PRETA">PRETA</option>
+                <option @if(old('cor',$Funcionarios['cor']) == "AMARELO") selected @endif disabled value="AMARELO">AMARELO</option>
+                <option @if(old('cor',$Funcionarios['cor']) == "INDÍGINA") selected @endif disabled value="INDÍGINA">INDÍGINA</option>
             </select>
             </br>
 
             <label for="Peso"><b>PESO</b></label>
-            <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso',$Funcionarios['Peso'])}}">
+            <input type="text" placeholder="Entre com seu Peso" name="Peso" disabled value="{{old('Peso',$Funcionarios['Peso'])}}">
 
             <label for="Altura"><b>ALTURA</b></label>
-            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura',$Funcionarios['Altura'])}}">
+            <input type="text" placeholder="Entre com sua Altura" name="Altura" disabled value="{{old('Altura',$Funcionarios['Altura'])}}">
 
             <label for="rh"><b>FATOR RH</b></label>
-            <select class="form-control" id="gender1" name="rh" value="{{old('rh',$Funcionarios['rh'])}}">
-                <option value="RH+">RH+</option>
-                <option value="RH-">RH-</option>
+            <select class="form-control" id="gender1" name="rh" disabled value="{{old('rh',$Funcionarios['rh'])}}">
+                <option @if(old('rh',$Funcionarios['rh']) == "RH+") selected @endif disabled value="RH+">RH+</option>
+                <option @if(old('rh',$Funcionarios['rh']) == "RH-") selected @endif disabled value="RH-">RH-</option>
             </select>
             </br>
 
             <label for="tipo"><b>TIPO SANGUINIO</b></label>
-            <select class="form-control" id="gender1" name="tipo" value="{{old('tipo',$Funcionarios['tipo'])}}">
-                <option @if(old('tipo',$Funcionarios['tipo']) == "A+") selected @endif value="A+">A+</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "A-") selected @endif value="A-">A-</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "B+") selected @endif value="B+">B+</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "B-") selected @endif value="B-">B-</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "AB+") selected @endif value="AB+">AB+</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "AB-") selected @endif value="AB-">AB-</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "O+") selected @endif value="O+">O+</option>
-                <option @if(old('tipo',$Funcionarios['tipo']) == "O-") selected @endif value="O-">O-</option>
+            <select class="form-control" id="gender1" name="tipo" disabled value="{{old('tipo',$Funcionarios['tipo'])}}">
+                <option @if(old('tipo',$Funcionarios['tipo']) == "A+") selected @endif disabled value="A+">A+</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "A-") selected @endif disabled value="A-">A-</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "B+") selected @endif disabled value="B+">B+</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "B-") selected @endif disabled value="B-">B-</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "AB+") selected @endif disabled value="AB+">AB+</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "AB-") selected @endif disabled value="AB-">AB-</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "O+") selected @endif disabled value="O+">O+</option>
+                <option @if(old('tipo',$Funcionarios['tipo']) == "O-") selected @endif disabled value="O-">O-</option>
             </select>
             </br>
 
             <label for="plano"><b>DOÊNÇAS HEREDITARIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere',$Funcionarios['Chere'])}}">
+            <input type="text" placeholder="COMENTE" name="Chere" disabled value="{{old('Chere',$Funcionarios['Chere'])}}">
 
             <label for="plano"><b>DIABETES?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "sim") checked @endif  >
+                <input type="radio" disabled value="sim" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "sim") checked @endif  >
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "não") checked @endif >
+                <input type="radio" disabled value="não" name="radioD" @if(old('radioD',$Funcionarios['radioD']) == "não") checked @endif >
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab',$Funcionarios['CDiab'])}}">
+            <input type="text" placeholder="COMENTE" name="CDiab" disabled value="{{old('CDiab',$Funcionarios['CDiab'])}}">
 
             <label for="plano"><b>HIPERTENSÃO?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioHI" @if(old('radioHI',$Funcionarios['radioHI']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Chiper" value="{{old('Chiper',$Funcionarios['Chiper'])}}">
+            <input type="text" placeholder="COMENTE" name="Chiper" disabled value="{{old('Chiper',$Funcionarios['Chiper'])}}">
 
         </div>
 
@@ -280,47 +280,47 @@
             <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
             <label for="plano"><b>TABAGISTA?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioT" @if(old('radioT',$Funcionarios['radioT']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioT" @if(old('radioT',$Funcionarios['radioT']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioT" @if(old('radioT',$Funcionarios['radioT']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioT" @if(old('radioT',$Funcionarios['radioT']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cclini" value="{{old('Cclini',$Funcionarios['Cclini'])}}">
+            <input type="text" placeholder="COMENTE" name="Cclini" disabled value="{{old('Cclini',$Funcionarios['Cclini'])}}">
 
             <label for="plano"><b>DOÊNÇAS CRONICAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioC" @if(old('radioC',$Funcionarios['radioC']) == "sim") checked @endif >
+                <input type="radio" disabled value="sim" name="radioC" @if(old('radioC',$Funcionarios['radioC']) == "sim") checked @endif >
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioC" @if(old('radioC',$Funcionarios['radioC']) == "não") checked @endif >
+                <input type="radio" disabled value="não" name="radioC" @if(old('radioC',$Funcionarios['radioC']) == "não") checked @endif >
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cdoen" value="{{old('Cdoen',$Funcionarios['Cdoen'])}}">
+            <input type="text" placeholder="COMENTE" name="Cdoen" disabled value="{{old('Cdoen',$Funcionarios['Cdoen'])}}">
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioN" @if(old('radioN',$Funcionarios['radioN']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioN" @if(old('radioN',$Funcionarios['radioN']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioN" @if(old('radioN',$Funcionarios['radioN']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioN" @if(old('radioN',$Funcionarios['radioN']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cneopla" value="{{old('Cneopla',$Funcionarios['Cneopla'])}}">
+            <input type="text" placeholder="COMENTE" name="Cneopla" disabled value="{{old('Cneopla',$Funcionarios['Cneopla'])}}">
 
             <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
+                <input type="radio" disabled value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cfarma" value="{{old('Cfarma',$Funcionarios['Cfarma'])}}">
+            <input type="text" placeholder="COMENTE" name="Cfarma" disabled value="{{old('Cfarma',$Funcionarios['Cfarma'])}}">
         </div>
 
         <div id="clinicos3" class="tab-pane fade">
@@ -331,47 +331,47 @@
             <label for="plano"><b>USO DE DROGAS?</b></label>
 
             <label class="radio">SIM
-                <input type="radio" value="sim" value="sim" name="radioDRO" @if(old('radioDRO',$Funcionarios['radioDRO']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" disabled value="sim" name="radioDRO" @if(old('radioDRO',$Funcionarios['radioDRO']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioDRO" @if(old('radioDRO',$Funcionarios['radioDRO']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioDRO" @if(old('radioDRO',$Funcionarios['radioDRO']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cuso" value="{{old('Cuso',$Funcionarios['Cuso'])}}">
+            <input type="text" placeholder="COMENTE" name="Cuso" disabled value="{{old('Cuso',$Funcionarios['Cuso'])}}">
 
             <label for="plano"><b>ALERGIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioAL" @if(old('radioAL',$Funcionarios['radioAL']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioAL" @if(old('radioAL',$Funcionarios['radioAL']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioAL" @if(old('radioAL',$Funcionarios['radioAL']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioAL" @if(old('radioAL',$Funcionarios['radioAL']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Calerg" value="{{old('Calerg',$Funcionarios['Calerg'])}}">
+            <input type="text" placeholder="COMENTE" name="Calerg" disabled value="{{old('Calerg',$Funcionarios['Calerg'])}}">
 
             <label for="plano"><b>ETILISTA?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioET" @if(old('radioET',$Funcionarios['radioET']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioET" @if(old('radioET',$Funcionarios['radioET']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioET" @if(old('radioET',$Funcionarios['radioET']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioET" @if(old('radioET',$Funcionarios['radioET']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cetili" value="{{old('Cetili',$Funcionarios['Cetili'])}}">
+            <input type="text" placeholder="COMENTE" name="Cetili" disabled value="{{old('Cetili',$Funcionarios['Cetili'])}}">
 
             <label for="plano"><b>VACINA TOMADAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioVA" @if(old('radioET',$Funcionarios['radioET']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioVA" @if(old('radioET',$Funcionarios['radioET']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioVA" @if(old('radioET',$Funcionarios['radioET']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioVA" @if(old('radioET',$Funcionarios['radioET']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cvacina" value="{{old('Cvacina',$Funcionarios['Cvacina'])}}">
+            <input type="text" placeholder="COMENTE" name="Cvacina" disabled value="{{old('Cvacina',$Funcionarios['Cvacina'])}}">
         </div>
 
         <div id="clinicos4" class="tab-pane fade">
@@ -380,47 +380,47 @@
 
             <label for="plano"><b>CIRURGIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioCI" @if(old('radioCI',$Funcionarios['radioCI']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioCI" @if(old('radioCI',$Funcionarios['radioCI']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioCI" @if(old('radioCI',$Funcionarios['radioCI']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioCI" @if(old('radioCI',$Funcionarios['radioCI']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ccirur" value="{{old('Ccirur',$Funcionarios['Ccirur'])}}">
+            <input type="text" placeholder="COMENTE" name="Ccirur" disabled value="{{old('Ccirur',$Funcionarios['Ccirur'])}}">
 
             <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioTRA" @if(old('radioTRA',$Funcionarios['radioTRA']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioTRA" @if(old('radioTRA',$Funcionarios['radioTRA']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioTRA" @if(old('radioTRA',$Funcionarios['radioTRA']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioTRA" @if(old('radioTRA',$Funcionarios['radioTRA']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cporta" value="{{old('Cporta',$Funcionarios['Cporta'])}}">
+            <input type="text" placeholder="COMENTE" name="Cporta" disabled value="{{old('Cporta',$Funcionarios['Cporta'])}}">
 
             <label for="plano"><b>PORTADOR DE MARCAPASSO?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioMAR" @if(old('radioMAR',$Funcionarios['radioMAR']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioMAR" @if(old('radioMAR',$Funcionarios['radioMAR']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioMAR" @if(old('radioMAR',$Funcionarios['radioMAR']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioMAR" @if(old('radioMAR',$Funcionarios['radioMAR']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cmarca" value="{{old('Cmarca',$Funcionarios['Cmarca'])}}">
+            <input type="text" placeholder="COMENTE" name="Cmarca" disabled value="{{old('Cmarca',$Funcionarios['Cmarca'])}}">
 
             <label for="plano"><b>EPLIPSIA - CONSULÇÃO?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioEP" @if(old('radioEP',$Funcionarios['radioEP']) == "sim") checked @endif>
+                <input type="radio" disabled value="sim" name="radioEP" @if(old('radioEP',$Funcionarios['radioEP']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" value="não" name="radioEP" @if(old('radioEP',$Funcionarios['radioEP']) == "não") checked @endif>
+                <input type="radio" disabled value="não" name="radioEP" @if(old('radioEP',$Funcionarios['radioEP']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
+            <input type="text" placeholder="COMENTE" name="Ceplis" disabled value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
             <button class="button-ok">Voltar</button>
           </form>
