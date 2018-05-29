@@ -13,7 +13,7 @@ Route::get('deslogar', 'LoginController@logout')->name('deslogar');
 Route::group(['middleware' => ['login']], function() {
 
     /* Cadastrar Paciente*/
-    Route::get('cadastrar-paciente', 'cadastrarController@paciente')->name('cadastrar-paciente');
+    Route::get('cadastrarPaciente', 'cadastrarController@paciente')->name('cadastrar-paciente');
     Route::get('pacienteSalvar', 'cadastrarController@pacienteSalvar')->name('paciente-salvar');
     Route::get('pacienteListar', 'cadastrarController@pacienteListar')->name('paciente-listar');
     Route::get('pacienteEditar/{id}', 'cadastrarController@pacienteEditar')->name('paciente-editar');
@@ -22,7 +22,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::get('pacienteAtualizar/{id}', 'cadastrarController@pacienteAtualizar')->name('paciente-atualizar');
 
     /* Cadastrar Funcionário*/
-    Route::get('cadastrar-funcionario', 'cadastrarController@funcionario')->name('cadastrar-funcionario');
+    Route::get('cadastrarFuncionario', 'cadastrarController@funcionario')->name('cadastrar-funcionario');
     Route::get('funcionarioSalvar', 'cadastrarController@funcionarioSalvar')->name('funcionario-salva');
     Route::get('funcionarioListar', 'cadastrarController@funcionarioListar')->name('funcionario-listar');
     Route::get('funcionarioEditar/{id}', 'cadastrarController@funcionarioEditar')->name('funcionario-editar');
@@ -31,7 +31,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::get('funcionarioAtualizar/{id}', 'cadastrarController@funcionarioAtualizar')->name('funcionario-Atualizar');
 
     /* Consulta */
-    Route::get('cadastrar-consulta', 'consultaController@paciente')->name('consulta');
+    Route::get('cadastrarConsulta', 'consultaController@paciente')->name('consulta');
     Route::get('consultaSalvar', 'consultaController@consultaSalvar')->name('consultaSalvar');
     Route::get('consultaListar', 'consultaController@consultaListar')->name('consultaListar');
     Route::get('consultaEditar/{id}', 'consultaController@consultaEditar')->name('consultaEditar');

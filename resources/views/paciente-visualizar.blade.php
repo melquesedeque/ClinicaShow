@@ -51,8 +51,13 @@
                       <label for=""><b>TELEFONE</b></label>
                       <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" disabled value="{{old('Telefone-p',$pacientes['Telefone-p'])}}">
 
-                      <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" disabled value="{{old('Data',$pacientes['Data'])}}">
+                      <label for="Data">Data</label>
+                        <div class="input-group date">
+                            <input type="date" class="form-control" id="Data" name="Data" disabled value="{{old('Data',$pacientes['Data'])}}">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                        </div>
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" disabled value="{{old('Naturalidade',$pacientes['Naturalidade'])}}">
@@ -201,7 +206,13 @@
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" disabled value="{{old('Inscricao',$pacientes['Inscricao'])}}">
 
             <label for="Validade"><b>VALIDADE</b></label>
-            <input type="date" placeholder="Entre com sua Validade" name="Validade" disabled value="{{old('Validade',$pacientes['Validade'])}}">
+            <div class="input-group date">
+                <input type="date" class="form-control" id="Validade" name="Validade" disabled value="{{old('Validade',$pacientes['Validade'])}}">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+            </div>
+
         </div>
 
         <div id="clinicos1" class="tab-pane fade">

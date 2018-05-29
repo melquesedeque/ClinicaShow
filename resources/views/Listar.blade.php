@@ -1,7 +1,7 @@
 @extends('NavBar')
 @section('body')
 
-    <div class="container">
+<div class="container">
 
 
         {{--  @if ($button=true)
@@ -63,11 +63,11 @@
                     </td>
                     
                 </tr>
-                @endforeach	 s
+                @endforeach
             </tbody>
             <!-- DADOS [FIM] -->
         </table>
-    </div>
+        {{$paginacao}}
 </div>
    
     <script type="text/javascript">

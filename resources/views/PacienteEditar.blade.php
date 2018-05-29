@@ -200,7 +200,12 @@
             </br>
 
             <label for="Plano"><b>PLANO</b></label>
-            <input type="text" placeholder="Entre com seu Plano" name="Plano" value="{{old('Plano',$pacientes['Plano'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <select class="form-control" id="Plano" name="Plano" value="{{old('Plano')}}">
+                <option @if(old('Plano',$pacientes['Plano']) == "Individual") selected @endif value="Individual">Individual</option>
+                <option @if(old('Plano',$pacientes['Plano']) == "Familiares") selected @endif value="Familiares">Familiares</option>
+                <option @if(old('Plano',$pacientes['Plano']) == "Empresarias") selected @endif value="Empresarias">Empresarias</option>
+                <option @if(old('Plano',$pacientes['Plano']) == "Hospitalares") selected @endif value="Hospitalares">Hospitalares</option>
+            </select>
 
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao',$pacientes['Inscricao'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">

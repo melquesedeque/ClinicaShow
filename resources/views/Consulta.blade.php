@@ -17,26 +17,19 @@
 				</div>
             @endif
 
-            {{-- {{$button=false}}
-
-            @if ($button=true)
-                <!-- Modal -->
+            <!-- Modal -->
+            @if ($errors)
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Confirmar Cadastro da Consulta</h5>
+                                <h5 class="modal-title" id="exampleModalLabel"><span class="glyphicon-ok">Confirmar Cadastro da Consulta</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Salvar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endif --}}
-
+            @endif    
 
             <label for="NomePaciente"><b>NOME PACIENTE</b></label>
             <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
@@ -45,12 +38,12 @@
 
                     <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
 
-                @endforeach      
-                
+                @endforeach             
             </select> 
 
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
             <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico')}}" class="form-control"> // bucas Pacientes no Banco
+
                 @foreach ($funcionarios as $func)
 
                     <option value="{{$func->Nome}}">{{$func->Nome}}</option>
@@ -59,16 +52,15 @@
             </select> 
 
             <label for="Data">Data</label> </br>
-
-                    <div class="input-group date">
-                        <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data')}}">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-calendar"></span>
-                        </div>
-                    </div>
+            <div class="input-group date">
+                <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data')}}">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </div>
+            </div>
 
             <label for="queixa"><b>QUAL A SUA QUEIXA?</b></label>
-            <input type="text" name="Queixa" id="queixa" required value="{{old('Queixa')}}" class="form-control">
+            <input type="text" name="Queixa" id="queixa" value="{{old('Queixa')}}" class="form-control">
 
             <label for="iniciodurabilidade"><b>Início, durabilidade, como se deu a evolução, características da dor?</b></label>
             <input type="text" id="iniciodurabilidade" name="InicioDurabilidade" class="form-control" value=" {{old('InicioDurabilidade')}} ">

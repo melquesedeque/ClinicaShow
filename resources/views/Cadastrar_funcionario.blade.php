@@ -105,21 +105,13 @@
                         <option value="MesCOMPLETO">MESTRADO-COMPLETO</option>
                     </select>>
 
-                      <label><b>PROFISSÃO</b></label>
+                      <label><b>Cargo</b></label>
                       <select class="form-control" id="gender1" name="profi" value="{{old('profi')}}">
                         <option value="MÉDICO">MÉDICO</option>
                         <option value="ENFERMEIRO">ENFERMEIRO</option>
-                        <option value="ARQUITETO">ARQUITETO</option>
-                        <option value="ENGENHEIRO">ENGENHEIRO</option>
-                        <option value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option value="ANALISTA">ANALISTA DE SISTEMAAS</option>
-                        <option value="PROGRAMADOR">PROGRAMADOR</option>
-                        <option value="DENTISTA">DENTISTA</option>
-                        <option value="PEDREIRO">PEDREIRO</option>
-                        <option value="SEGURANÇA">SEGURANÇA</option>
-                        <option value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
-                        <option value="FARMACIA">FARMACIA</option>
-                        <option value="FÍSICA">EDUÇÃO FÍSICA</option>
+                        <option value="RH">RH</option>
+                        <option value="Atendente">Atendente</option>
+
                       </select>
 
                       <label><b>CRM</b></label>

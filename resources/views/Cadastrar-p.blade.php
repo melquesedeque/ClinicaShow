@@ -201,7 +201,12 @@
             </br>
 
             <label for="Plano"><b>PLANO</b></label>
-            <input type="text" placeholder="Entre com seu Plano" name="Plano" value="{{old('Plano')}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <select class="form-control" id="Plano" name="Plano" value="{{old('Plano')}}">
+                <option value="Individual">Individual</option>
+                <option value="Familiares">Familiares</option>
+                <option value="Empresarias">Empresarias</option>
+                <option value="Hospitalares">Hospitalares</option>
+            </select>
 
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao')}}" maxlength="19" OnKeyPress="formatar('# ### ########### #', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">

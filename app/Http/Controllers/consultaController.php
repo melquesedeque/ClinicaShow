@@ -23,6 +23,7 @@ class consultaController extends Controller{
             'NomePaciente'       => 'required',
             'NomeMedico'         => 'required',
             'Queixa'             => 'required',
+            'Data'               => 'required',
             'InicioDurabilidade' => 'required',
             'HabitosVida'        => 'required',
             'TipoAlimento'       => 'required',
@@ -33,8 +34,7 @@ class consultaController extends Controller{
             'Materias'           => 'required',
         ]);
 
-        consulta::create($request->all());
-
+        consulta::create($request->all()); 
         return redirect()->route('consultaListar');
     }
 
@@ -45,10 +45,18 @@ class consultaController extends Controller{
         else
             $consultas = consulta::all();
 
+        //Paginação
+        $exibirPorPagina = 5;
+        $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
+        $paginacao = consulta::paginate($exibirPorPagina); //Exibe 5 elementos por página
+        $consultas = consulta::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                        ->offset($offset) //Começa a exibir a apartir de qual valor
+                        ->get();
+
         $dados = [
             'menu'       => 4, 
             'consultas'  => $consultas,
-            'button'     => false
+            'paginacao'  => $paginacao
         ];
 
         return view('listar', $dados);
@@ -63,10 +71,10 @@ class consultaController extends Controller{
         ];
 
         return view('consultaEditar', $dados);
-
     }
 
     public function consultaExcluir($id){ // Excluir Consulta
+
         consulta::destroy($id);
         return redirect()->route('consultaListar');
     }
