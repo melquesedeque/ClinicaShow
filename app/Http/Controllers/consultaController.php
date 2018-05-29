@@ -47,7 +47,8 @@ class consultaController extends Controller{
 
         $dados = [
             'menu'       => 4, 
-            'consultas'  => $consultas
+            'consultas'  => $consultas,
+            'button'     => false
         ];
 
         return view('listar', $dados);

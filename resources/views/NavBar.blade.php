@@ -58,7 +58,7 @@
                     <a class="dropdown-toggle" data-toggle="dropdown">Consulta
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li @if($menu == 3) class="active" @endif><a href={{ route('consuta') }}>Cadastrar Consulta</a></li>
+                        <li @if($menu == 3) class="active" @endif><a href={{ route('consulta') }}>Cadastrar Consulta</a></li>
                         <li @if($menu == 4) class="active" @endif><a href={{ route('consultaListar') }}>Listar Consulta</a></li>
                     </ul>
                 </li>

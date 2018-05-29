@@ -40,11 +40,13 @@
 
             <label for="NomePaciente"><b>NOME PACIENTE</b></label>
             <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
+
                 @foreach ($pacientes as $paci)
 
                     <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
 
                 @endforeach      
+                
             </select> 
 
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
@@ -92,7 +94,7 @@
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
             <input type="text" id="materias" name="Materias" class="form-control" value=" {{old('Materias')}} ">
 
-            <button class="button-ok" data-toggle="modal" data-target="#exampleModal"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
+            <button class="button-ok" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
             
         </div>
     </form>

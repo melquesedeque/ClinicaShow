@@ -35,7 +35,7 @@
                       @endif
 
                       <label for="nome"><b>NOME</b></label>
-                    <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
 
                     <label for="matricula"><b>MATRICULA</b></label>
                     <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value="{{old('Matricula')}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -47,7 +47,7 @@
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg')}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
                     <label for="telefone"><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="nao">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
                     <label for="Data">Data</label>
                     <div class="input-group date">
@@ -259,7 +259,7 @@
                     <span class="checkmark"></span>
                 </label>
                 <label class="radio">NÃO
-                    <input type="radio" required name="radioD" value="nao">
+                    <input type="radio" required name="radioD" value="não">
                     <span class="checkmark"></span>
                 </label>
                 <input type="text" placeholder="COMENTE" required name="CDiab" value="{{old('CDiab')}}">

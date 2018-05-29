@@ -191,11 +191,11 @@
             <h3>Finânceiro</h3>
 
             <label for="convenio"><b>CONVÊNIO</b></label>
-            <select class="form-control" id="gender1" name="convenio" disabled value="{{old('convenio',$pacientes['convenio'])}}">
-                <option @if(old('convenio',$pacientes['convenio']) == "UNIMED") selected @endif disabled value="UNIMED">UNIMED</option>
-                <option @if(old('convenio',$pacientes['convenio']) == "HAPVIDA") selected @endif disabled value="HAPVIDA">HAPVIDA</option>
-                <option @if(old('convenio',$pacientes['convenio']) == "SANDANDER") selected @endif disabled value="SANDANDER">SANDANDER</option>
-                <option @if(old('convenio',$pacientes['convenio']) == "AMIL") selected @endif disabled value="AMIL">AMIL</option>
+            <select class="form-control" id="gender1" name="convenio" value="{{old('convenio',$pacientes['convenio'])}}">
+                <option @if(old('convenio',$pacientes['convenio']) == "UNIMED") selected @endif  value="UNIMED">UNIMED</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "HAPVIDA") selected @endif  value="HAPVIDA">HAPVIDA</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "SANDANDER") selected @endif  value="SANDANDER">SANDANDER</option>
+                <option @if(old('convenio',$pacientes['convenio']) == "AMIL") selected @endif  value="AMIL">AMIL</option>
             </select>
             </br>
 
@@ -235,9 +235,9 @@
           <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura',$pacientes['Altura'])}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
           <label for="rh"><b>FATOR RH</b></label>
-          <select class="form-control" id="gender1" name="rh" disabled value="{{old('rh',$pacientes['rh'])}}">
-            <option @if(old('rh',$pacientes['rh']) == "RH+") selected @endif disabled value="RH+">RH+</option>
-            <option @if(old('rh',$pacientes['rh']) == "RH-") selected @endif disabled value="RH-">RH-</option>
+          <select class="form-control" id="gender1" name="rh" value="{{old('rh',$pacientes['rh'])}}">
+            <option @if(old('rh',$pacientes['rh']) == "RH+") selected @endif value="RH+">RH+</option>
+            <option @if(old('rh',$pacientes['rh']) == "RH-") selected @endif value="RH-">RH-</option>
           </select>
           </br>
 
@@ -328,7 +328,7 @@
 
           <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
           <label class="radio">SIM
-              <input type="radio" value="sim" name="radioFA" @if(old('radioFA',$pacientes['radioFA']) == "não") checked @endif>
+              <input type="radio" value="sim" name="radioFA" @if(old('radioFA',$pacientes['radioFA']) == "sim") checked @endif>
               <span class="checkmark"></span>
           </label>
           <label class="radio">NÃO

@@ -38,19 +38,19 @@
                       <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$Funcionarios['Nome'])}}">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$Funcionarios['Matricula'])}}">
+                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$Funcionarios['Matricula'])}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}">
+                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label for=""><b>RG</b></label>
-                      <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$Funcionarios['Rg'])}}">
+                      <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$Funcionarios['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label for=""><b>TELEFONE</b></label>
                       <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data',$Funcionarios['Data'])}}">
+                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data',$Funcionarios['Data'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">
@@ -147,10 +147,10 @@
               <!-- 2 Aba (aba dos enderço)-->
               <h3>Endereço</h3>
               <label for="CEP"><b>CEP</b></label>
-              <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep',$Funcionarios['Cep'])}}">
+              <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep',$Funcionarios['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
 
               <label for="uf"><b>UF</b></label>
-              <input type="text" placeholder="Entre com seu UF" name="Uf" value="{{old('Uf',$Funcionarios['Uf'])}}">
+              <input type="text" placeholder="Entre com seu UF" name="Uf" maxlength="2" value="{{old('Uf',$Funcionarios['Uf'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
               <label for="cidade"><b>CIDADE</b></label>
               <select class="form-control" id="gender1" name="cidade">
@@ -313,7 +313,7 @@
 
             <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
-                <input type="radio" value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
+                <input type="radio" value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO

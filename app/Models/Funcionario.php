@@ -20,6 +20,7 @@ class Funcionario extends Model
         'Email',
         'escola',
         'profi',
+        'Crm',
         'Especialidade',
         'TIPO_PERMISAO',
         'Cep',

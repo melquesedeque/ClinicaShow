@@ -313,7 +313,7 @@
 
             <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
-                <input type="radio" disabled value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "não") checked @endif>
+                <input type="radio" disabled value="sim" name="radioFA" @if(old('radioFA',$Funcionarios['radioFA']) == "sim") checked @endif>
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO

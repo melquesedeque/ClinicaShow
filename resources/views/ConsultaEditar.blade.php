@@ -45,7 +45,7 @@
 
                 @endforeach      
             </select> 
-
+            </br>
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
             <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico')}}" class="form-control"> // bucas Pacientes no Banco
                 @foreach ($funcionarios as $func)
@@ -54,7 +54,7 @@
 
                 @endforeach      
             </select>
-
+        </br>
             <label for="Data">Data</label>
             <div class="input-group date">
                 <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$consulta['Data'])}}">
