@@ -102,9 +102,9 @@ class cadastrarController extends Controller{
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
             'Parentent-tele-1' => 'required',
-            'Plano'            => 'required|integer',
-            'Inscricao'        => 'required|integer',
-            'Validade'         => 'required|date',
+            'Plano'            => 'required',
+            'Inscricao'        => 'required',
+            'Validade'         => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);

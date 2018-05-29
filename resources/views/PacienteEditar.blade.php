@@ -134,10 +134,10 @@
             <!-- 2 Aba (aba dos enderço)-->
             <h3>Endereço</h3>
             <label for="Cep"><b>CEP</b></label>
-            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
+            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep',$pacientes['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
 
             <label for="Uf"><b>UF</b></label>
-            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" value="{{old('Uf')}}">
+            <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" value="{{old('Uf',$pacientes['Uf'])}}">
 
             <label for="cidade"><b>CIDADE</b></label>
             <select class="form-control" id="gender1" name="cidade">
@@ -205,7 +205,7 @@
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao',$pacientes['Inscricao'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-            <label class="col-sm-2 control_label" for="Validade">Validade</label>
+            <label for="Validade">Validade</label>
             <div class="input-group date">
                 <input type="date" class="form-control" id="Validade" name="Validade" maxlength="10" value="{{old('Validade',$pacientes['Validade'])}}">
                 <div class="input-group-addon">
@@ -271,7 +271,7 @@
               <span class="checkmark"></span>
           </label>
           <label class="radio">NÃO
-              <input type="radio" value="não" name="radioD" @if(old('radioD',$pacientes['radioD']) == "não") checked @endif>
+              <input type="radio" value="nao" name="radioD" @if(old('radioD',$pacientes['radioD']) == "nao") checked @endif>
               <span class="checkmark"></span>
           </label>
           <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab',$pacientes['CDiab'])}}">

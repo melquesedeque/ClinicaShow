@@ -37,7 +37,7 @@
                     @endif
 
                     <label for="nome"><b>NOME</b></label>
-                    <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
 
                     <label for="matricula"><b>MATRICULA</b></label>
                     <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value="{{old('Matricula')}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -206,7 +206,7 @@
             <label for="Inscricao"><b>INSCRIÇÃO</b></label>
             <input type="text" placeholder="Entre com sua Inscrição" name="Inscricao" value="{{old('Inscricao')}}" maxlength="19" OnKeyPress="formatar('# ### ########### #', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-            <label class="col-sm-2 control_label" for="Validade">Validade</label>
+            <label for="Validade">Validade</label>
             <div class="input-group date">
                 <input type="date" class="form-control" id="Validade" name="Validade" maxlength="10" value="{{old('Validade')}}">
                 <div class="input-group-addon">
@@ -264,7 +264,7 @@
                 <input type="radio" required name="radioH" value="não" >
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere')}}">
+            <input type="text" placeholder="COMENTE" required name="Chere" value="{{old('Chere')}}">
 
             <label for="plano"><b>DIABETES?</b></label>
             <label class="radio">SIM
@@ -275,7 +275,7 @@
                 <input type="radio" required name="radioD" value="nao">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab')}}">
+            <input type="text" placeholder="COMENTE" required name="CDiab" value="{{old('CDiab')}}">
 
             <label for="plano"><b>HIPERTENSÃO?</b></label>
             <label class="radio">SIM
@@ -286,7 +286,7 @@
                 <input type="radio" required name="radioHI" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Chiper" value="{{old('Chiper')}}">
+            <input type="text" placeholder="COMENTE" required name="Chiper" value="{{old('Chiper')}}">
 
         </div>
 
@@ -303,7 +303,7 @@
                 <input type="radio" required name="radioT" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cclini" value="{{old('Cclini')}}">
+            <input type="text" placeholder="COMENTE" required name="Cclini" value="{{old('Cclini')}}">
 
             <label for="plano"><b>DOÊNÇAS CRONICAS?</b></label>
             <label class="radio">SIM
@@ -311,10 +311,10 @@
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" required name="radioC" value="não"
+                <input type="radio" required name="radioC" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cdoen" value="{{old('Cdoen')}}">
+            <input type="text" placeholder="COMENTE" required name="Cdoen" value="{{old('Cdoen')}}">
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
@@ -322,10 +322,10 @@
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" required name="radioN" value="não"
+                <input type="radio" required name="radioN" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cneopla" value="{{old('Cneopla')}}">
+            <input type="text" placeholder="COMENTE" required name="Cneopla" value="{{old('Cneopla')}}">
 
             <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
@@ -336,7 +336,7 @@
                 <input type="radio" required name="radioFA" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cfarma" value="{{old('Cfarma')}}">
+            <input type="text" placeholder="COMENTE" required name="Cfarma" value="{{old('Cfarma')}}">
         </div>
 
         <div id="clinicos3" class="tab-pane fade">
@@ -353,7 +353,7 @@
                 <input type="radio" required name="radioDRO" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cuso" value="{{old('Cuso')}}">
+            <input type="text" placeholder="COMENTE" required name="Cuso" value="{{old('Cuso')}}">
 
             <label for="plano"><b>ALERGIAS?</b></label>
             <label class="radio">SIM
@@ -364,7 +364,7 @@
                 <input type="radio" required name="radioAL" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Calerg" value="{{old('Calerg')}}">
+            <input type="text" placeholder="COMENTE" required name="Calerg" value="{{old('Calerg')}}">
 
             <label for="plano"><b>ETILISTA?</b></label>
             <label class="radio">SIM
@@ -375,7 +375,7 @@
                 <input type="radio" required name="radioET" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cetili" value="{{old('Cetili')}}">
+            <input type="text" placeholder="COMENTE" required name="Cetili" value="{{old('Cetili')}}">
 
             <label for="plano"><b>VACINA TOMADAS?</b></label>
             <label class="radio">SIM
@@ -386,7 +386,7 @@
                 <input type="radio" required name="radioVA" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cvacina" value="{{old('Cvacina')}}">
+            <input type="text" placeholder="COMENTE" required name="Cvacina" value="{{old('Cvacina')}}">
         </div>
 
         <div id="clinicos4" class="tab-pane fade">
@@ -402,7 +402,7 @@
                 <input type="radio" required name="radioCI" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ccirur" value="{{old('Ccirur')}}">
+            <input type="text" placeholder="COMENTE" required name="Ccirur" value="{{old('Ccirur')}}">
 
             <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
@@ -413,7 +413,7 @@
                 <input type="radio" required name="radioTRA" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cporta" value="{{old('Cporta')}}">
+            <input type="text" placeholder="COMENTE" required name="Cporta" value="{{old('Cporta')}}">
 
             <label for="plano"><b>PORTADOR DE MARCAPASSO?</b></label>
             <label class="radio">SIM
@@ -424,7 +424,7 @@
                 <input type="radio" required name="radioMAR" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cmarca" value="{{old('Cmarca')}}">
+            <input type="text" placeholder="COMENTE" required name="Cmarca" value="{{old('Cmarca')}}">
 
             <label for="plano"><b>EPLIPSIA - CONSULÇÃO?</b></label>
             <label class="radio">SIM
@@ -435,7 +435,7 @@
                 <input type="radio" required name="radioEP" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
+            <input type="text" placeholder="COMENTE" required name="Ceplis" value="{{old('Ceplis')}}"> </br>
 
             <button class="button-ok"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
         </div>

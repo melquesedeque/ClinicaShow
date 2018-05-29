@@ -93,8 +93,8 @@ input[type=text]:focus {
 
 .radio .checkmark:after {
     top: 9px;
-    left: 9px;
-    width: 8px;
+    left: 8px;
+    width: 9px;
     height: 8px;
     border-radius: 50%;
     background: white;

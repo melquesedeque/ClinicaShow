@@ -261,7 +261,7 @@
               <span class="checkmark"></span>
           </label>
           <label class="radio">NÃO
-              <input type="radio" disabled value="não" name="radioD" @if(old('radioD',$pacientes['radioD']) == "não") checked @endif>
+              <input type="radio" disabled value="nao" name="radioD" @if(old('radioD',$pacientes['radioD']) == "nao") checked @endif>
               <span class="checkmark"></span>
           </label>
           <input type="text" placeholder="COMENTE" name="CDiab" disabled value="{{old('CDiab',$pacientes['CDiab'])}}">
