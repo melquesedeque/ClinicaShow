@@ -86,7 +86,8 @@
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
             <input type="text" id="materias" name="Materias" class="form-control" value=" {{old('Materias')}} ">
 
-            <button class="button-ok" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
+            <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
             
         </div>
     </form>

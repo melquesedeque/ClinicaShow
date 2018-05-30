@@ -18,7 +18,7 @@
       <div class="tab-content">
 
           <div id="DadosPessoais" class="tab-pane fade in active">
-              <!-- Dados do pacientes-->
+              <!-- Dados do Funcionarios-->
 
               <form action=" {{ route('funcionario-Atualizar', ['id' => $Funcionarios['id']]) }}" style="border:#ccc">
 
@@ -103,21 +103,12 @@
                       </select>
                       </br>
 
-                      <label for=""><b>PROFISSÃO</b></label>
+                      <label for=""><b>CARGO</b></label>
                       <select class="form-control" id="gender1" name="profi" value="{{old('profi',$Funcionarios['profi'])}}">
                         <option @if(old('profi',$Funcionarios['profi']) == "MÉDICO") selected @endif value="MÉDICO">MÉDICO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "ENFERMEIRO") selected @endif value="ENFERMEIRO">ENFERMEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ARQUITETO") selected @endif value="ARQUITETO">ARQUITETO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ENGENHEIRO") selected @endif value="ENGENHEIRO">ENGENHEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FISIOTERAPEUTA") selected @endif value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif value="ANALISTA">ANALISTA DE SISTEMAS</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PROGRAMADOR") selected @endif value="PROGRAMADOR">PROGRAMADOR</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "DENTISTA") selected @endif value="DENTISTA">DENTISTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PEDREIRO") selected @endif value="PEDREIRO">PEDREIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "SEGURANÇA") selected @endif value="SEGURANÇA">SEGURANÇA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ADIMINISTRAÇÃO") selected @endif value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FARMACIA") selected @endif value="FARMACIA">FARMACIA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FÍSICA") selected @endif value="FÍSICA">EDUÇÃO FÍSICA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "RH") selected @endif value="RH">RH</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "Atendente") selected @endif value="Atendente">ATENTENDE</option>
                       </select>
                       </br>
 
@@ -249,7 +240,21 @@
                 <input type="radio" value="não" name="radioH" @if(old('radioH',$Funcionarios['radioH']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere',$Funcionarios['Chere'])}}">
+            <select class="form-control" required name="Chere" value="{{old('Chere')}}">
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Nenhuma") selected @endif value="Nenhuma">-Nenhuma-</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Câncer") selected @endif value="Câncer">Câncer</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Depressão") selected @endif value="Depressão">Depressão</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Fibrose") selected @endif value="Fibrose">Fibrose Cística</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Hemorroidas") selected @endif value="Hemorroidas">Hemorroidas</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Daltonismo") selected @endif value="Daltonismo">Daltonismo</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Obesidade") selected @endif value="Obesidade">Obesidade</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Diabetes") selected @endif value="Diabetes">Diabetes</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Cardiopatias") selected @endif value="Cardiopatias">Cardiopatias</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Hipertensão") selected @endif value="Hipertensão">Hipertensão arterial</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Anemia") selected @endif value="Anemia">Anemia falciforme</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Síndrome") selected @endif value="Síndrome">Síndrome de Marfan</option>
+                <option @if(old('Chere',$Funcionarios['Chere']) == "Hemocromatose") selected @endif value="Hemocromatose">Hemocromatose arterial</option>
+              </select>
 
             <label for="plano"><b>DIABETES?</b></label>
             <label class="radio">SIM
@@ -299,7 +304,25 @@
                 <input type="radio" value="não" name="radioC" @if(old('radioC',$Funcionarios['radioC']) == "não") checked @endif >
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Cdoen" value="{{old('Cdoen',$Funcionarios['Cdoen'])}}">
+            <select class="form-control" required name="Cdoen" value="{{old('Cdoen')}}">
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Nenhuma") selected @endif value="Nenhuma">-Nenhuma-</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Hipertensão") selected @endif value="Hipertensão">Hipertensão arterial</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Colesterol") selected @endif value="Colesterol">Colesterol alto</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Depressão") selected @endif value="Depressão">Depressão</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Diabetes") selected @endif value="Diabetes">Diabetes</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Artrite") selected @endif value="Artrite">Artrite</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Câncer") selected @endif value="Câncer">Câncer</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Asma") selected @endif value="Asma">Asma</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "coluna") selected @endif value="coluna">Dores na coluna</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "DPOC") selected @endif value="DPOC">DPOC (Doença pulmonar obstrutiva crônica)</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Osteoporose") selected @endif value="Osteoporose">Osteoporose</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Parkinson") selected @endif value="Parkinson">Parkinson arterial</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Alzheimer") selected @endif value="Alzheimer">Alzheimer</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "AVC") selected @endif value="AVC">AVC</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Fibrose") selected @endif value="Fibrose">Fibrose Cistica</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Hepatites") selected @endif value="Hepatites">Hepatites</option>
+                <option @if(old('Cdoen',$Funcionarios['Cdoen']) == "Cirrose") selected @endif value="Cirrose">Cirrose</option>
+              </select>>
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
@@ -388,7 +411,24 @@
                 <input type="radio" value="não" name="radioCI" @if(old('radioCI',$Funcionarios['radioCI']) == "não") checked @endif>
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ccirur" value="{{old('Ccirur',$Funcionarios['Ccirur'])}}">
+            <select class="form-control" required name="Ccirur" value="{{old('Ccirur')}}">
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Nenhuma") selected @endif value="Nenhum">Nenhum</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Vasectomia") selected @endif value="Vasectomia">Vasectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Nefrectomia") selected @endif value="Nefrectomia">Nefrectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Mastectomia") selected @endif value="Mastectomia">Mastectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Prostectomia") selected @endif value="Prostectomia">Prostectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Pneumonectomia") selected @endif value="Pneumonectomia">Pneumonectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Histerectomia") selected @endif value="Histerectomia">Histerectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Colecistectomia") selected @endif value="Colecistectomia">Colecistectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Ooforectomia") selected @endif value="Ooforectomia">Ooforectomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Abdominoplastia") selected @endif value="Abdominoplastia">Abdominoplastia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Craniotomia") selected @endif value="Craniotomia">Craniotomia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Blefaroplastia") selected @endif value="Blefaroplastia">Blefaroplastia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Rinoplastia") selected @endif value="Rinoplastia">Rinoplastia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Queiloplastia") selected @endif value="Queiloplastia">Queiloplastia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Mamoplastia") selected @endif value="Mamoplastia">Mamoplastia</option>
+                <option @if(old('Ccirur',$Funcionarios['Ccirur']) == "Ritidoplastia") selected @endif value="Ritidoplastia">Ritidoplastia</option>
+            </select>
 
             <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
@@ -424,6 +464,6 @@
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
             <button herf=" {{ route('funcionario-listar') }} " class="btn btn-danger">Voltar</button>
-            <button class="btn btn-primary button-ok">Alterar Dados</button>
+            <button class="btn btn-primary">Alterar Dados</button>
         </form>
 @endsection

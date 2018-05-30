@@ -35,10 +35,37 @@ class cadastrarController extends Controller{
             'Inscricao'        => 'required',
             'Validade'         => 'required|date',
             'Peso'             => 'required',
-            'Altura'           => 'required',
+            'Altura'           => 'required',       
+            'CDiab'            => 'required',
+            'Chiper'           => 'required',
+            'Cclini'           => 'required',
+            'Cneopla'          => 'required',
+            'Cfarma'           => 'required',
+            'Cuso'             => 'required',
+            'Calerg'           => 'required',
+            'Cetili'           => 'required',
+            'Cvacina'          => 'required',
+            'Cporta'           => 'required',
+            'Cmarca'           => 'required',
+            'Ceplis'           => 'required',
         ]);
 
-        Paciente::create($request->all()); // para salvar no banco
+        $dados = $request->all();
+
+        // if (empty($dados['CDiab'])) unset($dados['CDiab']);
+        // if (empty($dados['Chiper'])) unset($dados['Chiper']);
+        // if (empty($dados['Cclini'])) unset($dados['Cclini']);
+        // if (empty($dados['Cneopla'])) unset($dados['Cneopla']);
+        // if (empty($dados['Cfarma'])) unset($dados['Cfarma']);
+        // if (empty($dados['Cuso'])) unset($dados['Cuso']);
+        // if (empty($dados['Calerg'])) unset($dados['Calerg']);
+        // if (empty($dados['Cetili'])) unset($dados['Cetili']);
+        // if (empty($dados['Cvacina'])) unset($dados['Cvacina']);
+        // if (empty($dados['Cporta'])) unset($dados['Cporta']);
+        // if (empty($dados['Cmarca'])) unset($dados['Cmarca']);
+        // if (empty($dados['Ceplis'])) unset($dados['Ceplis']);
+
+        Paciente::create($dados); // para salvar no banco
 
         return redirect()->route('paciente-listar');
     }
@@ -105,6 +132,18 @@ class cadastrarController extends Controller{
             'Validade'         => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
+            'CDiab'            => 'required',
+            'Chiper'           => 'required',
+            'Cclini'           => 'required',
+            'Cneopla'          => 'required',
+            'Cfarma'           => 'required',
+            'Cuso'             => 'required',
+            'Calerg'           => 'required',
+            'Cetili'           => 'required',
+            'Cvacina'          => 'required',
+            'Cporta'           => 'required',
+            'Cmarca'           => 'required',
+            'Ceplis'           => 'required',
         ]);
 
         Paciente::where('id', $id)->update($request->all()); // para Update no banco
@@ -138,6 +177,18 @@ class cadastrarController extends Controller{
             'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
+            'CDiab'            => 'required',
+            'Chiper'           => 'required',
+            'Cclini'           => 'required',
+            'Cneopla'          => 'required',
+            'Cfarma'           => 'required',
+            'Cuso'             => 'required',
+            'Calerg'           => 'required',
+            'Cetili'           => 'required',
+            'Cvacina'          => 'required',
+            'Cporta'           => 'required',
+            'Cmarca'           => 'required',
+            'Ceplis'           => 'required',
         ]);
         
         Funcionario::create($request->all()); // para salvar no banco
@@ -204,6 +255,18 @@ class cadastrarController extends Controller{
             'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
+            'CDiab'            => 'required',
+            'Chiper'           => 'required',
+            'Cclini'           => 'required',
+            'Cneopla'          => 'required',
+            'Cfarma'           => 'required',
+            'Cuso'             => 'required',
+            'Calerg'           => 'required',
+            'Cetili'           => 'required',
+            'Cvacina'          => 'required',
+            'Cporta'           => 'required',
+            'Cmarca'           => 'required',
+            'Ceplis'           => 'required',
         ]);
         
         Funcionario::where('id', $id)->update($request->all()); // para Atulizar o banco

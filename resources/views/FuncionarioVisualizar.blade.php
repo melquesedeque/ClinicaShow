@@ -102,21 +102,12 @@
                       </select>
                       </br>
 
-                      <label for=""><b>PROFISSÃO</b></label>
+                      <label for=""><b>Cargo</b></label>
                       <select class="form-control" id="gender1" name="profi" disabled value="{{old('profi',$Funcionarios['profi'])}}">
                         <option @if(old('profi',$Funcionarios['profi']) == "MÉDICO") selected @endif disabled value="MÉDICO">MÉDICO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "ENFERMEIRO") selected @endif disabled value="ENFERMEIRO">ENFERMEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ARQUITETO") selected @endif disabled value="ARQUITETO">ARQUITETO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ENGENHEIRO") selected @endif disabled value="ENGENHEIRO">ENGENHEIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FISIOTERAPEUTA") selected @endif disabled value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ANALISTA") selected @endif disabled value="ANALISTA">ANALISTA DE SISTEMAAS</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PROGRAMADOR") selected @endif disabled value="PROGRAMADOR">PROGRAMADOR</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "DENTISTA") selected @endif disabled value="DENTISTA">DENTISTA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "PEDREIRO") selected @endif disabled value="PEDREIRO">PEDREIRO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "SEGURANÇA") selected @endif disabled value="SEGURANÇA">SEGURANÇA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "ADIMINISTRAÇÃO") selected @endif disabled value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FARMACIA") selected @endif disabled value="FARMACIA">FARMACIA</option>
-                        <option @if(old('profi',$Funcionarios['profi']) == "FÍSICA") selected @endif disabled value="FÍSICA">EDUÇÃO FÍSICA</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "RH") selected @endif disabled value="RH">RH</option>
+                        <option @if(old('profi',$Funcionarios['profi']) == "Atendente") selected @endif disabled value="Atendente">ATENTENDE</option>
                       </select>
                       </br>
 

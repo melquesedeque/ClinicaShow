@@ -268,8 +268,22 @@
               <input type="radio" value="não" name="radioH" @if(old('radioH',$pacientes['radioH']) == "não") checked @endif>
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="Chere" value="{{old('Chere',$pacientes['Chere'])}}">
-
+          <select class="form-control" required name="Chere" value="{{old('Chere')}}">
+            <option @if(old('Chere',$pacientes['Chere']) == "Nenhuma") selected @endif value="Nenhuma">-Nenhuma-</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Câncer") selected @endif value="Câncer">Câncer</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Depressão") selected @endif value="Depressão">Depressão</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Fibrose") selected @endif value="Fibrose">Fibrose Cística</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Hemorroidas") selected @endif value="Hemorroidas">Hemorroidas</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Daltonismo") selected @endif value="Daltonismo">Daltonismo</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Obesidade") selected @endif value="Obesidade">Obesidade</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Diabetes") selected @endif value="Diabetes">Diabetes</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Cardiopatias") selected @endif value="Cardiopatias">Cardiopatias</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Hipertensão") selected @endif value="Hipertensão">Hipertensão arterial</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Anemia") selected @endif value="Anemia">Anemia falciforme</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Síndrome") selected @endif value="Síndrome">Síndrome de Marfan</option>
+            <option @if(old('Chere',$pacientes['Chere']) == "Hemocromatose") selected @endif value="Hemocromatose">Hemocromatose arterial</option>
+          </select>
+        
           <label for="plano"><b>DIABETES?</b></label>
           <label class="radio">SIM
               <input type="radio" value="sim" name="radioD" @if(old('radioD',$pacientes['radioD']) == "sim") checked @endif>
@@ -318,7 +332,25 @@
               <input type="radio" value="não" name="radioC" @if(old('radioC',$pacientes['radioC']) == "não") checked @endif >
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="Cdoen" value="{{old('Cdoen',$pacientes['Cdoen'])}}">
+          <select class="form-control" required name="Cdoen" value="{{old('Cdoen')}}">
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Nenhuma") selected @endif value="Nenhuma">-Nenhuma-</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Hipertensão") selected @endif value="Hipertensão">Hipertensão arterial</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Colesterol") selected @endif value="Colesterol">Colesterol alto</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Depressão") selected @endif value="Depressão">Depressão</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Diabetes") selected @endif value="Diabetes">Diabetes</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Artrite") selected @endif value="Artrite">Artrite</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Câncer") selected @endif value="Câncer">Câncer</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Asma") selected @endif value="Asma">Asma</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "coluna") selected @endif value="coluna">Dores na coluna</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "DPOC") selected @endif value="DPOC">DPOC (Doença pulmonar obstrutiva crônica)</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Osteoporose") selected @endif value="Osteoporose">Osteoporose</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Parkinson") selected @endif value="Parkinson">Parkinson arterial</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Alzheimer") selected @endif value="Alzheimer">Alzheimer</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "AVC") selected @endif value="AVC">AVC</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Fibrose") selected @endif value="Fibrose">Fibrose Cistica</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Hepatites") selected @endif value="Hepatites">Hepatites</option>
+            <option @if(old('Cdoen',$pacientes['Cdoen']) == "Cirrose") selected @endif value="Cirrose">Cirrose</option>
+          </select>
 
           <label for="plano"><b>NEOPLASIA?</b></label>
           <label class="radio">SIM
@@ -407,7 +439,24 @@
               <input type="radio" value="não" name="radioCI" @if(old('radioCI',$pacientes['radioCI']) == "não") checked @endif>
               <span class="checkmark"></span>
           </label>
-          <input type="text" placeholder="COMENTE" name="Ccirur" value="{{old('Ccirur',$pacientes['Ccirur'])}}">
+          <select class="form-control" required name="Ccirur" value="{{old('Ccirur')}}">
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Nenhuma") selected @endif value="Nenhum">Nenhum</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Vasectomia") selected @endif value="Vasectomia">Vasectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Nefrectomia") selected @endif value="Nefrectomia">Nefrectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Mastectomia") selected @endif value="Mastectomia">Mastectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Prostectomia") selected @endif value="Prostectomia">Prostectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Pneumonectomia") selected @endif value="Pneumonectomia">Pneumonectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Histerectomia") selected @endif value="Histerectomia">Histerectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Colecistectomia") selected @endif value="Colecistectomia">Colecistectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Ooforectomia") selected @endif value="Ooforectomia">Ooforectomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Abdominoplastia") selected @endif value="Abdominoplastia">Abdominoplastia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Craniotomia") selected @endif value="Craniotomia">Craniotomia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Blefaroplastia") selected @endif value="Blefaroplastia">Blefaroplastia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Rinoplastia") selected @endif value="Rinoplastia">Rinoplastia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Queiloplastia") selected @endif value="Queiloplastia">Queiloplastia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Mamoplastia") selected @endif value="Mamoplastia">Mamoplastia</option>
+            <option @if(old('Ccirur',$pacientes['Ccirur']) == "Ritidoplastia") selected @endif value="Ritidoplastia">Ritidoplastia</option>
+        </select>
 
           <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
           <label class="radio">SIM

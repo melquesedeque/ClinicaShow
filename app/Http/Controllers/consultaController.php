@@ -13,7 +13,7 @@ class consultaController extends Controller{
         $dados = [
             'menu'          => 3,
             'pacientes'     => Paciente::all(),
-            'funcionarios'  => Funcionario::all()
+            'funcionarios'  => Funcionario::all()->where('profi', '=', 'MÉDICO')
         ]; 
         return view('consulta', $dados);
     }
