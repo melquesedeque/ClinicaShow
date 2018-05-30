@@ -3,25 +3,31 @@
 
     <div class="container">
 
-        <h3>Listar Funcionarios</h3> </br>
+            <h3 style="display: inline">Listar Funcionário</h3>
 
-        {{-- barra de pesquisa --}}
-        <form method="get" action="">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar" name="filtro">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
+            <div style="float:right">
+                <a href=" {{ route('cadastrar-funcionario') }} " class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Novo</a>
             </div>
-        </form>
+    
+            </br></br></br>
+            {{-- barra de pesquisa --}}
+            <form method="get" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar" name="filtro">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </br>
 
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Nome</th>
                     <th>Matricula</th>
+                    <th>Nome</th>
                     <th>Tipo de Permissão</th>
                     <th width="30%">Opções</th>
                 </tr>
@@ -31,8 +37,8 @@
                 @foreach($Funcionarios as $Funcionario)
 
                 <tr class="trItens">
+                    <td class="tex">{{$Funcionario['id']}}</td>
                     <td class="tex">{{$Funcionario['Nome']}}</td>
-                    <td class="tex">{{$Funcionario['Matricula']}}</td>
                     <td class="tex">{{$Funcionario['TIPO_PERMISAO']}}</td>
     
                     <td>

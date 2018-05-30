@@ -16,7 +16,6 @@ class cadastrarController extends Controller{
     public function pacienteSalvar(Request $request){ // Salvar no Banco Paciente
         $request->validate([
             'Nome'             => 'required',
-            'Matricula'        => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
             'Telefone-p'       => 'required',
@@ -86,7 +85,6 @@ class cadastrarController extends Controller{
     public function pacienteAtualizar(Request $request, $id){ // Atualizar Paciente
         $request->validate([
             'Nome'             => 'required',
-            'Matricula'        => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
             'Telefone-p'       => 'required',
@@ -123,7 +121,6 @@ class cadastrarController extends Controller{
     public function funcionarioSalvar(Request $request){ // Salvar Funcionário
         $request->validate([
             'Nome'             => 'required',
-            'Matricula'        => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
             'Telefone-p'       => 'required',
@@ -190,7 +187,6 @@ class cadastrarController extends Controller{
     public function funcionarioAtualizar(Request $request, $id){ // Atualizar Paciente
         $request->validate([
             'Nome'             => 'required',
-            'Matricula'        => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
             'Telefone-p'       => 'required',

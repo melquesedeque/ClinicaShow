@@ -40,11 +40,12 @@ class consultaController extends Controller{
 
     public function consultaListar(Request $request){ // Listar Consulta e Filtro
 
+
         if ($request->filtro)
             $consultas = consulta::where('NomePaciente', 'like', '%'.$request->filtro.'%')->orWhere('NomeMedico', 'like', '%'.$request->filtro.'%')->get();
         else
             $consultas = consulta::all();
-
+            
         //Paginação
         $exibirPorPagina = 5;
         $offset = ($exibirPorPagina * ($request->query('page', 1)-1));

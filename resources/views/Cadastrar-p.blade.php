@@ -39,9 +39,6 @@
                     <label for="nome"><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
 
-                    <label for="matricula"><b>MATRICULA</b></label>
-                    <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value="{{old('Matricula')}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-
                     <label for="cpf"><b>CPF</b></label>
                     <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
@@ -260,7 +257,7 @@
             </select>
             </br>
 
-            <label for="plano"><b>DOÊNÇAS HEREDITARIAS?</b></label>
+            <label><b>DOÊNÇAS HEREDITARIAS?</b></label>
             <label class="radio">SIM
                 <input type="radio" required checked="checked" name="radioH" value="sim">
                 <span class="checkmark"></span>
@@ -269,7 +266,13 @@
                 <input type="radio" required name="radioH" value="não" >
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" required name="Chere" value="{{old('Chere')}}">
+            <select class="form-control" required name="Chere" value="{{old('Chere')}}">
+                <option value="Nenhum">Nenhum</option>
+                <option value="PARDA">PARDA</option>
+                <option value="PRETA">PRETA</option>
+                <option value="AMARELO">AMARELO</option>
+                <option value="INDÍGINA">INDÍGINA</option>
+            </select>
 
             <label for="plano"><b>DIABETES?</b></label>
             <label class="radio">SIM
@@ -319,7 +322,13 @@
                 <input type="radio" required name="radioC" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" required name="Cdoen" value="{{old('Cdoen')}}">
+            <select class="form-control" required name="Cdoen" value="{{old('Cdoen')}}">
+                <option value="Nenhum">Nenhum</option>
+                <option value="PARDA">PARDA</option>
+                <option value="PRETA">PRETA</option>
+                <option value="AMARELO">AMARELO</option>
+                <option value="INDÍGINA">INDÍGINA</option>
+            </select>
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
@@ -407,7 +416,13 @@
                 <input type="radio" required name="radioCI" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" required name="Ccirur" value="{{old('Ccirur')}}">
+            <select class="form-control" required name="Ccirur" value="{{old('Ccirur')}}">
+                <option value="Nenhum">Nenhum</option>
+                <option value="PARDA">PARDA</option>
+                <option value="PRETA">PRETA</option>
+                <option value="AMARELO">AMARELO</option>
+                <option value="INDÍGINA">INDÍGINA</option>
+            </select>
 
             <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM

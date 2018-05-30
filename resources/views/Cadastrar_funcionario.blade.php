@@ -34,11 +34,8 @@
                       </div>
                       @endif
 
-                      <label for="nome"><b>NOME</b></label>
+                    <label for="nome"><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
-
-                    <label for="matricula"><b>MATRICULA</b></label>
-                    <input type="text" placeholder="Enter com sua Matricula" name="Matricula" value="{{old('Matricula')}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for="cpf"><b>CPF</b></label>
                     <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">

@@ -34,11 +34,12 @@
                       </div>
                       @endif
 
-                      <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$Funcionarios['Nome'])}}">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$Funcionarios['Matricula'])}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                      <input type="text" name="id" disabled value="{{old('id',$Funcionarios['id'])}}">
+
+                      <label for=""><b>NOME</b></label>
+                      <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$Funcionarios['Nome'])}}">
 
                       <label for=""><b>CPF</b></label>
                       <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -422,7 +423,7 @@
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
-
-            <button class="button-ok">Alterar Dados</button>
+            <button herf=" {{ route('funcionario-listar') }} " class="btn btn-danger">Voltar</button>
+            <button class="btn btn-primary button-ok">Alterar Dados</button>
         </form>
 @endsection

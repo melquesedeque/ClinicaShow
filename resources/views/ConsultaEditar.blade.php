@@ -90,6 +90,8 @@
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
             <input type="text" class="form-control" name="Materias" value="{{old('Materias',$consulta['Materias'])}}"> </br>
 
+
+            <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
             <button class="button-ok" data-toggle="modal" data-target="#exampleModal">Alterar</button>
             
         </div>

@@ -35,12 +35,12 @@
                             </ul>
                         </div>
                     @endif
-                    
-                      <label for=""><b>NOME</b></label>
-                      <input type="text" placeholder="Enter com seu nome" name="Nome" disabled value="{{old('Nome',$pacientes['Nome'])}}">
 
                       <label for=""><b>MATRICULA</b></label>
-                      <input type="text" placeholder="Entre com sua Matricula" name="Matricula" disabled value="{{old('Matricula',$pacientes['Matricula'])}}">
+                      <input type="text" placeholder="Entre com sua Matricula" name="id" disabled value="{{old('id',$pacientes['id'])}}">
+
+                      <label for=""><b>NOME</b></label>
+                      <input type="text" placeholder="Enter com seu nome" name="Nome" disabled value="{{old('Nome',$pacientes['Nome'])}}">
 
                       <label for=""><b>CPF</b></label>
                       <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" disabled value="{{old('Cpf',$pacientes['Cpf'])}}">

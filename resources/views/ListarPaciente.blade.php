@@ -3,25 +3,31 @@
 
     <div class="container">
 
-        <h3>Listar Pacientes</h3> </br>
+            <h3 style="display: inline">Listar Paciente</h3>
 
-        {{-- barra de pesquisa --}}
-        <form method="get" action="">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Buscar" name="filtro">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit">
-                    <i class="glyphicon glyphicon-search"></i>
-                    </button>
-                </div>
+            <div style="float:right">
+                <a href=" {{ route('cadastrar-paciente') }} " class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> Novo</a>
             </div>
-        </form>
+    
+            </br></br></br>
+            {{-- barra de pesquisa --}}
+            <form method="get" action="">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Buscar" name="filtro">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            </br>
 
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>Nome Paciente</th>
                     <th>Matricula</th>
+                    <th>Nome</th>
                     <th>CPF</th>
                     <th width="30%">Opções</th>
                 </tr>
@@ -31,8 +37,8 @@
                 @foreach($pacientes as $paciente)
 
                 <tr class="trItens">
+                    <td class="tex">{{$paciente['id']}}</td>
                     <td class="tex">{{$paciente['Nome']}}</td>
-                    <td class="tex">{{$paciente['Matricula']}}</td>
                     <td class="tex">{{$paciente['Cpf']}}</td>
     
                     <td>

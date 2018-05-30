@@ -36,11 +36,11 @@
                         </div>
                     @endif
 
+                    <label for=""><b>MATRICULA</b></label>
+                    <input type="text" placeholder="Entre com sua Matricula" name="id" value="{{old('id',$pacientes['id'])}}" disabled>
+
                     <label for=""><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$pacientes['Nome'])}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
-
-                    <label for=""><b>MATRICULA</b></label>
-                    <input type="text" placeholder="Entre com sua Matricula" name="Matricula" value="{{old('Matricula',$pacientes['Matricula'])}}" maxlength="5" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for=""><b>CPF</b></label>
                     <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$pacientes['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -442,7 +442,8 @@
           </label>
           <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$pacientes['Ceplis'])}}"> </br>
         </div>
-          <button class="button-ok">Alterar Dados</button>
+            <button herf=" {{ route('paciente-listar') }} " class="btn btn-danger">Voltar</button>
+            <button class="btn btn-primary">Alterar Dados</button>
         </form>
 
         <script>
