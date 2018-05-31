@@ -52,8 +52,12 @@
             </tbody>
 
         </table>
+
+        <div class="center">
+            {{$paginacao}}
+        </div>
     </div>
-</div>
+
     <script type="text/javascript">
         $(function(){
             $("#txtBusca").keyup(function(){

@@ -51,7 +51,7 @@
                       <label for=""><b>TELEFONE</b></label>
                       <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" disabled value="{{old('Telefone-p',$pacientes['Telefone-p'])}}">
 
-                      <label for="Data">Data</label>
+                      <label for="Data">DATA DE NASCIMENTO</label>
                         <div class="input-group date">
                             <input type="date" class="form-control" id="Data" name="Data" disabled value="{{old('Data',$pacientes['Data'])}}">
                             <div class="input-group-addon">
@@ -438,6 +438,6 @@
           </label>
           <input type="text" placeholder="COMENTE" name="Ceplis" disabled value="{{old('Ceplis',$pacientes['Ceplis'])}}"> </br>
         </div>
-          <button class="button-ok">Voltar</button>
+          <button class="btn btn-danger">Voltar</button>
         </form>
 @endsection

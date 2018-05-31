@@ -52,7 +52,10 @@
             </tbody>
 
         </table>
+
+        <div class="center">
+            {{$paginacao}}
+        </div>
     </div>
-</div>
 
 @endsection

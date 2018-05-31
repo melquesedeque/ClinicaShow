@@ -35,23 +35,10 @@ class cadastrarController extends Controller{
             'Inscricao'        => 'required',
             'Validade'         => 'required|date',
             'Peso'             => 'required',
+            'Altura'           => 'required',
         ]);
 
         $dados = $request->all();
-
-        // if (empty($dados['CDiab'])) unset($dados['CDiab']);
-        // if (empty($dados['Chiper'])) unset($dados['Chiper']);
-        // if (empty($dados['Cclini'])) unset($dados['Cclini']);
-        // if (empty($dados['Cneopla'])) unset($dados['Cneopla']);
-        // if (empty($dados['Cfarma'])) unset($dados['Cfarma']);
-        // if (empty($dados['Cuso'])) unset($dados['Cuso']);
-        // if (empty($dados['Calerg'])) unset($dados['Calerg']);
-        // if (empty($dados['Cetili'])) unset($dados['Cetili']);
-        // if (empty($dados['Cvacina'])) unset($dados['Cvacina']);
-        // if (empty($dados['Cporta'])) unset($dados['Cporta']);
-        // if (empty($dados['Cmarca'])) unset($dados['Cmarca']);
-        // if (empty($dados['Ceplis'])) unset($dados['Ceplis']);
-
         Paciente::create($dados); // para salvar no banco
 
         return redirect()->route('paciente-listar');
@@ -59,14 +46,26 @@ class cadastrarController extends Controller{
 
     public function pacienteListar(Request $request){ // Listar Paciente e filtro
 
-        if ($request->filtro)
-            $pacientes = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->get();
-        else
-            $pacientes = Paciente::all();
+        //Paginação
+       $exibirPorPagina = 5;
+       $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
+       
+       if ($request->filtro) {
+           $paginacao = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
+           $pacientes = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                       ->offset($offset) //Começa a exibir a apartir de qual valor
+                       ->get();
+       }  else {
+           $paginacao = Paciente::paginate($exibirPorPagina); //Exibe 5 elementos por página
+           $pacientes = Paciente::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                           ->offset($offset) //Começa a exibir a apartir de qual valor::all();
+                           ->get();
+       }
 
         $dados = [
             'menu'       => 6, 
-            'pacientes'  => $pacientes
+            'pacientes'  => $pacientes,
+            'paginacao'  => $paginacao
         ];
 
         return view('listarPaciente', $dados);
@@ -119,18 +118,6 @@ class cadastrarController extends Controller{
             'Validade'         => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
-            'CDiab'            => 'required',
-            'Chiper'           => 'required',
-            'Cclini'           => 'required',
-            'Cneopla'          => 'required',
-            'Cfarma'           => 'required',
-            'Cuso'             => 'required',
-            'Calerg'           => 'required',
-            'Cetili'           => 'required',
-            'Cvacina'          => 'required',
-            'Cporta'           => 'required',
-            'Cmarca'           => 'required',
-            'Ceplis'           => 'required',
         ]);
 
         Paciente::where('id', $id)->update($request->all()); // para Update no banco
@@ -164,18 +151,6 @@ class cadastrarController extends Controller{
             'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
-            'CDiab'            => 'required',
-            'Chiper'           => 'required',
-            'Cclini'           => 'required',
-            'Cneopla'          => 'required',
-            'Cfarma'           => 'required',
-            'Cuso'             => 'required',
-            'Calerg'           => 'required',
-            'Cetili'           => 'required',
-            'Cvacina'          => 'required',
-            'Cporta'           => 'required',
-            'Cmarca'           => 'required',
-            'Ceplis'           => 'required',
         ]);
         
         Funcionario::create($request->all()); // para salvar no banco
@@ -185,14 +160,26 @@ class cadastrarController extends Controller{
 
     public function funcionarioListar(Request $request){ // Listar Funcionario e filtar
 
-        if ($request->filtro)
-            $Funcionarios = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->get();
-        else
-            $Funcionarios = Funcionario::all();
+       //Paginação
+       $exibirPorPagina = 5;
+       $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
+       
+       if ($request->filtro) {
+           $paginacao = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
+           $Funcionarios = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                       ->offset($offset) //Começa a exibir a apartir de qual valor
+                       ->get();
+       }  else {
+           $paginacao = Funcionario::paginate($exibirPorPagina); //Exibe 5 elementos por página
+           $Funcionarios = Funcionario::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                           ->offset($offset) //Começa a exibir a apartir de qual valor::all();
+                           ->get();
+       }
 
         $dados = [
             'menu'          => 7, 
-            'Funcionarios'  => $Funcionarios
+            'Funcionarios'  => $Funcionarios,
+            'paginacao'  => $paginacao
         ];
 
         return view('listarFuncionario', $dados);
@@ -242,18 +229,6 @@ class cadastrarController extends Controller{
             'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
-            'CDiab'            => 'required',
-            'Chiper'           => 'required',
-            'Cclini'           => 'required',
-            'Cneopla'          => 'required',
-            'Cfarma'           => 'required',
-            'Cuso'             => 'required',
-            'Calerg'           => 'required',
-            'Cetili'           => 'required',
-            'Cvacina'          => 'required',
-            'Cporta'           => 'required',
-            'Cmarca'           => 'required',
-            'Ceplis'           => 'required',
         ]);
         
         Funcionario::where('id', $id)->update($request->all()); // para Atulizar o banco

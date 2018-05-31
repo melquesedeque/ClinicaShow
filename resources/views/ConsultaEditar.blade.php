@@ -55,7 +55,7 @@
                 @endforeach      
             </select>
         </br>
-            <label for="Data">Data</label>
+            <label for="Data">DATA DA CONSULTA</label>
             <div class="input-group date">
                 <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$consulta['Data'])}}">
                 <div class="input-group-addon">
@@ -92,7 +92,7 @@
 
 
             <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
-            <button class="button-ok" data-toggle="modal" data-target="#exampleModal">Alterar</button>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Alterar</button>
             
         </div>
     </form>

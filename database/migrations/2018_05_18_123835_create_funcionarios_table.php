@@ -30,11 +30,11 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Endereco');
             $table->string('Bairro');
             $table->integer('Numero');
-            $table->string('Complemento');
-            $table->string('Parente');
-            $table->string('Parentent-tele');
-            $table->string('Parente-1');
-            $table->string('Parentent-tele-1');
+            $table->string('Complemento')->nullable();
+            $table->string('Parente')->nullable();
+            $table->string('Parentent-tele')->nullable();
+            $table->string('Parente-1')->nullable();
+            $table->string('Parentent-tele-1')->nullable();
             $table->string('cor');
             $table->string('Peso');
             $table->string('Altura');

@@ -51,7 +51,13 @@
                       <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" value="{{old('Data',$Funcionarios['Data'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                      <input type="date" placeholder="DD/MM/YYYY" name="Data" >
+                      <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" value="{{old('Data',$Funcionarios['Data'])}}" maxlength="10">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                     </div>
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">

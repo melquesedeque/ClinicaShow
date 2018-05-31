@@ -51,7 +51,7 @@
                     <label for=""><b>TELEFONE</b></label>
                     <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for="Data">Data</label>
+                      <label for="Data">DATA DE NASCIMENTO</label>
                       <div class="input-group date">
                         <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$pacientes['Data'])}}">
                         <div class="input-group-addon">

@@ -48,7 +48,7 @@
                     <label for="telefone"><b>TELEFONE</b></label>
                     <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;"  class="nao">
 
-                    <label for="Data">Data</label>
+                    <label for="Data">DATA DE NASCIMENTO</label>
                     <div class="input-group date">
                         <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data')}}">
                         <div class="input-group-addon">
@@ -489,7 +489,7 @@
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
 
             <button herf=" {{ route('paciente-listar') }} " class="btn btn-danger">Voltar</button>
-            <button class="button-ok"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
+            <button class="btn btn-primary"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
         </div>
         </form>
 

@@ -50,7 +50,12 @@
                       <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" disabled value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" disabled value="{{old('Data',$Funcionarios['Data'])}}">
+                      <div class="input-group date">
+                        <input type="date" class="form-control" id="Data" name="Data" disabled value="{{old('Data',$Funcionarios['Data'])}}">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </div>
+                     </div>
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" disabled value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">
@@ -413,6 +418,6 @@
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" disabled value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
-            <button class="button-ok">Voltar</button>
+            <button class="btn btn-danger">Voltar</button>
           </form>
 @endsection
