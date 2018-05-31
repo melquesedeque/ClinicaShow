@@ -18,7 +18,7 @@
             @endif
 
             <!-- Modal -->
-            @if ($errors)
+            @if ($errors->any())
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -87,6 +87,7 @@
             <input type="text" id="materias" name="Materias" class="form-control" value=" {{old('Materias')}} ">
 
             <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
+            
             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">CONCLUIR</button>
             
         </div>

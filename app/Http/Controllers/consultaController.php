@@ -40,20 +40,23 @@ class consultaController extends Controller{
 
     public function consultaListar(Request $request){ // Listar Consulta e Filtro
 
-
-        if ($request->filtro)
-            $consultas = consulta::where('NomePaciente', 'like', '%'.$request->filtro.'%')->orWhere('NomeMedico', 'like', '%'.$request->filtro.'%')->get();
-        else
-            $consultas = consulta::all();
             
         //Paginação
         $exibirPorPagina = 5;
         $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
-        $paginacao = consulta::paginate($exibirPorPagina); //Exibe 5 elementos por página
-        $consultas = consulta::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+        
+        if ($request->filtro) {
+            $paginacao = consulta::where('NomePaciente', 'like', '%'.$request->filtro.'%')->orWhere('NomeMedico', 'like', '%'.$request->filtro.'%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
+            $consultas = consulta::where('NomePaciente', 'like', '%'.$request->filtro.'%')->orWhere('NomeMedico', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
                         ->offset($offset) //Começa a exibir a apartir de qual valor
                         ->get();
-
+        }  else {
+            $paginacao = consulta::paginate($exibirPorPagina); //Exibe 5 elementos por página
+            $consultas = consulta::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+                            ->offset($offset) //Começa a exibir a apartir de qual valor::all();
+                            ->get();
+        }
+        
         $dados = [
             'menu'       => 4, 
             'consultas'  => $consultas,

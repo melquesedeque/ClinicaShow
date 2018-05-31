@@ -488,6 +488,7 @@
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
 
+            <button herf=" {{ route('paciente-listar') }} " class="btn btn-danger">Voltar</button>
             <button class="button-ok"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
         </div>
         </form>

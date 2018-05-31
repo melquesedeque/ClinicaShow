@@ -42,7 +42,7 @@
                     <td class="tex">{{$consulta['id']}}</td>
                     <td class="tex">{{$consulta['NomePaciente']}}</td>
                     <td class="tex">{{$consulta['NomeMedico']}}</td>
-                    <td class="tex">{{$consulta['Data']}}</td>
+                    <td class="tex">{{date('d/m/Y', strtotime($consulta['Data']))}}</td>
     
                     <td>
                         <a href="{{route('consultaVisualizar', ['id' => $consulta['id']])}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Visualizar</a>

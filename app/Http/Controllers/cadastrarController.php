@@ -10,7 +10,7 @@ class cadastrarController extends Controller{
 
     public function paciente(){
         $dados['menu'] = 1; // Para acionar o Active do navbar
-        return view('cadastrar-p', $dados);
+        return view('Cadastrar-p', $dados);
     }
 
     public function pacienteSalvar(Request $request){ // Salvar no Banco Paciente
@@ -35,19 +35,6 @@ class cadastrarController extends Controller{
             'Inscricao'        => 'required',
             'Validade'         => 'required|date',
             'Peso'             => 'required',
-            'Altura'           => 'required',       
-            'CDiab'            => 'required',
-            'Chiper'           => 'required',
-            'Cclini'           => 'required',
-            'Cneopla'          => 'required',
-            'Cfarma'           => 'required',
-            'Cuso'             => 'required',
-            'Calerg'           => 'required',
-            'Cetili'           => 'required',
-            'Cvacina'          => 'required',
-            'Cporta'           => 'required',
-            'Cmarca'           => 'required',
-            'Ceplis'           => 'required',
         ]);
 
         $dados = $request->all();

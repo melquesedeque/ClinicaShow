@@ -103,7 +103,7 @@
                     </select>>
 
                       <label><b>Cargo</b></label>
-                      <select class="form-control" name="profi" value="{{old('profi')}}">
+                      <select class="form-control" name="profi" value="{{old('profi')}}" id="cargo" onchange="teste()">
                         <option value="MÉDICO">MÉDICO</option>
                         <option value="ENFERMEIRO">ENFERMEIRO</option>
                         <option value="RH">RH</option>
@@ -112,7 +112,7 @@
                       </select>
 
                       <label><b>CRM</b></label>
-                      <input type="text" name="Crm" value="{{old('Crm')}}" maxlength="8" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
+                      <input type="text" id="Crm" name="Crm" value="{{old('Crm')}}" maxlength="8" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
 
                       <label><b>ESPECIALIDADE</b></label>
                       <select class="form-control" name="Especialidade" value="{{old('Especialidade')}}">
@@ -578,5 +578,23 @@
 	            }
 	            
 	    }
+
+        function teste() { // para Ativar ou Desativar o Botão
+
+            $('#Crm').val("");
+
+            if ($('#cargo').val() === 'MÉDICO') {
+
+                $('#Crm').show();
+                $('#Crm').attr('readonly',false)
+
+            } else {
+
+                $('#Crm').empty();
+                $('#Crm').attr('readonly',true);
+
+            }
+        }
+        
         </script>
 @endsection
