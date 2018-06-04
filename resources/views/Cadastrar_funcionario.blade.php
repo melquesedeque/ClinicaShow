@@ -20,9 +20,9 @@
           <div id="DadosPessoais" class="tab-pane fade in active">
               <!-- Dados do pacientes-->
 
-              <form action=" {{ route('funcionario-salva') }}" style="border:#ccc">
+              <form action=" {{ route('funcionario-salva') }}" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
-                  <div class="container">
                     <h3>Dados Funcionário</h3>
                       @if ($errors->any())
                       <div class="alert alert-danger">
@@ -34,17 +34,22 @@
                       </div>
                       @endif
 
+                    <div class="form-group">
+                        <label for="Foto">FOTO</label>
+                        <input type="file" class="form-control" name="Foto" id="Foto" value=" {{old('Foto')}} ">
+                    </div>  
+
                     <label for="nome"><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu Nome" name="Nome" value="{{old('Nome')}}">
 
                     <label for="cpf"><b>CPF</b></label>
-                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf')}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" onblur="validarCPF(this)">
 
                     <label for="rg"><b>RG</b></label>
-                    <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg')}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
+                    <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg')}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for="telefone"><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for="Data">DATA DE NASCIMENTO</label>
                     <div class="input-group date">
@@ -112,7 +117,7 @@
                       </select>
 
                       <label><b>CRM</b></label>
-                      <input type="text" id="Crm" name="Crm" value="{{old('Crm')}}" maxlength="8" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" class="nao">
+                      <input type="text" id="Crm" name="Crm" value="{{old('Crm')}}" maxlength="8" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label><b>ESPECIALIDADE</b></label>
                       <select class="form-control" name="Especialidade" value="{{old('Especialidade')}}">
@@ -124,23 +129,26 @@
 
                       <label><b>TIPO DE PERMISSÃO</b></label>
                       <select class="form-control" name="TIPO_PERMISAO"  value="{{old('TIPO_PERMISAO')}}">
-                          <option value="PMEDICO">MÉDICO</option>
-                          <option value="PMEDICOGERENTE">MÉDICO GERENTE</option>
-                          <option value="PENFERMEIRO">ENFERMEIRO</option>
-                          <option value="PENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
-                          <option value="PATENDIMENTO">ATENDIMENTO</option>
-                          <option value="PGERAL">GERENTE GERAL</option>
+                          <option value="MEDICO">MÉDICO</option>
+                          <option value="MEDICOGERENTE">MÉDICO GERENTE</option>
+                          <option value="ENFERMEIRO">ENFERMEIRO</option>
+                          <option value="ENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
+                          <option value="ATENDIMENTO">ATENDIMENTO</option>
+                          <option value="GERAL">GERENTE GERAL</option>
                           <option value="RH">RH</option>
                       </select>
-                  </div>
           </div>
 
           <div id="Endereco" class="tab-pane fade">
               <!-- 2 Aba (aba dos enderço)-->
 
-              <h3>Endereço</h3>
-            <label for="Cep"><b>CEP</b></label>
-            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
+            <h3>Endereço</h3>
+
+            <div class="form-group col-md-2">
+                <label for="Cep"><b>CEP</b></label>
+                <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
+                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
+            </div>
 
             <label for="Uf"><b>UF</b></label>
             <input type="text" placeholder="Entre com seu UF" id="uf" maxlength="2" name="Uf" value="{{old('Uf')}}">
@@ -468,7 +476,7 @@
           </form>
 
           <script>
-            function formatar(mascara, documento) { // Para a Data
+            {{-- function formatar(mascara, documento) { // Para a Data
                 var i = documento.value.length;
                 var saida = mascara.substring(0, 1);
                 var texto = mascara.substring(i)
@@ -482,8 +490,7 @@
             $('#Data').datepicker({
                 format: 'dd/mm/yyyy',
                 language: "pt-BR",
-            });
-    
+            });--}}
             function formatar(mascara, documento) { // Mascara dos campos
     
                 var i = documento.value.length;
@@ -495,14 +502,8 @@
                 }
     
             }
-    
-            $(document).ready(function() { // Para Não permitir C,V,X
-                $('.nao').bind('cut copy paste', function(event) {
-                    event.preventDefault();
-                });
-            });
 
-            function limpa_formulário_cep() {
+            function limpa_formulário_cep() { // buscar cep
 	            //Limpa valores do formulário de cep.
 	            document.getElementById('rua').value=("");
 	            document.getElementById('bairro').value=("");
@@ -568,17 +569,6 @@
 	        }
 	    };
 
-	    function formatar(mascara, documento){ // Para o CEP
-	            var i = documento.value.length;
-	            var saida = mascara.substring(0,1);
-	            var texto = mascara.substring(i)
-	            
-	            if (texto.substring(0,1) != saida){
-	                        documento.value += texto.substring(0,1);
-	            }
-	            
-	    }
-
         function teste() { // para Ativar ou Desativar o Botão
 
             $('#Crm').val("");
@@ -594,6 +584,51 @@
                 $('#Crm').attr('readonly',true);
 
             }
+        }
+
+        function _cpf(cpf) { // Validar CPF
+            cpf = cpf.replace(/[^\d]+/g, '');
+            if (cpf == '') return false;
+            if (cpf.length != 11 ||
+                cpf == "00000000000" ||
+                cpf == "11111111111" ||
+                cpf == "22222222222" ||
+                cpf == "33333333333" ||
+                cpf == "44444444444" ||
+                cpf == "55555555555" ||
+                cpf == "66666666666" ||
+                cpf == "77777777777" ||
+                cpf == "88888888888" ||
+                cpf == "99999999999")
+                return false;
+            add = 0;
+            for (i = 0; i < 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+                return false;
+            add = 0;
+            for (i = 0; i < 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+                return false;
+            return true;
+        }
+        
+        function validarCPF(el){
+          if( !_cpf(el.value) ){
+         
+            {{-- $("body").append("<button>Outro Botão adicionado</button>") --}}
+            alert("CPF inválido!" + el.value);
+         
+            // apaga o valor
+            el.value = "";
+          }
         }
         
         </script>

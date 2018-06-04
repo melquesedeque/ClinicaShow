@@ -20,7 +20,7 @@
           <div id="DadosPessoais" class="tab-pane fade in active">
               <!-- Dados do Funcionarios-->
 
-              <form action=" {{ route('funcionario-Atualizar', ['id' => $Funcionarios['id']]) }}" style="border:#ccc">
+              <form action=" {{ route('funcionario-Atualizar', ['id' => $Funcionarios['id']]) }}">
 
                   <div class="container">
                     <h3>Dados Funcionário</h3>
@@ -42,7 +42,7 @@
                       <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$Funcionarios['Nome'])}}">
 
                       <label for=""><b>CPF</b></label>
-                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                      <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$Funcionarios['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" onblur="validarCPF(this)">
 
                       <label for=""><b>RG</b></label>
                       <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$Funcionarios['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -110,13 +110,17 @@
                       </br>
 
                       <label for=""><b>CARGO</b></label>
-                      <select class="form-control" id="gender1" name="profi" value="{{old('profi',$Funcionarios['profi'])}}">
+                      <select class="form-control" id="cargo" name="profi" value="{{old('profi',$Funcionarios['profi'])}}" onchange="teste()">
                         <option @if(old('profi',$Funcionarios['profi']) == "MÉDICO") selected @endif value="MÉDICO">MÉDICO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "ENFERMEIRO") selected @endif value="ENFERMEIRO">ENFERMEIRO</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "RH") selected @endif value="RH">RH</option>
                         <option @if(old('profi',$Funcionarios['profi']) == "Atendente") selected @endif value="Atendente">ATENTENDE</option>
                       </select>
                       </br>
+
+                      <label><b>CRM</b></label>
+                      <input type="text" id="Crm" name="Crm" value="{{old('Crm',$Funcionarios['Crm'])}}" maxlength="8" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" >
+
 
                       <label for="profissao"><b>ESPECIALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Especialidade" value="{{old('Especialidade',$Funcionarios['Especialidade'])}}">
@@ -143,9 +147,14 @@
 
           <div id="Endereco" class="tab-pane fade">
               <!-- 2 Aba (aba dos enderço)-->
+
               <h3>Endereço</h3>
-              <label for="CEP"><b>CEP</b></label>
-              <input type="text" placeholder="Enter com seu CEP" name="Cep" value="{{old('Cep',$Funcionarios['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
+
+              <div class="form-group col-md-2">
+                <label for="Cep"><b>CEP</b></label>
+                <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep',$Funcionarios['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
+                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
+              </div>
 
               <label for="uf"><b>UF</b></label>
               <input type="text" placeholder="Entre com seu UF" name="Uf" maxlength="2" value="{{old('Uf',$Funcionarios['Uf'])}}" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -472,4 +481,179 @@
             <button herf=" {{ route('funcionario-listar') }} " class="btn btn-danger">Voltar</button>
             <button class="btn btn-primary">Alterar Dados</button>
         </form>
+
+        <script>
+            {{-- function formatar(mascara, documento) { // Para a Data
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+    
+            $('#Data').datepicker({
+                format: 'dd/mm/yyyy',
+                language: "pt-BR",
+            });--}}
+            function formatar(mascara, documento) { // Mascara dos campos
+    
+                var i = documento.value.length;
+                var saida = mascara.substring(0, 1);
+                var texto = mascara.substring(i)
+    
+                if (texto.substring(0, 1) != saida) {
+                    documento.value += texto.substring(0, 1);
+                }
+    
+            }
+
+            function limpa_formulário_cep() { // buscar cep
+	            //Limpa valores do formulário de cep.
+	            document.getElementById('rua').value=("");
+	            document.getElementById('bairro').value=("");
+	            document.getElementById('cidade').value=("");
+	            document.getElementById('uf').value=("");
+	    }
+
+	    function meu_callback(conteudo) {
+	        if (!("erro" in conteudo)) {
+	            //Atualiza os campos com os valores.
+	            document.getElementById('rua').value=(conteudo.logradouro);
+	            document.getElementById('bairro').value=(conteudo.bairro);
+	            //document.getElementById('cidade').value=(conteudo.localidade);
+	            document.getElementById('uf').value=(conteudo.uf);
+	        } //end if.
+	        else {
+	            //CEP não Encontrado.
+	            limpa_formulário_cep();
+	            alert("CEP não encontrado.");
+	        }
+	    }
+	        
+	    function pesquisacep(valor) {
+
+	        //Nova variável "cep" somente com dígitos.
+	        var cep = valor.replace(/\D/g, '');
+
+	        //Verifica se campo cep possui valor informado.
+	        if (cep != "") {
+
+	            //Expressão regular para validar o CEP.
+	            var validacep = /^[0-9]{8}$/;
+
+	            //Valida o formato do CEP.
+	            if(validacep.test(cep)) {
+
+	                //Preenche os campos com "..." enquanto consulta webservice.
+	                document.getElementById('rua').value="...";
+	                document.getElementById('bairro').value="...";
+	                //document.getElementById('cidade').value="...";
+	                document.getElementById('uf').value="...";
+	                //document.getElementById('ibge').value="...";
+
+	                //Cria um elemento javascript.
+	                var script = document.createElement('script');
+
+	                //Sincroniza com o callback.
+	                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+
+	                //Insere script no documento e carrega o conteúdo.
+	                document.body.appendChild(script);
+
+	            } //end if.
+	            else {
+	                //cep é inválido.
+	                limpa_formulário_cep();
+	                alert("Formato de CEP inválido.");
+	            }
+	        } //end if.
+	        else {
+	            //cep sem valor, limpa formulário.
+	            limpa_formulário_cep();
+	        }
+	    };
+
+        function teste() { // para Ativar ou Desativar o Botão
+
+            $('#Crm').val("");
+
+            if ($('#cargo').val() === 'MÉDICO') {
+
+                $('#Crm').show();
+                $('#Crm').attr('readonly',false)
+
+            } else {
+
+                $('#Crm').empty();
+                $('#Crm').attr('readonly',true);
+
+            }
+        }
+
+        function _cpf(cpf) { // Validar CPF
+            cpf = cpf.replace(/[^\d]+/g, '');
+            if (cpf == '') return false;
+            if (cpf.length != 11 ||
+                cpf == "00000000000" ||
+                cpf == "11111111111" ||
+                cpf == "22222222222" ||
+                cpf == "33333333333" ||
+                cpf == "44444444444" ||
+                cpf == "55555555555" ||
+                cpf == "66666666666" ||
+                cpf == "77777777777" ||
+                cpf == "88888888888" ||
+                cpf == "99999999999")
+                return false;
+            add = 0;
+            for (i = 0; i < 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+                return false;
+            add = 0;
+            for (i = 0; i < 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+                return false;
+            return true;
+        }
+        
+        function validarCPF(el){
+          if( !_cpf(el.value) ){
+         
+            {{-- $("body").append("<button>Outro Botão adicionado</button>") --}}
+            alert("CPF inválido!" + el.value);
+         
+            // apaga o valor
+            el.value = "";
+          }
+        }
+
+        function teste() { // para Ativar ou Desativar o Botão
+
+            $('#Crm').val("");
+
+            if ($('#cargo').val() === 'MÉDICO') {
+
+                $('#Crm').show();
+                $('#Crm').attr('readonly',false)
+
+            } else {
+
+                $('#Crm').empty();
+                $('#Crm').attr('readonly',true);
+
+            }
+        }
+        
+        </script>
 @endsection

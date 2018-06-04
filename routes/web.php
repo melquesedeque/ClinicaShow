@@ -14,16 +14,17 @@ Route::group(['middleware' => ['login']], function() {
 
     /* Cadastrar Paciente*/
     Route::get('cadastrarPaciente', 'cadastrarController@paciente')->name('cadastrar-paciente');
-    Route::get('pacienteSalvar', 'cadastrarController@pacienteSalvar')->name('paciente-salvar');
+    Route::post('pacienteSalvar', 'cadastrarController@pacienteSalvar')->name('paciente-salvar');
     Route::get('pacienteListar', 'cadastrarController@pacienteListar')->name('paciente-listar');
     Route::get('pacienteEditar/{id}', 'cadastrarController@pacienteEditar')->name('paciente-editar');
     Route::get('pacienteExcluir/{id}', 'cadastrarController@pacienteExcluir')->name('paciente-excluir');
     Route::get('pacienteVisualizar/{id}', 'cadastrarController@pacienteVisualizar')->name('paciente-visualizar');
     Route::get('pacienteAtualizar/{id}', 'cadastrarController@pacienteAtualizar')->name('paciente-atualizar');
+    Route::get('FichaPaciente/{id}', 'cadastrarController@Ficha')->name('FichaPaciente');
 
     /* Cadastrar Funcionário*/
     Route::get('cadastrarFuncionario', 'cadastrarController@funcionario')->name('cadastrar-funcionario');
-    Route::get('funcionarioSalvar', 'cadastrarController@funcionarioSalvar')->name('funcionario-salva');
+    Route::post('funcionarioSalvar', 'cadastrarController@funcionarioSalvar')->name('funcionario-salva');
     Route::get('funcionarioListar', 'cadastrarController@funcionarioListar')->name('funcionario-listar');
     Route::get('funcionarioEditar/{id}', 'cadastrarController@funcionarioEditar')->name('funcionario-editar');
     Route::get('funcionarioExcluir/{id}', 'cadastrarController@funcionarioExcluir')->name('funcionario-excluir');
@@ -41,7 +42,6 @@ Route::group(['middleware' => ['login']], function() {
 
     /* Conta */
     Route::get('conta', 'contaController@pacienteconta')->name('conta');
-
 });
 
 

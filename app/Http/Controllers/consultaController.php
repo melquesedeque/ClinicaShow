@@ -13,7 +13,8 @@ class consultaController extends Controller{
         $dados = [
             'menu'          => 3,
             'pacientes'     => Paciente::all(),
-            'funcionarios'  => Funcionario::all()->where('profi', '=', 'MÉDICO')
+            'funcionarios'  => Funcionario::all()->where('profi', '=', 'MÉDICO'),
+            // 'Ficha'         => Paciente::find($id)
         ]; 
         return view('consulta', $dados);
     }
@@ -71,7 +72,7 @@ class consultaController extends Controller{
             'menu'          => 4,
             'consulta'      => consulta::find($id),
             'pacientes'     => Paciente::all(),
-            'funcionarios'  => Funcionario::all()
+            'funcionarios'  => Funcionario::all()->where('profi', '=', 'MÉDICO')
         ];
 
         return view('consultaEditar', $dados);
@@ -108,6 +109,7 @@ class consultaController extends Controller{
         ]);
 
         consulta::where('id', $id)->update($request->all());
+
         return redirect()->route('consultaListar');
     }
   

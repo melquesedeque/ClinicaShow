@@ -125,6 +125,15 @@ class cadastrarController extends Controller{
         return redirect()->route('paciente-listar');
     }
 
+    public function Ficha($id){ // Visualizar Paciente
+        $dados = [
+            'menu'  => 6,
+            'Ficha' => Paciente::find($id)
+        ];
+
+        return view('FichaPaciente', $dados);
+    }
+
     # ---------------------------------------------------- Funcionario --------------------------------------------------------------------
     public function funcionario(){ // Rota da View Funcionario
         $dados['menu'] = 2;

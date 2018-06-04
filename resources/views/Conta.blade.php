@@ -1,7 +1,6 @@
 @extends('NavBar')
 @section('body')
 
-
 <div class="container">
 
 

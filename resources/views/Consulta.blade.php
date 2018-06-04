@@ -17,29 +17,34 @@
 				</div>
             @endif
 
-            <!-- Modal -->
+            {{-- <!-- Modal -->
             @if ($errors->any())
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel"><span class="glyphicon-ok">Confirmar Cadastro da Consulta</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Consulta Realizada Com Sucesso</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endif    
+            @endif     --}}
 
-            <label for="NomePaciente"><b>NOME PACIENTE</b></label>
-            <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
+            <div class="input-group">
+                <label for="NomePaciente"><b>NOME PACIENTE</b></label>
+                <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
 
-                @foreach ($pacientes as $paci)
+                    @foreach ($pacientes as $paci)
 
-                    <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
+                        <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
 
-                @endforeach             
-            </select> 
+                    @endforeach             
+                </select>
+                <div class="input-group-btn">
+                    {{-- <a href="{{route('FichaPaciente', ['id' => $Ficha['id']])}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> --}}
+                </div>
+            </div> 
 
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
             <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico')}}" class="form-control"> // bucas Pacientes no Banco

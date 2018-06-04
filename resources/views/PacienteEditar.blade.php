@@ -21,9 +21,7 @@
         <div id="DadosPessoais" class="tab-pane fade in active">
             <!-- Dados do pacientes-->
 
-            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}" style="border:#ccc">
-
-                <div class="container">
+            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}">
 
                     <h3>Dados Paciente</h3> 
                     @if ($errors->any())
@@ -36,14 +34,19 @@
                         </div>
                     @endif
 
+                    {{-- <div class="form-group">
+                        <label for="campo-foto">FOTO</label>
+                        <input type="file" class="form-control" name="Foto" id="campo-foto" value=" {{old('Foto')}} ">
+                    </div> --}}
+
                     <label for=""><b>MATRICULA</b></label>
                     <input type="text" placeholder="Entre com sua Matricula" name="id" value="{{old('id',$pacientes['id'])}}" disabled>
 
                     <label for=""><b>NOME</b></label>
                     <input type="text" placeholder="Enter com seu nome" name="Nome" value="{{old('Nome',$pacientes['Nome'])}}" OnKeyPress="if (isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                    <label for=""><b>CPF</b></label>
-                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$pacientes['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <label for="cpf"><b>CPF</b></label>
+                    <input type="text" placeholder="XXX.XXX.XXX-XX" name="Cpf" value="{{old('Cpf',$pacientes['Cpf'])}}" maxlength="14" OnKeyPress="formatar('###.###.###-##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" onblur="validarCPF(this)">
 
                     <label for=""><b>RG</b></label>
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$pacientes['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -51,13 +54,13 @@
                     <label for=""><b>TELEFONE</b></label>
                     <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
-                      <label for="Data">DATA DE NASCIMENTO</label>
-                      <div class="input-group date">
+                    <label for="Data">DATA DE NASCIMENTO</label>
+                    <div class="input-group date">
                         <input type="date" class="form-control" id="Data" name="Data" maxlength="10" value="{{old('Data',$pacientes['Data'])}}">
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-calendar"></span>
                         </div>
-                      </div>
+                    </div>
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$pacientes['Naturalidade'])}}">
@@ -126,15 +129,18 @@
                         <option @if(old('profi',$pacientes['profi']) == "FÍSICA") selected @endif value="FÍSICA">EDUÇÃO FÍSICA</option>
                       </select>
                       </br>
-                    
-                </div>
         </div>
 
         <div id="Endereco" class="tab-pane fade">
             <!-- 2 Aba (aba dos enderço)-->
+
             <h3>Endereço</h3>
-            <label for="Cep"><b>CEP</b></label>
-            <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep',$pacientes['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)" class="nao">
+
+            <div class="form-group col-md-2">
+                <label for="Cep"><b>CEP</b></label>
+                <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep',$pacientes['Cep'])}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
+                <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
+            </div>
 
             <label for="Uf"><b>UF</b></label>
             <input type="text" placeholder="Entre com seu UF" id="uf" name="Uf" value="{{old('Uf',$pacientes['Uf'])}}">
@@ -496,7 +502,7 @@
         </form>
 
         <script>
-            function formatar(mascara, documento) { // Para a Data
+            {{-- function formatar(mascara, documento) { // Para a Data
                 var i = documento.value.length;
                 var saida = mascara.substring(0, 1);
                 var texto = mascara.substring(i)
@@ -510,7 +516,7 @@
             $('#Data').datepicker({
                 format: 'dd/mm/yyyy',
                 language: "pt-BR",
-            });
+            }); --}}
     
             function formatar(mascara, documento) { // Mascara dos campos
     
@@ -523,14 +529,8 @@
                 }
     
             }
-    
-            $(document).ready(function() { // Para Não permitir C,V,X
-                $('.nao').bind('cut copy paste', function(event) {
-                    event.preventDefault();
-                });
-            });
 
-            function limpa_formulário_cep() {
+            function limpa_formulário_cep() { // Buscar o CEP
 	            //Limpa valores do formulário de cep.
 	            document.getElementById('rua').value=("");
 	            document.getElementById('bairro').value=("");
@@ -596,7 +596,7 @@
 	        }
 	    };
 
-	    function formatar(mascara, documento){ // Para o CEP
+	    function formatar(mascara, documento){ // Masca cara dos Campos
 	            var i = documento.value.length;
 	            var saida = mascara.substring(0,1);
 	            var texto = mascara.substring(i)
@@ -605,6 +605,51 @@
 	                        documento.value += texto.substring(0,1);
 	            }
 	            
-	    }
+        }
+        
+        function _cpf(cpf) { // Validar CPF
+            cpf = cpf.replace(/[^\d]+/g, '');
+            if (cpf == '') return false;
+            if (cpf.length != 11 ||
+                cpf == "00000000000" ||
+                cpf == "11111111111" ||
+                cpf == "22222222222" ||
+                cpf == "33333333333" ||
+                cpf == "44444444444" ||
+                cpf == "55555555555" ||
+                cpf == "66666666666" ||
+                cpf == "77777777777" ||
+                cpf == "88888888888" ||
+                cpf == "99999999999")
+                return false;
+            add = 0;
+            for (i = 0; i < 9; i++)
+                add += parseInt(cpf.charAt(i)) * (10 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(9)))
+                return false;
+            add = 0;
+            for (i = 0; i < 10; i++)
+                add += parseInt(cpf.charAt(i)) * (11 - i);
+            rev = 11 - (add % 11);
+            if (rev == 10 || rev == 11)
+                rev = 0;
+            if (rev != parseInt(cpf.charAt(10)))
+                return false;
+            return true;
+        }
+        
+        function validarCPF(el){
+          if( !_cpf(el.value) ){
+         
+            {{-- $("body").append("<button>Outro Botão adicionado</button>") --}}
+            alert("CPF inválido!" + el.value);
+         
+            // apaga o valor
+            el.value = "";
+          }
+        }
         </script>
 @endsection

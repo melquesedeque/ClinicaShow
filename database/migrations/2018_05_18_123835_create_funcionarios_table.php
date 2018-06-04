@@ -21,7 +21,7 @@ class CreateFuncionariosTable extends Migration{
             $table->string('Email');
             $table->string('escola');
             $table->string('profi');
-            $table->string('Crm');
+            $table->string('Crm')->nullable();
             $table->string('Especialidade');
             $table->string('TIPO_PERMISAO');
             $table->string('Cep');
