@@ -60,7 +60,7 @@
                     </div>
 
                     <label for="naturalidade"><b>NATURALIDADE</b></label>
-                    </br>
+
                     <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade')}}">
                         <option value="BRASIL">BRASIL</option>
                         <option value="ARGENTINA">ARGENTINA</option>
@@ -76,7 +76,7 @@
                         <option value="JAPÃO">JAPÃO</option>
                         <option value="CHINA">CHINA</option>
                     </select>
-                    </br>
+
 
                     <label for="sexo"><b>SEXO</b></label>
                     <select class="form-control" id="gender1" name="sexo" value="{{old('sexo')}}">
@@ -84,7 +84,7 @@
                         <option value="FEMIN">FEMININO</option>
                         <option value="OUTRO">OUTRO</option>
                     </select>
-                    </br>
+
 
                     <label for="estado"><b>ESTADO CIVIL</b></label>
                     <select class="form-control" id="gender1" name="estado" value="{{old('estado')}}">
@@ -93,7 +93,7 @@
                         <option value="viuvo">VIUVO</option>
                         <option value="divorciado">DIVORCIADO</option>
                     </select>
-                    </br>
+
 
                     <label for="Email"><b>E-MAIL</b></label>
                     <input type="text" placeholder="Entre com seu Email@email.com" name="Email" value="{{old('Email')}}">
@@ -109,7 +109,7 @@
                         <option value="MesINCOMPLETO">MESTRADO-INCOMPLETO</option>
                         <option value="MesCOMPLETO">MESTRADO-COMPLETO</option>
                     </select>
-                    </br>
+
 
                     <label for="profi"><b>PROFISSÃO</b></label>
                     <select class="form-control" id="gender1" name="profi" value="{{old('profi')}}">
@@ -127,14 +127,15 @@
                         <option value="FARMACIA">FARMACIA</option>
                         <option value="FÍSICA">EDUÇÃO FÍSICA</option>
                     </select>
-                    </br>
+
         </div>
 
         <div id="Endereco" class="tab-pane fade">
             <!-- 2 Aba (aba dos enderço)-->
 
             <h3>Endereço</h3>
-            <div class="form-group col-md-2">
+
+            <div class="form-group">
                 <label for="Cep"><b>CEP</b></label>
                 <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
                 <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
@@ -200,8 +201,7 @@
                 <option value="SANDANDER">SANDANDER</option>
                 <option value="AMIL">AMIL</option>
             </select>
-            </br>
-
+            
             <label for="Plano"><b>PLANO</b></label>
             <select class="form-control" id="Plano" name="Plano" value="{{old('Plano')}}">
                 <option value="Individual">Individual</option>
@@ -234,7 +234,7 @@
                 <option value="AMARELO">AMARELO</option>
                 <option value="INDÍGINA">INDÍGINA</option>
             </select>
-            </br>
+            
 
             <label for="Peso"><b>PESO</b></label>
             <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso')}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -247,7 +247,7 @@
                 <option value="RH+">RH+</option>
                 <option value="RH-">RH-</option>
             </select>
-            </br>
+            
 
             <label for="tipo"><b>TIPO SANGUINIO</b></label>
             <select class="form-control" id="gender1" name="tipo" value="{{old('tipo')}}">
@@ -260,7 +260,7 @@
                 <option value="O+">O+</option>
                 <option value="O-">O-</option>
             </select>
-            </br>
+            
 
             <label><b>DOÊNÇAS HEREDITARIAS?</b></label>
             <label class="radio">SIM
@@ -491,7 +491,7 @@
                 <input type="radio" name="radioEP" value="não">
                 <span class="checkmark"></span>
             </label>
-            <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
+            <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> 
 
             <a href=" {{ route('paciente-listar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>
             <button class="btn btn-primary"> <span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>

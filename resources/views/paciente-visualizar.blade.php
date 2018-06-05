@@ -38,7 +38,8 @@
 
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="campo-foto" disabled value=" {{old('Foto',$pacientes['Foto'])}}">
+                        </br>
+                        <img src="{{url($pacientes['Foto'])}}">
                     </div>
 
                     <label for=""><b>MATRICULA</b></label>

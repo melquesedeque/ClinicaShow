@@ -34,6 +34,12 @@
                       </div>
                       @endif
 
+                      <div class="form-group">
+                        <label for="campo-foto">FOTO</label>
+                        </br>
+                        <img src="{{url($Funcionarios['Foto'])}}" style="width:30%; hieght:auto;">
+                    </div>
+
                       <label for=""><b>MATRICULA</b></label>
                       <input type="text" placeholder="Entre com sua Matricula" name="id" disabled value="{{old('id',$Funcionarios['id'])}}">
 

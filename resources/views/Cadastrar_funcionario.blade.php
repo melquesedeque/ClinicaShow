@@ -35,8 +35,8 @@
                       @endif
 
                     <div class="form-group">
-                        <label for="Foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="Foto" value=" {{old('Foto')}} ">
+                        <label for="campo-foto">FOTO</label>
+                        <input type="file" class="form-control" name="Foto" id="campo-foto" value=" {{old('Foto')}} ">
                     </div>  
 
                     <label for="nome"><b>NOME</b></label>
@@ -144,7 +144,7 @@
 
             <h3>Endereço</h3>
 
-            <div class="form-group col-md-2">
+            <div class="form-group">
                 <label for="Cep"><b>CEP</b></label>
                 <input type="text" placeholder="Enter com seu CEP" id="cep" name="Cep" value="{{old('Cep')}}" maxlength="9" onblur="pesquisacep(this.value);" OnKeyPress="formatar('#####-###', this)">
                 <a href="http://www.buscacep.correios.com.br/sistemas/buscacep/buscaCep.cfm" target="_blank">Pesquisar CEP</a>
