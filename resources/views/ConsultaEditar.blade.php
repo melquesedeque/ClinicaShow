@@ -91,8 +91,8 @@
             <input type="text" class="form-control" name="Materias" value="{{old('Materias',$consulta['Materias'])}}"> </br>
 
 
-            <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
-            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Alterar</button>
+            <a href=" {{ route('consultaListar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>
+            <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-floppy-disk"></span> Alterar Dados</button>
             
         </div>
     </form>

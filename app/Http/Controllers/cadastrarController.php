@@ -38,15 +38,20 @@ class cadastrarController extends Controller{
             'Altura'           => 'required',
         ]);
 
-        $dados = $request->all();
-        Paciente::create($dados); // para salvar no banco
+        // if(!empty($_FILES['Foto']['name'])) {
+        //     $request->Foto->storeAs('public/fotos', 'foto_paciente.jpg');
+        // }
+
+        $dados = Paciente::create($request->all()); // para salvar no banco
+
+        $this->SalvarFoto($dados, $request); //Salva Foto do Paciente
 
         return redirect()->route('paciente-listar');
     }
 
     public function pacienteListar(Request $request){ // Listar Paciente e filtro
 
-        //Paginação
+        //Paginação e Filtro
        $exibirPorPagina = 5;
        $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
        
@@ -83,7 +88,7 @@ class cadastrarController extends Controller{
     public function pacienteExcluir($id){ // Excluir Paciente
 
         Paciente::destroy($id);
-        return redirect()->route('listarPaciente');
+        return redirect()->route('paciente-listar');
     }
 
     public function pacienteVisualizar($id){ // Visualizar Paciente
@@ -125,13 +130,25 @@ class cadastrarController extends Controller{
         return redirect()->route('paciente-listar');
     }
 
-    public function Ficha($id){ // Visualizar Paciente
+    public function Ficha($id){ // Visualizar Paciente teste
         $dados = [
             'menu'  => 6,
             'Ficha' => Paciente::find($id)
         ];
 
         return view('FichaPaciente', $dados);
+    }
+
+    public function SalvarFoto(Paciente $dados, Request $request): void{
+
+        //Salvando imagem da foto com um nome exclusivo
+        $ext = $request->Foto->extension();
+        $FotoPaciente = 'Paciente_'.$dados->id.'.'.$ext;
+        $request->Foto->storeAs('public\fotos', $FotoPaciente);
+
+        //Salvando o nome do arquivo da imagem no banco
+        $dados->Foto = $FotoPaciente;
+        $dados->save();
     }
 
     # ---------------------------------------------------- Funcionario --------------------------------------------------------------------
@@ -206,7 +223,7 @@ class cadastrarController extends Controller{
     public function funcionarioExcluir($id){ // Excluir Funcionario
 
         Funcionario::destroy($id);
-        return redirect()->route('conta');
+        return redirect()->route('funcionario-listar');
     }
     
     public function funcionarioVisualizar($id){ // Visualizar Funcionario

@@ -478,8 +478,8 @@
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>
-            <button herf=" {{ route('funcionario-listar') }} " class="btn btn-danger">Voltar</button>
-            <button class="btn btn-primary">Alterar Dados</button>
+            <a href=" {{ route('funcionario-listar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>
+            <button class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Alterar Dados</button>
         </form>
 
         <script>

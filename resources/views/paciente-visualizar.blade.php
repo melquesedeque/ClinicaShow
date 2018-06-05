@@ -1,4 +1,5 @@
 @extends('NavBar') 
+
 @section('body')
 
 <div class="container">
@@ -37,7 +38,7 @@
 
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="campo-foto" value=" {{old('Foto')}} ">
+                        <input type="file" class="form-control" name="Foto" id="campo-foto" disabled value=" {{old('Foto',$pacientes['Foto'])}}">
                     </div>
 
                     <label for=""><b>MATRICULA</b></label>
@@ -442,6 +443,9 @@
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" disabled value="{{old('Ceplis',$pacientes['Ceplis'])}}"> </br>
         </div>
+
         <button class="btn btn-danger">Voltar</button>
+        
         </form>
+    </div>
 @endsection

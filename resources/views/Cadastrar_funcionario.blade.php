@@ -470,7 +470,7 @@
                 </label>
                 <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> </br>
 
-                <button herf=" {{ route('funcionario-listar') }} " class="btn btn-danger">Voltar</button>
+                <a href=" {{ route('funcionario-listar') }} " class="btn btn-danger"> <span class="glyphicon glyphicon-backward"></span> Voltar</a>
                 <button class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
           </div>
           </form>

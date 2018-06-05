@@ -31,7 +31,6 @@
                 </div>
             @endif     --}}
 
-            <div class="input-group">
                 <label for="NomePaciente"><b>NOME PACIENTE</b></label>
                 <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
 
@@ -41,10 +40,6 @@
 
                     @endforeach             
                 </select>
-                <div class="input-group-btn">
-                    {{-- <a href="{{route('FichaPaciente', ['id' => $Ficha['id']])}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span></a> --}}
-                </div>
-            </div> 
 
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
             <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico')}}" class="form-control"> // bucas Pacientes no Banco
@@ -91,9 +86,13 @@
             <label for="materias"><b>MATERIAS UTILIZADOS</b></label>
             <input type="text" id="materias" name="Materias" class="form-control" value=" {{old('Materias')}} ">
 
-            <button herf=" {{ route('consultaListar') }} " class="btn btn-danger">Voltar</button>
+            <a href=" {{ route('consultaListar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>
             <button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><span class="glyphicon glyphicon-floppy-disk"></span> CONCLUIR</button>
             
         </div>
     </form>
+
+    <div class="container">
+            
+    </div>    
 @endsection

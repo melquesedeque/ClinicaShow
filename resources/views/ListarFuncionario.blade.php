@@ -42,9 +42,30 @@
                     <td class="tex">{{$Funcionario['TIPO_PERMISAO']}}</td>
     
                     <td>
+
+                        <div class="modal fade" id="exampleModal-{{$Funcionario['id']}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Excluir Funcionário</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Tem certeza que deseja excluir esse Fucionário?
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="" class="btn btn-secondary" data-dismiss="modal">Cancelar</a>
+                                    <a href="{{ route('funcionario-excluir', ['id' => $Funcionario['id']] ) }}" class="btn btn-danger">Excluir</a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <a href="{{route('funcionario-visualizar', ['id' => $Funcionario['id']])}}" class="btn btn-primary"><span class="glyphicon glyphicon-eye-open"></span> Visualizar</a>
                         <a href="{{route('funcionario-editar', ['id' => $Funcionario['id']])}}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Editar</a>
-                        <a href="{{route('funcionario-excluir', ['id' => $Funcionario['id']])}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Excluir</a>
+                        <a href="" data-toggle="modal" data-target="#exampleModal-{{$Funcionario['id']}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Excluir</a>
                     </td>
                    
                 </tr>
