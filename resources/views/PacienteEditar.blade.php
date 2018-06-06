@@ -21,9 +21,9 @@
         <div id="DadosPessoais" class="tab-pane fade in active">
             <!-- Dados do pacientes-->
 
-            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}">
-
-                    <h3>Dados Paciente</h3> 
+            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}" method="post" enctype="multipart/form-data">
+               @csrf
+                    <h3>Dados Paciente</h3>
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -37,6 +37,7 @@
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
                         </br>
+                        <img src="{{url('$pacientes->Foto')}}">
                         <input type="file" class="form-control" name="Foto" id="campo-foto">
                     </div>
 
@@ -53,7 +54,7 @@
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$pacientes['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for=""><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefonep" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for="Data">DATA DE NASCIMENTO</label>
                     <div class="input-group date">
@@ -67,7 +68,7 @@
                       <select class="form-control" id="gender1" name="Naturalidade" value="{{old('Naturalidade',$pacientes['Naturalidade'])}}">
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "BRASIL") selected @endif value="BRASIL">BRASIL</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "ARGENTINA") selected @endif value="ARGENTINA">ARGENTINA</option>
-                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CHILE") selected @endif value="CHILE">CHILE</option>    
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CHILE") selected @endif value="CHILE">CHILE</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "COLÔMBIA") selected @endif value="COLÔMBIA">COLÔMBIA</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "ESTADOS") selected @endif value="ESTADOS">ESTADOS UNIDOS</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CANADA") selected @endif value="CANADA">CANADÁ</option>
@@ -184,13 +185,13 @@
             <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente',$pacientes['Parente'])}}">
 
             <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" maxlength="14" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele" maxlength="14" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
 
             <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-            <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1',$pacientes['Parente-1'])}}">
+            <input type="text" placeholder="Entre com seu nome" name="Parente1" value="{{old('Parente-1',$pacientes['Parente-1'])}}">
 
             <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" maxlength="14" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele1" maxlength="14" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
         </div>
 
         <div id="financeiro" class="tab-pane fade">
@@ -290,7 +291,7 @@
             <option @if(old('Chere',$pacientes['Chere']) == "Síndrome") selected @endif value="Síndrome">Síndrome de Marfan</option>
             <option @if(old('Chere',$pacientes['Chere']) == "Hemocromatose") selected @endif value="Hemocromatose">Hemocromatose arterial</option>
           </select>
-        
+
           <label for="plano"><b>DIABETES?</b></label>
           <label class="radio">SIM
               <input type="radio" value="sim" name="radioD" @if(old('radioD',$pacientes['radioD']) == "sim") checked @endif>
@@ -498,7 +499,7 @@
           </label>
           <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis',$pacientes['Ceplis'])}}"> </br>
         </div>
-            <a href=" {{ route('paciente-listar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>    
+            <a href=" {{ route('paciente-listar') }} " class="btn btn-danger"><span class="glyphicon glyphicon-backward"></span> Voltar</a>
             <button class="btn btn-primary"><span class="glyphicon glyphicon-floppy-disk"></span> Alterar Dados</button>
         </form>
 
@@ -507,28 +508,28 @@
                 var i = documento.value.length;
                 var saida = mascara.substring(0, 1);
                 var texto = mascara.substring(i)
-    
+
                 if (texto.substring(0, 1) != saida) {
                     documento.value += texto.substring(0, 1);
                 }
-    
+
             }
-    
+
             $('#Data').datepicker({
                 format: 'dd/mm/yyyy',
                 language: "pt-BR",
             }); --}}
-    
+
             function formatar(mascara, documento) { // Mascara dos campos
-    
+
                 var i = documento.value.length;
                 var saida = mascara.substring(0, 1);
                 var texto = mascara.substring(i)
-    
+
                 if (texto.substring(0, 1) != saida) {
                     documento.value += texto.substring(0, 1);
                 }
-    
+
             }
 
             function limpa_formulário_cep() { // Buscar o CEP
@@ -553,7 +554,7 @@
 	            alert("CEP não encontrado.");
 	        }
 	    }
-	        
+
 	    function pesquisacep(valor) {
 
 	        //Nova variável "cep" somente com dígitos.
@@ -601,13 +602,13 @@
 	            var i = documento.value.length;
 	            var saida = mascara.substring(0,1);
 	            var texto = mascara.substring(i)
-	            
+
 	            if (texto.substring(0,1) != saida){
 	                        documento.value += texto.substring(0,1);
 	            }
-	            
+
         }
-        
+
         function _cpf(cpf) { // Validar CPF
             cpf = cpf.replace(/[^\d]+/g, '');
             if (cpf == '') return false;
@@ -641,13 +642,13 @@
                 return false;
             return true;
         }
-        
+
         function validarCPF(el){
           if( !_cpf(el.value) ){
-         
+
             {{-- $("body").append("<button>Outro Botão adicionado</button>") --}}
             alert("CPF inválido!" + el.value);
-         
+
             // apaga o valor
             el.value = "";
           }

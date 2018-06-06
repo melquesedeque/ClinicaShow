@@ -52,21 +52,21 @@ class cadastrarController extends Controller{
         //Paginação e Filtro
        $exibirPorPagina = 5;
        $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
-       
+
        if ($request->filtro) {
            $paginacao = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
-           $pacientes = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
+           $pacientes = Paciente::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido
                        ->offset($offset) //Começa a exibir a apartir de qual valor
                        ->get();
        }  else {
            $paginacao = Paciente::paginate($exibirPorPagina); //Exibe 5 elementos por página
-           $pacientes = Paciente::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+           $pacientes = Paciente::limit($exibirPorPagina) //Quantos valores devem ser exibido
                            ->offset($offset) //Começa a exibir a apartir de qual valor::all();
                            ->get();
        }
 
         $dados = [
-            'menu'       => 6, 
+            'menu'       => 6,
             'pacientes'  => $pacientes,
             'paginacao'  => $paginacao
         ];
@@ -103,7 +103,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
-            'Telefone-p'       => 'required',
+            'Telefonep'       => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
             'Cep'              => 'required',
@@ -112,9 +112,9 @@ class cadastrarController extends Controller{
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
             'Parente'          => 'required',
-            'Parentent-tele'   => 'required',
-            'Parente-1'        => 'required',
-            'Parentent-tele-1' => 'required',
+            'Parententtele'   => 'required',
+            'Parente1'        => 'required',
+            'Parententtele1' => 'required',
             'Plano'            => 'required',
             'Inscricao'        => 'required',
             'Validade'         => 'required',
@@ -122,83 +122,83 @@ class cadastrarController extends Controller{
             'Altura'           => 'required',
         ]);
 
-        // if(isset($request->Foto)){
-        //      // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
-        //     $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
-        //     $caminho = 'storage/paciente/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
-        //     $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
-        //     $imagem->storeAs('paciente',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
-        //     // Fim do salvamente da imagem
-        //     $dados321 = Paciente::where('id', $id)->update([
-        //         'Foto' => $caminho
-        //         ]);
-        // }
-       
-        // $dados123 = Paciente::where('id', $id)->update([
-        //     'Nome'             => $request->Nome,
-        //     'Cpf'              => $request->Cpf,
-        //     'Rg'               => $request->Rg,
-        //     'Telefone-p'       => $request->Telefonep,
-        //     'Data'             => $request->Data,
-        //     'Naturalidade'     => $request->Naturalidade,
-        //     'Sexo'             => $request->sexo,
-        //     'estado'           => $request->estado,
-        //     'escola'           => $request->escola,
-        //     'profi'            => $request->profi,
-        //     'cidade'           => $request->cidade,
-        //     'convenio'         => $request->convenio,
-        //     'cor'              => $request->cor,
-        //     'rh'               => $request->rh,
-        //     'tipo'             => $request->tipo,
-        //     'radioH'           => $request->radioH,
-        //     'Chere'            => $request->Chere,
-        //     'radioD'           => $request->radioD,
-        //     'CDiab'            => $request->CDiab,
-        //     'radioHI'          => $request->radioHI,
-        //     'Chiper'           => $request->Chiper,
-        //     'radioT'           => $request->radioT,
-        //     'Cclini'           => $request->Cclini,
-        //     'radioC'           => $request->radioC,
-        //     'Cdoen'            => $request->Cdoen,
-        //     'radioN'           => $request->radioN,
-        //     'Cneopla'          => $request->Cneopla,
-        //     'radioFA'          => $request->radioFA,
-        //     'Cfarma'           => $request->Cfarma,
-        //     'radioDRO'         => $request->radioDRO,
-        //     'Cuso'             => $request->Cuso,
-        //     'radioAL'          => $request->radioAL,
-        //     'Calerg'           => $request->Calerg,
-        //     'radioET'          => $request->radioET,
-        //     'Cetili'           => $request->Cetili,
-        //     'radioVA'          => $request->radioVA,
-        //     'Cvacina'          => $request->Cvacina,
-        //     'radioCI'          => $request->radioCI,
-        //     'Ccirur'           => $request->Ccirur,
-        //     'radioTRA'         => $request->radioTRA,
-        //     'Cporta'           => $request->Cporta,
-        //     'radioMAR'         => $request->radioMAR,
-        //     'Cmarca'           => $request->Cmarca,
-        //     'radioEP'          => $request->radioEP,
-        //     'Ceplis'           => $request->Ceplis,
-        //     'Email'            => $request->Email,
-        //     'Cep'              => $request->Cep,
-        //     'Uf'               => $request->Uf,
-        //     'Endereco'         => $request->Endereco,
-        //     'Bairro'           => $request->Bairro,
-        //     'Numero'           => $request->Numero,
-        //     'Complemento'      => $request->Complemento,
-        //     'Parente'          => $request->Parente,
-        //     'Parentent-tele'   => $request->Parententtele,
-        //     'Parente-1'        => $request->Parente1,
-        //     'Parentent-tele-1' => $request->Parententtele1,
-        //     'Plano'            => $request->Plano,
-        //     'Inscricao'        => $request->Inscricao,
-        //     'Validade'         => $request->Validade,
-        //     'Peso'             => $request->Peso,
-        //     'Altura'           => $request->Altura,
-        //     ]);
-        
-        $dados = Paciente::where('id', $id)->update($request->except(['_token']),$request->all()); // para Update no banco        
+        if(isset($request->Foto)){
+             // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
+            $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
+            $caminho = 'storage/paciente/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
+            $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
+            $imagem->storeAs('paciente',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
+            // Fim do salvamente da imagem
+            $dados321 = Paciente::where('id', $id)->update([
+                'Foto' => $caminho
+                ]);
+        }
+
+        $dados123 = Paciente::where('id', $id)->update([
+            'Nome'             => $request->Nome,
+            'Cpf'              => $request->Cpf,
+            'Rg'               => $request->Rg,
+            'Telefone-p'       => $request->Telefonep,
+            'Data'             => $request->Data,
+            'Naturalidade'     => $request->Naturalidade,
+            'Sexo'             => $request->sexo,
+            'estado'           => $request->estado,
+            'escola'           => $request->escola,
+            'profi'            => $request->profi,
+            'cidade'           => $request->cidade,
+            'convenio'         => $request->convenio,
+            'cor'              => $request->cor,
+            'rh'               => $request->rh,
+            'tipo'             => $request->tipo,
+            'radioH'           => $request->radioH,
+            'Chere'            => $request->Chere,
+            'radioD'           => $request->radioD,
+            'CDiab'            => $request->CDiab,
+            'radioHI'          => $request->radioHI,
+            'Chiper'           => $request->Chiper,
+            'radioT'           => $request->radioT,
+            'Cclini'           => $request->Cclini,
+            'radioC'           => $request->radioC,
+            'Cdoen'            => $request->Cdoen,
+            'radioN'           => $request->radioN,
+            'Cneopla'          => $request->Cneopla,
+            'radioFA'          => $request->radioFA,
+            'Cfarma'           => $request->Cfarma,
+            'radioDRO'         => $request->radioDRO,
+            'Cuso'             => $request->Cuso,
+            'radioAL'          => $request->radioAL,
+            'Calerg'           => $request->Calerg,
+            'radioET'          => $request->radioET,
+            'Cetili'           => $request->Cetili,
+            'radioVA'          => $request->radioVA,
+            'Cvacina'          => $request->Cvacina,
+            'radioCI'          => $request->radioCI,
+            'Ccirur'           => $request->Ccirur,
+            'radioTRA'         => $request->radioTRA,
+            'Cporta'           => $request->Cporta,
+            'radioMAR'         => $request->radioMAR,
+            'Cmarca'           => $request->Cmarca,
+            'radioEP'          => $request->radioEP,
+            'Ceplis'           => $request->Ceplis,
+            'Email'            => $request->Email,
+            'Cep'              => $request->Cep,
+            'Uf'               => $request->Uf,
+            'Endereco'         => $request->Endereco,
+            'Bairro'           => $request->Bairro,
+            'Numero'           => $request->Numero,
+            'Complemento'      => $request->Complemento,
+            'Parente'          => $request->Parente,
+            'Parentent-tele'   => $request->Parententtele,
+            'Parente-1'        => $request->Parente1,
+            'Parentent-tele-1' => $request->Parententtele1,
+            'Plano'            => $request->Plano,
+            'Inscricao'        => $request->Inscricao,
+            'Validade'         => $request->Validade,
+            'Peso'             => $request->Peso,
+            'Altura'           => $request->Altura,
+            ]);
+
+        //$dados = Paciente::where('id', $id)->update($request->except(['_token']),$request->all()); // para Update no banco
         //$this->SalvarFoto($dados, $request);
 
         return redirect()->route('paciente-listar');
@@ -214,7 +214,7 @@ class cadastrarController extends Controller{
     }
 
     public function SalvarFoto(Paciente $dados, Request $request): void{
-        
+
         // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
         $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
         $caminho = 'storage/paciente/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
@@ -256,7 +256,7 @@ class cadastrarController extends Controller{
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);
-        
+
         $dados = Funcionario::create($request->all()); // para salvar no banco
 
         $this->SalvarFotoFuncionario($dados, $request); //Salva Foto do Paciente
@@ -269,21 +269,21 @@ class cadastrarController extends Controller{
        //Paginação
        $exibirPorPagina = 5;
        $offset = ($exibirPorPagina * ($request->query('page', 1)-1));
-       
+
        if ($request->filtro) {
            $paginacao = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->paginate($exibirPorPagina); //Exibe 5 elementos por página
-           $Funcionarios = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido 
+           $Funcionarios = Funcionario::where('Nome', 'like', '%'.$request->filtro.'%')->limit($exibirPorPagina) //Quantos valores devem ser exibido
                        ->offset($offset) //Começa a exibir a apartir de qual valor
                        ->get();
        }  else {
            $paginacao = Funcionario::paginate($exibirPorPagina); //Exibe 5 elementos por página
-           $Funcionarios = Funcionario::limit($exibirPorPagina) //Quantos valores devem ser exibido 
+           $Funcionarios = Funcionario::limit($exibirPorPagina) //Quantos valores devem ser exibido
                            ->offset($offset) //Começa a exibir a apartir de qual valor::all();
                            ->get();
        }
 
         $dados = [
-            'menu'          => 7, 
+            'menu'          => 7,
             'Funcionarios'  => $Funcionarios,
             'paginacao'     => $paginacao
         ];
@@ -305,7 +305,7 @@ class cadastrarController extends Controller{
         Funcionario::destroy($id);
         return redirect()->route('funcionario-listar');
     }
-    
+
     public function funcionarioVisualizar($id){ // Visualizar Funcionario
         $dados = [
             'menu'         => 7,
@@ -336,14 +336,14 @@ class cadastrarController extends Controller{
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);
-        
+
         Funcionario::where('id', $id)->update($request->all()); // para Atulizar o banco
 
         return redirect()->route('funcionario-listar');
     }
 
     public function SalvarFotoFuncionario(Funcionario $dados, Request $request): void{
-        
+
         // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
         $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
         $caminho = 'storage/Funcionario/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
