@@ -37,7 +37,7 @@
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
                         </br>
-                        <img src="{{url('$pacientes->Foto')}}">
+                        <img src="{{url($pacientes->Foto)}}">
                         <input type="file" class="form-control" name="Foto" id="campo-foto">
                     </div>
 
