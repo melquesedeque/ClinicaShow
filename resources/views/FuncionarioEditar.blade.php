@@ -34,7 +34,6 @@
                       </div>
                       @endif
 
-
                       <label for=""><b>MATRICULA</b></label>
                       <input type="text" name="id" disabled value="{{old('id',$Funcionarios['id'])}}">
 

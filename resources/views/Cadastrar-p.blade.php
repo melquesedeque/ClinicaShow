@@ -36,7 +36,7 @@
 
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="campo-foto" value=" {{old('Foto')}} ">
+                        <input type="file" class="form-control" name="Foto" id="campo-foto" value="{{old('Foto')}}">
                     </div>
 
                     <label for="nome"><b>NOME</b></label>

@@ -16,6 +16,7 @@ class cadastrarController extends Controller{
 
     public function pacienteSalvar(Request $request){ // Salvar no Banco Paciente
         $request->validate([
+            'Foto'             => 'required',
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
@@ -27,7 +28,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Complemento'      => 'required',
             'Parente'          => 'required',
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
@@ -39,10 +39,11 @@ class cadastrarController extends Controller{
             'Altura'           => 'required',
         ]);
 
-        $dados = Paciente::create($request->all()); // para salvar no banco
+        $dados = Paciente::create($request->all());
 
-        $this->SalvarFoto($dados, $request); //Salva Foto do Paciente
-
+        // if(isset($request->Foto)){
+            $this->SalvarFoto($dados, $request); //Salva Foto do Paciente
+        // }
         return redirect()->route('paciente-listar');
     }
 
@@ -102,7 +103,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
-            'Telefonep'        => 'required',
+            'Telefone-p'       => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
             'Cep'              => 'required',
@@ -110,94 +111,94 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Complemento'      => 'required',
             'Parente'          => 'required',
-            'Parententtele'    => 'required',
-            'Parente1'         => 'required',
-            'Parententtele1'   => 'required',
+            'Parentent-tele'   => 'required',
+            'Parente-1'        => 'required',
+            'Parentent-tele-1' => 'required',
             'Plano'            => 'required',
             'Inscricao'        => 'required',
             'Validade'         => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);
-        if(isset($request->Foto)){
-             // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
-            $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
-            $caminho = 'storage/paciente/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
-            $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
-            $imagem->storeAs('paciente',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
-            // Fim do salvamente da imagem
-            $dados321 = Paciente::where('id', $id)->update([
-                'Foto' => $caminho
-                ]);
-        }
+
+        // if(isset($request->Foto)){
+        //      // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
+        //     $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
+        //     $caminho = 'storage/paciente/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
+        //     $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
+        //     $imagem->storeAs('paciente',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
+        //     // Fim do salvamente da imagem
+        //     $dados321 = Paciente::where('id', $id)->update([
+        //         'Foto' => $caminho
+        //         ]);
+        // }
        
-        $dados123 = Paciente::where('id', $id)->update([
-            'Nome'             => $request->Nome,
-            'Cpf'              => $request->Cpf,
-            'Rg'               => $request->Rg,
-            'Telefone-p'       => $request->Telefonep,
-            'Data'             => $request->Data,
-            'Naturalidade'     => $request->Naturalidade,
-            'Sexo'             => $request->sexo,
-            'estado'           => $request->estado,
-            'escola'           => $request->escola,
-            'profi'            => $request->profi,
-            'cidade'           => $request->cidade,
-            'convenio'         => $request->convenio,
-            'cor'              => $request->cor,
-            'rh'               => $request->rh,
-            'tipo'             => $request->tipo,
-            'radioH'           => $request->radioH,
-            'Chere'            => $request->Chere,
-            'radioD'           => $request->radioD,
-            'CDiab'            => $request->CDiab,
-            'radioHI'          => $request->radioHI,
-            'Chiper'           => $request->Chiper,
-            'radioT'           => $request->radioT,
-            'Cclini'           => $request->Cclini,
-            'radioC'           => $request->radioC,
-            'Cdoen'            => $request->Cdoen,
-            'radioN'           => $request->radioN,
-            'Cneopla'          => $request->Cneopla,
-            'radioFA'          => $request->radioFA,
-            'Cfarma'           => $request->Cfarma,
-            'radioDRO'         => $request->radioDRO,
-            'Cuso'             => $request->Cuso,
-            'radioAL'          => $request->radioAL,
-            'Calerg'           => $request->Calerg,
-            'radioET'          => $request->radioET,
-            'Cetili'           => $request->Cetili,
-            'radioVA'          => $request->radioVA,
-            'Cvacina'          => $request->Cvacina,
-            'radioCI'          => $request->radioCI,
-            'Ccirur'           => $request->Ccirur,
-            'radioTRA'         => $request->radioTRA,
-            'Cporta'           => $request->Cporta,
-            'radioMAR'         => $request->radioMAR,
-            'Cmarca'           => $request->Cmarca,
-            'radioEP'          => $request->radioEP,
-            'Ceplis'           => $request->Ceplis,
-            'Email'            => $request->Email,
-            'Cep'              => $request->Cep,
-            'Uf'               => $request->Uf,
-            'Endereco'         => $request->Endereco,
-            'Bairro'           => $request->Bairro,
-            'Numero'           => $request->Numero,
-            'Complemento'      => $request->Complemento,
-            'Parente'          => $request->Parente,
-            'Parentent-tele'   => $request->Parententtele,
-            'Parente-1'        => $request->Parente1,
-            'Parentent-tele-1' => $request->Parententtele1,
-            'Plano'            => $request->Plano,
-            'Inscricao'        => $request->Inscricao,
-            'Validade'         => $request->Validade,
-            'Peso'             => $request->Peso,
-            'Altura'           => $request->Altura,
-            ]);
+        // $dados123 = Paciente::where('id', $id)->update([
+        //     'Nome'             => $request->Nome,
+        //     'Cpf'              => $request->Cpf,
+        //     'Rg'               => $request->Rg,
+        //     'Telefone-p'       => $request->Telefonep,
+        //     'Data'             => $request->Data,
+        //     'Naturalidade'     => $request->Naturalidade,
+        //     'Sexo'             => $request->sexo,
+        //     'estado'           => $request->estado,
+        //     'escola'           => $request->escola,
+        //     'profi'            => $request->profi,
+        //     'cidade'           => $request->cidade,
+        //     'convenio'         => $request->convenio,
+        //     'cor'              => $request->cor,
+        //     'rh'               => $request->rh,
+        //     'tipo'             => $request->tipo,
+        //     'radioH'           => $request->radioH,
+        //     'Chere'            => $request->Chere,
+        //     'radioD'           => $request->radioD,
+        //     'CDiab'            => $request->CDiab,
+        //     'radioHI'          => $request->radioHI,
+        //     'Chiper'           => $request->Chiper,
+        //     'radioT'           => $request->radioT,
+        //     'Cclini'           => $request->Cclini,
+        //     'radioC'           => $request->radioC,
+        //     'Cdoen'            => $request->Cdoen,
+        //     'radioN'           => $request->radioN,
+        //     'Cneopla'          => $request->Cneopla,
+        //     'radioFA'          => $request->radioFA,
+        //     'Cfarma'           => $request->Cfarma,
+        //     'radioDRO'         => $request->radioDRO,
+        //     'Cuso'             => $request->Cuso,
+        //     'radioAL'          => $request->radioAL,
+        //     'Calerg'           => $request->Calerg,
+        //     'radioET'          => $request->radioET,
+        //     'Cetili'           => $request->Cetili,
+        //     'radioVA'          => $request->radioVA,
+        //     'Cvacina'          => $request->Cvacina,
+        //     'radioCI'          => $request->radioCI,
+        //     'Ccirur'           => $request->Ccirur,
+        //     'radioTRA'         => $request->radioTRA,
+        //     'Cporta'           => $request->Cporta,
+        //     'radioMAR'         => $request->radioMAR,
+        //     'Cmarca'           => $request->Cmarca,
+        //     'radioEP'          => $request->radioEP,
+        //     'Ceplis'           => $request->Ceplis,
+        //     'Email'            => $request->Email,
+        //     'Cep'              => $request->Cep,
+        //     'Uf'               => $request->Uf,
+        //     'Endereco'         => $request->Endereco,
+        //     'Bairro'           => $request->Bairro,
+        //     'Numero'           => $request->Numero,
+        //     'Complemento'      => $request->Complemento,
+        //     'Parente'          => $request->Parente,
+        //     'Parentent-tele'   => $request->Parententtele,
+        //     'Parente-1'        => $request->Parente1,
+        //     'Parentent-tele-1' => $request->Parententtele1,
+        //     'Plano'            => $request->Plano,
+        //     'Inscricao'        => $request->Inscricao,
+        //     'Validade'         => $request->Validade,
+        //     'Peso'             => $request->Peso,
+        //     'Altura'           => $request->Altura,
+        //     ]);
         
-        //$dados = Paciente::where('id', $id)->update($request->all()); // para Update no banco        
+        $dados = Paciente::where('id', $id)->update($request->except(['_token']),$request->all()); // para Update no banco        
         //$this->SalvarFoto($dados, $request);
 
         return redirect()->route('paciente-listar');
@@ -228,7 +229,7 @@ class cadastrarController extends Controller{
         $dados->save();
     }
 
-    # ---------------------------------------------------- Funcionario --------------------------------------------------------------------
+    # ------------------------------------------------------------------ Funcionario --------------------------------------------------------------------
     public function funcionario(){ // Rota da View Funcionario
         $dados['menu'] = 2;
         return view('cadastrar_funcionario', $dados);
@@ -239,6 +240,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
+            'Foto'             => 'required',
             'Telefone-p'       => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
@@ -247,7 +249,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Complemento'      => 'required',
             'Parente'          => 'required',
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
@@ -258,7 +259,7 @@ class cadastrarController extends Controller{
         
         $dados = Funcionario::create($request->all()); // para salvar no banco
 
-        // $this->SalvarFotoFuncionario($dados, $request); //Salva Foto do Paciente
+        $this->SalvarFotoFuncionario($dados, $request); //Salva Foto do Paciente
 
         return redirect()->route('funcionario-listar');
     }
@@ -284,7 +285,7 @@ class cadastrarController extends Controller{
         $dados = [
             'menu'          => 7, 
             'Funcionarios'  => $Funcionarios,
-            'paginacao'  => $paginacao
+            'paginacao'     => $paginacao
         ];
 
         return view('listarFuncionario', $dados);
@@ -319,6 +320,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
+            'Foto'             => 'required',
             'Telefone-p'       => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
@@ -327,7 +329,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Complemento'      => 'required',
             'Parente'          => 'required',
             'Parentent-tele'   => 'required',
             'Parente-1'        => 'required',
@@ -341,19 +342,19 @@ class cadastrarController extends Controller{
         return redirect()->route('funcionario-listar');
     }
 
-    // public function SalvarFotoFuncionario(Funcionario $dados, Request $request): void{
+    public function SalvarFotoFuncionario(Funcionario $dados, Request $request): void{
         
-    //     // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
-    //     $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
-    //     $caminho = 'storage/Funcionario/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
-    //     $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
-    //     $imagem->storeAs('Funcionario',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
-    //     // Fim do salvamente da imagem
+        // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
+        $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
+        $caminho = 'storage/Funcionario/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
+        $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
+        $imagem->storeAs('Funcionario',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
+        // Fim do salvamente da imagem
 
-    //     $FotoFuncionario = $caminho;
+        $FotoFuncionario = $caminho;
 
-    //     //Salvando o nome do arquivo da imagem no bancos
-    //     $dados->Foto = $FotoFuncionario;
-    //     $dados->save();
-    // }
+        //Salvando o nome do arquivo da imagem no bancos
+        $dados->Foto = $FotoFuncionario;
+        $dados->save();
+    }
 }

@@ -21,8 +21,8 @@
         <div id="DadosPessoais" class="tab-pane fade in active">
             <!-- Dados do pacientes-->
 
-            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}" enctype="multipart/form-data" method="post">
-                {{ csrf_field() }}
+            <form action="{{ route('paciente-atualizar', ['id' => $pacientes['id']]) }}">
+
                     <h3>Dados Paciente</h3> 
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -34,15 +34,9 @@
                         </div>
                     @endif
 
-                    {{-- <div class="form-group">
-                        <label for="campo-foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="campo-foto" value=" {{old('Foto')}} ">
-                    </div> --}}
-
                     <div class="form-group">
                         <label for="campo-foto">FOTO</label>
                         </br>
-                        <img src="{{url($pacientes['Foto'])}}">
                         <input type="file" class="form-control" name="Foto" id="campo-foto">
                     </div>
 
@@ -59,7 +53,7 @@
                     <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$pacientes['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for=""><b>TELEFONE</b></label>
-                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefonep" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$pacientes['Telefone-p'])}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                     <label for="Data">DATA DE NASCIMENTO</label>
                     <div class="input-group date">
@@ -190,13 +184,13 @@
             <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente',$pacientes['Parente'])}}">
 
             <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele" maxlength="14" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" maxlength="14" value="{{old('Parentent-tele',$pacientes['Parentent-tele'])}}">
 
             <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-            <input type="text" placeholder="Entre com seu nome" name="Parente1" value="{{old('Parente-1',$pacientes['Parente-1'])}}">
+            <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1',$pacientes['Parente-1'])}}">
 
             <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele1" maxlength="14" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" maxlength="14" value="{{old('Parentent-tele-1',$pacientes['Parentent-tele-1'])}}">
         </div>
 
         <div id="financeiro" class="tab-pane fade">
