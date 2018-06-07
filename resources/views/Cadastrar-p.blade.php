@@ -118,7 +118,7 @@
                         <option value="ARQUITETO">ARQUITETO</option>
                         <option value="ENGENHEIRO">ENGENHEIRO</option>
                         <option value="FISIOTERAPEUTA">FISIOTERAPEUTA</option>
-                        <option value="ANALISTA">ANALISTA DE SISTEMAAS</option>
+                        <option value="ANALISTA">ANALISTA DE SISTEMAS</option>
                         <option value="PROGRAMADOR">PROGRAMADOR</option>
                         <option value="DENTISTA">DENTISTA</option>
                         <option value="PEDREIRO">PEDREIRO</option>
@@ -240,7 +240,7 @@
             <input type="text" placeholder="Entre com seu Peso" name="Peso" value="{{old('Peso')}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="Altura"><b>ALTURA</b></label>
-            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura')}}" maxlength="5" OnKeyPress="formatar('##,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <input type="text" placeholder="Entre com sua Altura" name="Altura" value="{{old('Altura')}}" maxlength="4" OnKeyPress="formatar('#,##', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="rh"><b>FATOR RH</b></label>
             <select class="form-control" id="gender1" name="rh" value="{{old('rh')}}">
@@ -264,11 +264,11 @@
 
             <label><b>DOÊNÇAS HEREDITARIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioH" value="sim">
+                <input type="radio" name="radioH" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioH" value="não" >
+                <input type="radio" name="radioH" value="não" checked="checked" >
                 <span class="checkmark"></span>
             </label>
             <select class="form-control" name="Chere" value="{{old('Chere')}}">
@@ -289,22 +289,22 @@
 
             <label for="plano"><b>DIABETES?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioD" value="sim">
+                <input type="radio" name="radioD" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioD" value="nao">
+                <input type="radio" name="radioD" value="nao" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="CDiab" value="{{old('CDiab')}}">
 
             <label for="plano"><b>HIPERTENSÃO?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioHI" value="sim">
+                <input type="radio" name="radioHI" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioHI" value="não">
+                <input type="radio" name="radioHI" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Chiper" value="{{old('Chiper')}}">
@@ -317,22 +317,22 @@
             <h3>DADOS CLÍNICOS CONTINUAÇÃO</h3>
             <label for="plano"><b>TABAGISTA?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioT" value="sim">
+                <input type="radio" name="radioT" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioT" value="não">
+                <input type="radio" name="radioT" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cclini" value="{{old('Cclini')}}">
 
             <label for="plano"><b>DOÊNÇAS CRONICAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioC" value="sim">
+                <input type="radio" name="radioC" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioC" value="não">
+                <input type="radio" name="radioC" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <select class="form-control" name="Cdoen" value="{{old('Cdoen')}}">
@@ -357,22 +357,22 @@
 
             <label for="plano"><b>NEOPLASIA?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioN" value="sim">
+                <input type="radio" name="radioN" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioN" value="não">
+                <input type="radio" name="radioN" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cneopla" value="{{old('Cneopla')}}">
 
             <label for="plano"><b>FÁRMACO HABITUAL?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioFA" value="sim">
+                <input type="radio" name="radioFA" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioFA" value="não">
+                <input type="radio" name="radioFA" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cfarma" value="{{old('Cfarma')}}">
@@ -385,44 +385,44 @@
 
             <label for="plano"><b>USO DE DROGAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioDRO" value="sim">
+                <input type="radio" name="radioDRO" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioDRO" value="não">
+                <input type="radio" name="radioDRO" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cuso" value="{{old('Cuso')}}">
 
             <label for="plano"><b>ALERGIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioAL" value="sim">
+                <input type="radio" name="radioAL" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioAL" value="não">
+                <input type="radio" name="radioAL" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Calerg" value="{{old('Calerg')}}">
 
             <label for="plano"><b>ETILISTA?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioET" value="sim">
+                <input type="radio" name="radioET" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioET" value="não">
+                <input type="radio" name="radioET" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cetili" value="{{old('Cetili')}}">
 
             <label for="plano"><b>VACINA TOMADAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioVA" value="sim">
+                <input type="radio" name="radioVA" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioVA" value="não">
+                <input type="radio" name="radioVA" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cvacina" value="{{old('Cvacina')}}">
@@ -434,11 +434,11 @@
 
             <label for="plano"><b>CIRURGIAS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioCI" value="sim">
+                <input type="radio" name="radioCI" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioCI" value="não">
+                <input type="radio" name="radioCI" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <select class="form-control" name="Ccirur" value="{{old('Ccirur')}}">
@@ -462,33 +462,33 @@
 
             <label for="plano"><b>PORTADOR DE DOÊNÇAS SEXUALMENTE TRANSMISSÍVEIS?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioTRA" value="sim">
+                <input type="radio" name="radioTRA" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioTRA" value="não">
+                <input type="radio" name="radioTRA" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cporta" value="{{old('Cporta')}}">
 
             <label for="plano"><b>PORTADOR DE MARCAPASSO?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioMAR" value="sim">
+                <input type="radio" name="radioMAR" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioMAR" value="não">
+                <input type="radio" name="radioMAR" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Cmarca" value="{{old('Cmarca')}}">
 
             <label for="plano"><b>EPLIPSIA - CONSULÇÃO?</b></label>
             <label class="radio">SIM
-                <input type="radio" checked="checked" name="radioEP" value="sim">
+                <input type="radio" name="radioEP" value="sim">
                 <span class="checkmark"></span>
             </label>
             <label class="radio">NÃO
-                <input type="radio" name="radioEP" value="não">
+                <input type="radio" name="radioEP" value="não" checked="checked">
                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" value="{{old('Ceplis')}}"> 
