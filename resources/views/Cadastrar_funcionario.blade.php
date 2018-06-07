@@ -190,13 +190,13 @@
             <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente')}}">
 
             <label for="parentent-tele"><b>RESPONSAVEL/PARENTE 1 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" value="{{old('Parentent-tele')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele" value="{{old('Parentent-tele')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
             <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-            <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1')}}">
+            <input type="text" placeholder="Entre com seu nome" name="Parente1" value="{{old('Parente-1')}}">
 
             <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-            <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" value="{{old('Parentent-tele-1')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+            <input type="text" placeholder="Entre com seu Telefone" name="Parententtele1" value="{{old('Parentent-tele-1')}}" maxlength="14" OnKeyPress="formatar('## # ####-####', this); if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
         </div>
 
         <div id="clinicos1" class="tab-pane fade">

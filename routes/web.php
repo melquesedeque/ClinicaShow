@@ -29,7 +29,7 @@ Route::group(['middleware' => ['login']], function() {
     Route::get('funcionarioEditar/{id}', 'cadastrarController@funcionarioEditar')->name('funcionario-editar');
     Route::get('funcionarioExcluir/{id}', 'cadastrarController@funcionarioExcluir')->name('funcionario-excluir');
     Route::get('funcionarioVisualizar/{id}', 'cadastrarController@funcionarioVisualizar')->name('funcionario-visualizar');
-    Route::get('funcionarioAtualizar/{id}', 'cadastrarController@funcionarioAtualizar')->name('funcionario-Atualizar');
+    Route::post('funcionarioAtualizar/{id}', 'cadastrarController@funcionarioAtualizar')->name('funcionario-Atualizar');
 
     /* Consulta */
     Route::get('cadastrarConsulta', 'consultaController@paciente')->name('consulta');

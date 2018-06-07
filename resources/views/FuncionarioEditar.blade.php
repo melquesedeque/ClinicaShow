@@ -20,8 +20,8 @@
           <div id="DadosPessoais" class="tab-pane fade in active">
               <!-- Dados do Funcionarios-->
 
-              <form action=" {{ route('funcionario-Atualizar', ['id' => $Funcionarios['id']]) }}">
-
+              <form action=" {{ route('funcionario-Atualizar', ['id' => $Funcionarios['id']]) }}" method="post" enctype="multipart/form-data">
+                @csrf
                   <div class="container">
                     <h3>Dados Funcionário</h3>
                       @if ($errors->any())
@@ -33,6 +33,13 @@
                           </ul>
                       </div>
                       @endif
+
+                      <div class="form-group">
+                        <label for="campo-foto">FOTO</label>
+                        </br>
+                        <img src="{{url($Funcionarios->Foto)}}">
+                        <input type="file" class="form-control" name="Foto" id="campo-foto">
+                    </div>
 
                       <label for=""><b>MATRICULA</b></label>
                       <input type="text" name="id" disabled value="{{old('id',$Funcionarios['id'])}}">
@@ -47,10 +54,9 @@
                       <input type="text" placeholder="Entre com seu RG" name="Rg" value="{{old('Rg',$Funcionarios['Rg'])}}" maxlength="14" OnKeyPress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
 
                       <label for=""><b>TELEFONE</b></label>
-                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefone-p" value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
+                      <input type="text" placeholder="(XX) X XXXX-XXXX" name="Telefonep" value="{{old('Telefone-p',$Funcionarios['Telefone-p'])}}">
 
                       <label for=""><b>DATA NASCIMENTO</b></label>
-                      <input type="date" placeholder="DD/MM/YYYY" name="Data" >
                       <div class="input-group date">
                         <input type="date" class="form-control" id="Data" name="Data" value="{{old('Data',$Funcionarios['Data'])}}" maxlength="10">
                         <div class="input-group-addon">
@@ -132,12 +138,12 @@
 
                       <label for="profissao"><b>TIPO DE PERMISSÃO</b></label>
                       <select class="form-control" id="gender1" name="TIPO_PERMISAO"  value="{{old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO'])}}">
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICO") selected @endif value="PMEDICO">MÉDICO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICOGERENTE") selected @endif value="PMEDICOGERENTE">MÉDICO GERENTE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIRO") selected @endif value="PENFERMEIRO">ENFERMEIRO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIROCHEFE") selected @endif value="PENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PATENDIMENTO") selected @endif value="PATENDIMENTO">ATENDIMENTO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PGERAL") selected @endif value="PGERAL">GERENTE GERAL</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "MEDICO") selected @endif value="MEDICO">MÉDICO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "MEDICOGERENTE") selected @endif value="MEDICOGERENTE">MÉDICO GERENTE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ENFERMEIRO") selected @endif value="ENFERMEIRO">ENFERMEIRO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ENFERMEIROCHEFE") selected @endif value="ENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ATENDIMENTO") selected @endif value="ATENDIMENTO">ATENDIMENTO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "GERAL") selected @endif value="GERAL">GERENTE GERAL</option>
                           <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "RH") selected @endif value="RH">RH</option>
                       </select>
                       </br>
@@ -196,13 +202,13 @@
               <input type="text" placeholder="Entre com seu nome" name="Parente" value="{{old('Parente',$Funcionarios['Parente'])}}">
 
               <label for="parentent-tele"><b>RESPONSAVEL/PARENTE  1 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele" value="{{old('Parentent-tele',$Funcionarios['Parentent-tele'])}}">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parententtele" value="{{old('Parentent-tele',$Funcionarios['Parentent-tele'])}}">
 
               <label for="parente-1"><b>RESPONSAVEL/PARENTE 2 NOME</b></label>
-              <input type="text" placeholder="Entre com seu nome" name="Parente-1" value="{{old('Parente-1',$Funcionarios['Parente-1'])}}">
+              <input type="text" placeholder="Entre com seu nome" name="Parente1" value="{{old('Parente-1',$Funcionarios['Parente-1'])}}">
 
               <label for="parentent-tele-1"><b>RESPONSAVEL/PARENTE 2 TELEFONE</b></label>
-              <input type="text" placeholder="Entre com seu Telefone" name="Parentent-tele-1" value="{{old('Parentent-tele-1',$Funcionarios['Parentent-tele-1'])}}">
+              <input type="text" placeholder="Entre com seu Telefone" name="Parententtele1" value="{{old('Parentent-tele-1',$Funcionarios['Parentent-tele-1'])}}">
           </div>
 
           <div id="clinicos1" class="tab-pane fade">

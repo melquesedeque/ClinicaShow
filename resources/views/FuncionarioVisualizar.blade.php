@@ -133,12 +133,12 @@
 
                       <label for="profissao"><b>TIPO DE PERMISSÃO</b></label>
                       <select class="form-control" id="gender1" name="TIPO_PERMISAO"  disabled value="{{old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO'])}}">
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICO") selected @endif disabled value="PMEDICO">MÉDICO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PMEDICOGERENTE") selected @endif disabled value="PMEDICOGERENTE">MÉDICO GERENTE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIRO") selected @endif disabled value="PENFERMEIRO">ENFERMEIRO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PENFERMEIROCHEFE") selected @endif disabled value="PENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PATENDIMENTO") selected @endif disabled value="PATENDIMENTO">ATENDIMENTO</option>
-                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "PGERAL") selected @endif disabled value="PGERAL">GERENTE GERAL</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "MEDICO") selected @endif disabled value="MEDICO">MÉDICO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "MEDICOGERENTE") selected @endif disabled value="MEDICOGERENTE">MÉDICO GERENTE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ENFERMEIRO") selected @endif disabled value="ENFERMEIRO">ENFERMEIRO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ENFERMEIROCHEFE") selected @endif disabled value="ENFERMEIROCHEFE">ENFERMEIRO CHEFE</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "ATENDIMENTO") selected @endif disabled value="ATENDIMENTO">ATENDIMENTO</option>
+                          <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "GERAL") selected @endif disabled value="GERAL">GERENTE GERAL</option>
                           <option @if(old('TIPO_PERMISAO',$Funcionarios['TIPO_PERMISAO']) == "RH") selected @endif disabled value="RH">RH</option>
                       </select>
                       </br>
@@ -420,7 +420,7 @@
             </label>
             <label class="radio">NÃO
                 <input type="radio" disabled value="não" name="radioEP" @if(old('radioEP',$Funcionarios['radioEP']) == "não") checked @endif>
-                <span class="checkmark"></span>
+                 <span class="checkmark"></span>
             </label>
             <input type="text" placeholder="COMENTE" name="Ceplis" disabled value="{{old('Ceplis',$Funcionarios['Ceplis'])}}"> </br>
           </div>

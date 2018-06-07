@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Paciente;
 use App\Models\Funcionario;
-use Illuminate\Support\Facades\DB;
 
 class cadastrarController extends Controller{
 
@@ -28,10 +27,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Parente'          => 'required',
-            'Parentent-tele'   => 'required',
-            'Parente-1'        => 'required',
-            'Parentent-tele-1' => 'required',
             'Plano'            => 'required',
             'Inscricao'        => 'required',
             'Validade'         => 'required|date',
@@ -41,9 +36,9 @@ class cadastrarController extends Controller{
 
         $dados = Paciente::create($request->all());
 
-        // if(isset($request->Foto)){
+        if(isset($request->Foto)){
             $this->SalvarFoto($dados, $request); //Salva Foto do Paciente
-        // }
+        }
         return redirect()->route('paciente-listar');
     }
 
@@ -103,7 +98,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
-            'Telefonep'       => 'required',
+            'Telefonep'        => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
             'Cep'              => 'required',
@@ -111,10 +106,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Parente'          => 'required',
-            'Parententtele'   => 'required',
-            'Parente1'        => 'required',
-            'Parententtele1' => 'required',
             'Plano'            => 'required',
             'Inscricao'        => 'required',
             'Validade'         => 'required',
@@ -249,10 +240,6 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Parente'          => 'required',
-            'Parentent-tele'   => 'required',
-            'Parente-1'        => 'required',
-            'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);
@@ -320,8 +307,7 @@ class cadastrarController extends Controller{
             'Nome'             => 'required',
             'Cpf'              => 'required',
             'Rg'               => 'required',
-            'Foto'             => 'required',
-            'Telefone-p'       => 'required',
+            'Telefonep'        => 'required',
             'Data'             => 'required',
             'Email'            => 'required|email',
             'Cep'              => 'required',
@@ -329,20 +315,91 @@ class cadastrarController extends Controller{
             'Endereco'         => 'required',
             'Bairro'           => 'required',
             'Numero'           => 'required|integer',
-            'Parente'          => 'required',
-            'Parentent-tele'   => 'required',
-            'Parente-1'        => 'required',
-            'Parentent-tele-1' => 'required',
             'Peso'             => 'required',
             'Altura'           => 'required',
         ]);
 
-        Funcionario::where('id', $id)->update($request->all()); // para Atulizar o banco
+        // Funcionario::where('id', $id)->update($request->all()); // para Atulizar o banco
+
+       $dados123 = Funcionario::where('id', $id)->update([
+           'Nome'             => $request->Nome,
+           'Cpf'              => $request->Cpf,
+           'Rg'               => $request->Rg,
+           'Telefone-p'       => $request->Telefonep,
+           'Data'             => $request->Data,
+           'Naturalidade'     => $request->Naturalidade,
+           'Sexo'             => $request->sexo,
+           'estado'           => $request->estado,
+           'escola'           => $request->escola,
+           'profi'            => $request->profi,
+           'cidade'           => $request->cidade,
+           'cor'              => $request->cor,
+           'rh'               => $request->rh,
+           'tipo'             => $request->tipo,
+           'radioH'           => $request->radioH,
+           'Chere'            => $request->Chere,
+           'radioD'           => $request->radioD,
+           'CDiab'            => $request->CDiab,
+           'radioHI'          => $request->radioHI,
+           'Chiper'           => $request->Chiper,
+           'radioT'           => $request->radioT,
+           'Cclini'           => $request->Cclini,
+           'radioC'           => $request->radioC,
+           'Cdoen'            => $request->Cdoen,
+           'radioN'           => $request->radioN,
+           'Cneopla'          => $request->Cneopla,
+           'radioFA'          => $request->radioFA,
+           'Cfarma'           => $request->Cfarma,
+           'radioDRO'         => $request->radioDRO,
+           'Cuso'             => $request->Cuso,
+           'radioAL'          => $request->radioAL,
+           'Calerg'           => $request->Calerg,
+           'radioET'          => $request->radioET,
+           'Cetili'           => $request->Cetili,
+           'radioVA'          => $request->radioVA,
+           'Cvacina'          => $request->Cvacina,
+           'radioCI'          => $request->radioCI,
+           'Ccirur'           => $request->Ccirur,
+           'radioTRA'         => $request->radioTRA,
+           'Cporta'           => $request->Cporta,
+           'radioMAR'         => $request->radioMAR,
+           'Cmarca'           => $request->Cmarca,
+           'radioEP'          => $request->radioEP,
+           'Ceplis'           => $request->Ceplis,
+           'Email'            => $request->Email,
+           'Cep'              => $request->Cep,
+           'Uf'               => $request->Uf,
+           'Endereco'         => $request->Endereco,
+           'Bairro'           => $request->Bairro,
+           'Numero'           => $request->Numero,
+           'Complemento'      => $request->Complemento,
+           'Parente'          => $request->Parente,
+           'Parentent-tele'   => $request->Parententtele,
+           'Parente-1'        => $request->Parente1,
+           'Parentent-tele-1' => $request->Parententtele1,
+           'Peso'             => $request->Peso,
+           'Altura'           => $request->Altura,
+           'TIPO_PERMISAO'    => $request->TIPO_PERMISAO,
+           'Crm'              => $request->Crm,
+           ]);
+
+        if(isset($request->Foto)){
+        // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
+        $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
+        $caminho = 'storage/Funcionario/'.$nomeDaImagem; // Define o caminho que será criado com o nome da imagem
+        $imagem = $request->Foto;  // Recebe a imagem na variável $imagem
+        $imagem->storeAs('Funcionario',$nomeDaImagem,'public'); // Armazena a imagem na pasta paciente com o nome da imagem
+        // Fim do salvamente da imagem
+
+        $dados321 = Funcionario::where('id', $id)->update([
+              'Foto' => $caminho
+              ]);   
+      }
 
         return redirect()->route('funcionario-listar');
     }
 
-    public function SalvarFotoFuncionario(Funcionario $dados, Request $request): void{
+    public function SalvarFotoFuncionario(Funcionario $dados, Request $request): void{ // salvar Foto Funcionario
 
         // Início do salvamento da imagem no "/storage/paciente/nomeDaImagem.png"
         $nomeDaImagem = $request->Foto->getClientOriginalName(); // Pega o nome da imagem que foi feita upload
