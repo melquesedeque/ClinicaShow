@@ -65,19 +65,33 @@
 
                       <label for=""><b>NATURALIDADE</b></label>
                       <select class="form-control" id="gender1" name="Naturalidade" disabled value="{{old('Naturalidade',$Funcionarios['Naturalidade'])}}">
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "BRASIL") selected @endif disabled value="BRASIL">BRASIL</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ARGENTINA") selected @endif disabled value="ARGENTINA">ARGENTINA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHILE") selected @endif disabled value="CHILE">CHILE</option>    
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "COLÔMBIA") selected @endif disabled value="COLÔMBIA">COLÔMBIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ESTADOS") selected @endif disabled value="ESTADOS">ESTADOS UNIDOS</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CANADA") selected @endif disabled value="CANADA">CANADÁ</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "MEXICO") selected @endif disabled value="MEXICO">MÉXICO</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PORTUGAL") selected @endif disabled value="PORTUGAL">PORTUGAL</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">FRANÇA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">ITáLIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif disabled value="FRANÇA">RÚSSIA</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "JAPÃO") selected @endif disabled value="JAPÃO">JAPÃO</option>
-                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHINA") selected @endif disabled value="CHINA">CHINA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "BRASIL") selected @endif value="BRASIL">BRASIL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ARGENTINA") selected @endif value="ARGENTINA">ARGENTINA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHILE") selected @endif value="CHILE">CHILE</option>    
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "COLÔMBIA") selected @endif value="COLÔMBIA">COLÔMBIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ESTADOS") selected @endif value="ESTADOS">ESTADOS UNIDOS</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CANADA") selected @endif value="CANADA">CANADÁ</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "MEXICO") selected @endif value="MEXICO">MÉXICO</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PORTUGAL") selected @endif value="PORTUGAL">PORTUGAL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">FRANÇA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">ITáLIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">RÚSSIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "JAPÃO") selected @endif value="JAPÃO">JAPÃO</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CHINA") selected @endif value="CHINA">CHINA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "EGITO") selected @endif value="EGITO">EGITO</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "IRA") selected @endif value="IRA">IRÃ</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "HOLANDA") selected @endif value="HOLANDA">HOLANDA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "NORTE") selected @endif value="NORTE">COREIA DO NORTE</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "SUL") selected @endif value="SUL">COREIA DO SUL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ISRAEL") selected @endif value="ISRAEL">ISRAEL</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CUBA") selected @endif value="CUBA">CUBA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "ESPANHA") selected @endif value="ESPANHA">ESPANHA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "INGLATERRA") selected @endif value="INGLATERRA">INGLATERRA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "NOVA") selected @endif value="NOVA">NOVA ZELANDIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "CROCIA") selected @endif value="CROCIA">CROCIA</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PERU") selected @endif value="PERU">PERU</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "URUGUAI") selected @endif value="URUGUAI">URUGUAI</option>
+                        <option @if(old('Naturalidade',$Funcionarios['Naturalidade']) == "PARAGUAI") selected @endif value="PARAGUAI">PARAGUAI</option>
                       </select>
 
                       <label for=""><b>SEXO</b></label>
@@ -156,19 +170,32 @@
 
               <label for="cidade"><b>CIDADE</b></label>
               <select class="form-control" id="gender1" disabled name="cidade">
-                <option @if(old('cidade',$Funcionarios['cidade']) == "MACEIÓ") selected @endif disabled value="MACEIÓ">MACEIÓ</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "CORURIPE") selected @endif disabled value="CORURIPE">CORURIPE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "RIO") selected @endif disabled value="RIO">RIO DE JANEIRO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PAULO") selected @endif disabled value="PAULO">SÃO PAULO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PARANA") selected @endif disabled value="PARANA">PARANA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "SANTA") selected @endif disabled value="SANTA">SANTA CATARINA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "RECIFE") selected @endif disabled value="RECIFE">RECIFE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "BAHIA") selected @endif disabled value="BAHIA">BAHIA</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "SERGIPE") selected @endif disabled value="SERGIPE">SERGIPE</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "PERNABUCO") selected @endif disabled value="PERNABUCO">PERNABUCO</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "GOIAS") selected @endif disabled value="GOIAS">GOIAS</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "AMAZONAS") selected @endif disabled value="AMAZONAS">AMAZONAS</option>
-                <option @if(old('cidade',$Funcionarios['cidade']) == "FLORIPA") selected @endif disabled value="FLORIPA">FLORIPA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "MACEIÓ") selected @endif value="MACEIÓ">MACEIÓ</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "CORURIPE") selected @endif value="CORURIPE">CORURIPE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "RIO") selected @endif value="RIO">RIO DE JANEIRO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PAULO") selected @endif value="PAULO">SÃO PAULO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PARANA") selected @endif value="PARANA">PARANA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "SANTA") selected @endif value="SANTA">SANTA CATARINA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "RECIFE") selected @endif value="RECIFE">RECIFE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "BAHIA") selected @endif value="BAHIA">BAHIA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "SERGIPE") selected @endif value="SERGIPE">SERGIPE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "PERNABUCO") selected @endif value="PERNABUCO">PERNABUCO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "GOIAS") selected @endif value="GOIAS">GOIAS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "AMAZONAS") selected @endif value="AMAZONAS">AMAZONAS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "FLORIPA") selected @endif value="FLORIPA">FLORIPA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "TEREZINA") selected @endif value="TEREZINA">TEREZINA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "FLORIPA") selected @endif value="TEREZINA">CURITIBA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "TEREZINA") selected @endif value="SANTOS">SANTOS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "AMAPA") selected @endif value="AMAPA">AMAPA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "GRAMADOS") selected @endif value="GRAMADOS">GRAMADOS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "ARACAJU") selected @endif value="ARACAJU">ARACAJU</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "JUENVILHE") selected @endif value="JUENVILHE">JUENVILHE</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "ANGRA") selected @endif value="ANGRA">ANGRA DOS REIS</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "SALVADOR") selected @endif value="SALVADOR">SALVADOR</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "MARACHAL") selected @endif value="MARACHAL">MARACHAL DEODORO</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "NATAL") selected @endif value="NATAL">NATAL</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "JOÃO") selected @endif value="JOÃO">JOÃO PESSOA</option>
+                <option @if(old('cidade',$Funcionarios['cidade']) == "ATALAIA") selected @endif value="ATALAIA">ATALAIA</option>
               </select>
               </br>
 

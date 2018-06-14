@@ -79,6 +79,20 @@
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "FRANÇA") selected @endif value="FRANÇA">RÚSSIA</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "JAPÃO") selected @endif value="JAPÃO">JAPÃO</option>
                         <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CHINA") selected @endif value="CHINA">CHINA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "EGITO") selected @endif value="EGITO">EGITO</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "IRA") selected @endif value="IRA">IRÃ</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "HOLANDA") selected @endif value="HOLANDA">HOLANDA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "NORTE") selected @endif value="NORTE">COREIA DO NORTE</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "SUL") selected @endif value="SUL">COREIA DO SUL</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "ISRAEL") selected @endif value="ISRAEL">ISRAEL</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CUBA") selected @endif value="CUBA">CUBA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "ESPANHA") selected @endif value="ESPANHA">ESPANHA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "INGLATERRA") selected @endif value="INGLATERRA">INGLATERRA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "NOVA") selected @endif value="NOVA">NOVA ZELANDIA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "CROCIA") selected @endif value="CROCIA">CROCIA</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "PERU") selected @endif value="PERU">PERU</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "URUGUAI") selected @endif value="URUGUAI">URUGUAI</option>
+                        <option @if(old('Naturalidade',$pacientes['Naturalidade']) == "PARAGUAI") selected @endif value="PARAGUAI">PARAGUAI</option>
                       </select>
 
                       <label for=""><b>SEXO</b></label>
@@ -129,6 +143,19 @@
                         <option @if(old('profi',$pacientes['profi']) == "ADIMINISTRAÇÃO") selected @endif value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
                         <option @if(old('profi',$pacientes['profi']) == "FARMACIA") selected @endif value="FARMACIA">FARMACIA</option>
                         <option @if(old('profi',$pacientes['profi']) == "FÍSICA") selected @endif value="FÍSICA">EDUÇÃO FÍSICA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "MECANICO") selected @endif value="MECANICO">MECANICO</option>
+                        <option @if(old('profi',$pacientes['profi']) == "PSICOLOGIA") selected @endif value="PSICOLOGIA">PSICOLOGIA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "FRETISTA") selected @endif value="FRETISTA">FRETISTA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "ELETRCISTA") selected @endif value="ELETRCISTA">ELETRCISTA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "EMPRESARIO") selected @endif value="EMPRESARIO">EMPRESARIO</option>
+                        <option @if(old('profi',$pacientes['profi']) == "PROFESSOR") selected @endif value="PROFESSOR">PROFESSOR</option>
+                        <option @if(old('profi',$pacientes['profi']) == "ATENDENTE") selected @endif value="ATENDENTE">ATENDENTE</option>
+                        <option @if(old('profi',$pacientes['profi']) == "SECRETARIA") selected @endif value="SECRETARIA">SECRETARIA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "EDUCADOR") selected @endif value="EDUCADOR">EDUCADOR FISICO</option>
+                        <option @if(old('profi',$pacientes['profi']) == "ATOR") selected @endif value="ATOR">ATOR</option>
+                        <option @if(old('profi',$pacientes['profi']) == "PUBLICITARIO") selected @endif value="PUBLICITARIO">PUBLICITARIO</option>
+                        <option @if(old('profi',$pacientes['profi']) == "MOTORISTA") selected @endif value="MOTORISTA">MOTORISTA</option>
+                        <option @if(old('profi',$pacientes['profi']) == "MILITARS") selected @endif value="MILITAR">MILITAR</option>
                       </select>
                       </br>
         </div>
@@ -162,6 +189,19 @@
               <option @if(old('cidade',$pacientes['cidade']) == "GOIAS") selected @endif value="GOIAS">GOIAS</option>
               <option @if(old('cidade',$pacientes['cidade']) == "AMAZONAS") selected @endif value="AMAZONAS">AMAZONAS</option>
               <option @if(old('cidade',$pacientes['cidade']) == "FLORIPA") selected @endif value="FLORIPA">FLORIPA</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "TEREZINA") selected @endif value="TEREZINA">TEREZINA</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "FLORIPA") selected @endif value="TEREZINA">CURITIBA</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "TEREZINA") selected @endif value="SANTOS">SANTOS</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "AMAPA") selected @endif value="AMAPA">AMAPA</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "GRAMADOS") selected @endif value="GRAMADOS">GRAMADOS</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "ARACAJU") selected @endif value="ARACAJU">ARACAJU</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "JUENVILHE") selected @endif value="JUENVILHE">JUENVILHE</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "ANGRA") selected @endif value="ANGRA">ANGRA DOS REIS</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "SALVADOR") selected @endif value="SALVADOR">SALVADOR</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "MARACHAL") selected @endif value="MARACHAL">MARACHAL DEODORO</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "NATAL") selected @endif value="NATAL">NATAL</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "JOÃO") selected @endif value="JOÃO">JOÃO PESSOA</option>
+              <option @if(old('cidade',$pacientes['cidade']) == "ATALAIA") selected @endif value="ATALAIA">ATALAIA</option>
             </select>
             </br>
 

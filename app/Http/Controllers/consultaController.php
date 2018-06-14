@@ -36,7 +36,7 @@ class consultaController extends Controller{
         ]);
 
         consulta::create($request->all()); 
-        return redirect()->route('consultaListar');
+        return redirect()->route('consultaListar')->with('ConsultaCadastrada', true);
     }
 
     public function consultaListar(Request $request){ // Listar Consulta e Filtro

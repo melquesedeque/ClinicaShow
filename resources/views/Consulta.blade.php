@@ -6,6 +6,20 @@
         <div class="container">
 
             <h2>Cadastrar Consulta</h2> 
+
+            {{-- @if(session('ConsultaCadastrada'))      
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Consulta Realizada Com Sucesso</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endif --}}
             
 			@if ($errors->any())
 				<div class="alert alert-danger">
@@ -17,29 +31,14 @@
 				</div>
             @endif
 
-            {{-- <!-- Modal -->
-            @if ($errors->any())
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Consulta Realizada Com Sucesso</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @endif     --}}
+            <label for="NomePaciente"><b>NOME PACIENTE</b></label>
+            <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
+                @foreach ($pacientes as $paci)
 
-                <label for="NomePaciente"><b>NOME PACIENTE</b></label>
-                <select name="NomePaciente" id="NomePaciente" value=" {{old('NomePaciente')}}" class="form-control"> // bucas Pacientes no Banco
+                    <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
 
-                    @foreach ($pacientes as $paci)
-
-                        <option value="{{$paci->Nome}}">{{$paci->Nome}}</option>
-
-                    @endforeach             
-                </select>
+                @endforeach             
+            </select>
 
             <label for="NomeMedico"><b>NOME MÉDICO</b></label>
             <select name="NomeMedico" id="NomeMedico" value=" {{old('NomeMedico')}}" class="form-control"> // bucas Pacientes no Banco

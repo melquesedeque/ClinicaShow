@@ -23,6 +23,7 @@
 
             <form action=" {{ route('paciente-salvar') }} " method="post" enctype="multipart/form-data">
                 {{ csrf_field() }}
+
                     <h3>Dados Paciente</h3> 
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -33,10 +34,11 @@
                             </ul>
                         </div>
                     @endif
-
-                    <div class="form-group">
-                        <label for="campo-foto">FOTO</label>
-                        <input type="file" class="form-control" name="Foto" id="campo-foto" value="{{old('Foto')}}">
+                    
+                    <div id="mostrarFoto" class="form-group">
+                        <label for="campo-foto">FOTO</label>                
+                        <div id="image-holder"></div>                         
+                        <input type = "file" value="Foto" id="campo-foto" name="Foto" accept=".jpg, .jpeg, .png" class="form-control"/>                   
                     </div>
 
                     <label for="nome"><b>NOME</b></label>
@@ -71,10 +73,24 @@
                         <option value="MeXICO">MÉXICO</option>
                         <option value="PORTUGAL">PORTUGAL</option>
                         <option value="FRANcA">FRANÇA</option>
-                        <option value="ITáLIA">ITáLIA</option>
+                        <option value="ITÁLIA">ITáLIA</option>
                         <option value="RÚSSIA">RÚSSIA</option>
                         <option value="JAPÃO">JAPÃO</option>
                         <option value="CHINA">CHINA</option>
+                        <option value="EGITO">EGITO</option>
+                        <option value="IRA">IRÃ</option>
+                        <option value="HOLANDA">HOLANDA</option>
+                        <option value="NORTE">COREIA DO NORTE</option>
+                        <option value="SUL">COREIA DO SUL</option>
+                        <option value="ISRAEL">ISRAEL</option>
+                        <option value="CUBA">CUBA</option>
+                        <option value="ESPANHA">ESPANHA</option>
+                        <option value="INGLATERRA">INGLATERRA</option>
+                        <option value="NOVA">NOVA ZELANDIA</option>
+                        <option value="CROCIA">CROCIA</option>
+                        <option value="PERU">PERU</option>
+                        <option value="URUGUAI">URUGUAI</option>
+                        <option value="PARAGUAI">PARAGUAI</option>
                     </select>
 
 
@@ -126,6 +142,19 @@
                         <option value="ADIMINISTRAÇÃO">ADIMINISTRAÇÃO</option>
                         <option value="FARMACIA">FARMACIA</option>
                         <option value="FÍSICA">EDUÇÃO FÍSICA</option>
+                        <option value="MECANICO">MECANICO</option>
+                        <option value="PSICOLOGIA">PSICOLOGIA</option>
+                        <option value="FRETISTA">FRETISTA</option>
+                        <option value="ELETRCISTA">ELETRCISTA</option>
+                        <option value="EMPRESARIO">EMPRESARIO</option>
+                        <option value="PROFESSOR">PROFESSOR</option>
+                        <option value="ATENDENTE">ATENDENTE</option>
+                        <option value="SECRETARIA">SECRETARIA</option>
+                        <option value="EDUCADOR">EDUCADOR FISICO</option>
+                        <option value="ATOR">ATOR</option>
+                        <option value="PUBLICITARIO">PUBLICITARIO</option>
+                        <option value="MOTORISTA">MOTORISTA</option>
+                        <option value="MILITAR">MILITAR</option>
                     </select>
 
         </div>
@@ -153,12 +182,25 @@
                 <option value="PARANA">PARANA</option>
                 <option value="SANTA">SANTA CATARINA</option>
                 <option value="RECIFE">RECIFE</option>
-                <option value="BAHIA">BAHIA</option>
+                <option value="BAHIA">BAHIA</option>s
                 <option value="SERGIPE">SERGIPE</option>
                 <option value="PERNABUCO">PERNABUCO</option>
                 <option value="GOIAS">GOIAS</option>
                 <option value="AMAZONAS">AMAZONAS</option>
                 <option value="FLORIPA">FLORIPA</option>
+                <option value="TEREZINA">TEREZINA</option>
+                <option value="CURITIBA">CURITIBA</option>
+                <option value="SANTOS">SANTOS</option>
+                <option value="AMAPA">AMAPA</option>
+                <option value="GRAMADOS">GRAMADOS</option>
+                <option value="ARACAJU">ARACAJU</option>
+                <option value="JUENVILHE">JUENVILHE</option>
+                <option value="ANGRA">ANGRA DOS REIS</option>
+                <option value="SALVADOR">SALVADOR</option>
+                <option value="MARACHAL">MARACHAL DEODORO</option>
+                <option value="NATAL">NATAL</option>
+                <option value="JOÃO">JOÃO PESSOA</option>
+                <option value="ATALAIA">ATALAIA</option>
             </select>
 
             <label for="Endereco"><b>ENDEREÇO</b></label>
@@ -499,22 +541,6 @@
         </form>
 
         <script>
-            {{-- function formatar(mascara, documento) { // Para a Data
-                var i = documento.value.length;
-                var saida = mascara.substring(0, 1);
-                var texto = mascara.substring(i)
-    
-                if (texto.substring(0, 1) != saida) {
-                    documento.value += texto.substring(0, 1);
-                }
-    
-            }
-    
-            $('#Data').datepicker({
-                format: 'dd/mm/yyyy',
-                language: "pt-BR",
-            }); --}}
-    
             function formatar(mascara, documento) { // Mascara dos campos
     
                 var i = documento.value.length;
@@ -648,5 +674,31 @@
             el.value = "";
           }
         }
+
+        $("#campo-foto").on('change', function() {
+
+            if (typeof(FileReader) != "undefined") {
+                var image_holder = $("#image-holder");
+                image_holder.empty();
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+        
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "thumb-image",
+                        "width": "250px",
+                        "height": "250px",
+                        "border": "none"
+                    }).appendTo(image_holder);
+        
+                }
+                image_holder.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+        
+            } else {
+                alert("Este navegador nao suporta FileReader.");
+            }
+        });
         </script>
 @endsection

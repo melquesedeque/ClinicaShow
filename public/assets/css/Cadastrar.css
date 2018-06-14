@@ -135,3 +135,18 @@ input[type=text]:focus {
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+.temporario{
+
+    
+	position: absolute;
+    
+	top: 30%;
+    
+	left: 40%;
+    
+	z-index: 10;
+    
+	animation: hide 2s 2s forwards;
+
+}
